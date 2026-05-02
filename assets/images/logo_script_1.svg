@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <rect width="300" height="100" fill="#0C1120"/>
+  <!-- Geometric A -->
+  <path d="M 40 70 L 60 30 L 80 70 M 50 60 L 70 60" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-linejoin="miter"/>
+  <!-- Text -->
+  <text x="100" y="56" font-family="Arial, sans-serif" font-size="32" fill="#FFFFFF" font-weight="bold" letter-spacing="8" dominant-baseline="middle">AURA</text>
+  <text x="100" y="72" font-family="Arial, sans-serif" font-size="9" fill="#6B7280" font-weight="normal" letter-spacing="6">EXECUTIVE TRAVEL</text>
+</svg>
