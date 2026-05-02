@@ -212,6 +212,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--aura-white);
   padding: 0.6rem 1rem;
   margin-right: var(--space-xs);
+  display: flex;
+  align-items: center;
+}
+
+.floating-nav .nav-logo img {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
 }
 
 .floating-nav .nav-logo span { color: var(--aura-electric); }
