@@ -1,0 +1,13 @@
+{
+  "name": "aura-travel",
+  "version": "1.0.0",
+  "description": "AURA Travel — Transporte Ejecutivo Premium en Chile",
+  "private": true,
+  "scripts": {
+    "dev": "npx http-server . -p 8080 -o",
+    "start": "npx http-server . -p 8080"
+  },
+  "keywords": ["transporte", "ejecutivo", "chile", "diálisis", "diplomático"],
+  "author": "AURA Travel",
+  "license": "UNLICENSED"
+}
