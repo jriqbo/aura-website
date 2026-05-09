@@ -38,13 +38,15 @@ const WEBHOOK_URL = 'https://hook.make.com/TU_URL_AQUI';
   - Propiedad personalizada "lead_id" → `{{_leadId}}`
   - Propiedad personalizada "utm_source" → `{{_utm_source}}`
 
-### Módulo 3: WhatsApp Cloud - Notificar al Equipo
+### Módulo 3: Router + WhatsApp Cloud - Notificar al Equipo
+- Agrega un "Router" después del Webhook para crear caminos según la división.
+- Filtro Ruta 1: Condition: `{{_division}}` = `CORPORATIVO` → Notifica a ejecutivos B2B
+- Filtro Ruta 2: Condition: `{{_division}}` = `TURISMO` → Notifica a operaciones especiales
 - Template: "new_lead_notification"
-- Número destino: Grupo AURA Operaciones
 - Variables:
-  - {{1}} = división
-  - {{2}} = nombre
-  - {{3}} = servicio solicitado
+  - {{1}} = `{{_division}}`
+  - {{2}} = `{{nombre}}`
+  - {{3}} = `{{_leadId}}`
 
 ### Módulo 4: Resend - Email Confirmación al Cliente
 - From: "AURA Travel" <contacto@auratravel.cl>

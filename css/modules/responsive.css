@@ -239,9 +239,19 @@
     .terminal-form input, 
     .terminal-form textarea, 
     .terminal-form select {
-        padding: 1.2rem 1rem;
+        padding: 1.5rem 1rem 0.8rem 1rem; /* Extra top padding for floating labels */
         font-size: 0.85rem;
         min-height: 48px; /* Touch target */
+    }
+
+    /* Mobile floating label scale */
+    .terminal-form input:focus ~ label,
+    .terminal-form input:not(:placeholder-shown) ~ label,
+    .terminal-form textarea:focus ~ label,
+    .terminal-form textarea:not(:placeholder-shown) ~ label,
+    .terminal-form select:focus ~ label,
+    .terminal-form select:not([value=""]) ~ label {
+        transform: translateY(-0.7rem) scale(0.65);
     }
 
     .btn, .btn-luxury-mission, .btn-terminal-submit {
