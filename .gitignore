@@ -26,7 +26,7 @@ restore_original.py
 update_css.js
 stitch-ui.html
 
-# Root-level generated PNGs (keep img/ folder)
+# Root-level generated PNGs (img/ folder is tracked)
 /*.png
 
 # Agents (internal ops, not for production)
