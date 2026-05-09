@@ -167,6 +167,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 14. SOVEREIGN HUD (Home Exclusive)
     // ========================
     initSovereignHUD();
+
+    // ========================
+    // 15. SMART ANALYTICS & TACTILE AUDIO
+    // ========================
+    initSmartAnalytics();
 });
 
 
@@ -675,4 +680,70 @@ function initTerminalIntelligence() {
     });
     
     updateProgress();
+}
+
+// ====================================================
+// 15. SMART ANALYTICS & TACTILE AUDIO
+// Generates a zero-latency tactile "tick" sound via Web Audio API
+// and tracks CTA clicks via GA4 events.
+// ====================================================
+let auraAudioCtx = null;
+
+function playTactileTick() {
+    try {
+        if (!auraAudioCtx) {
+            auraAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (auraAudioCtx.state === 'suspended') {
+            auraAudioCtx.resume();
+        }
+
+        const oscillator = auraAudioCtx.createOscillator();
+        const gainNode = auraAudioCtx.createGain();
+
+        // Very short, low-frequency "thud/tick" mimicking a luxury car button
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(150, auraAudioCtx.currentTime); // Deep thud
+        oscillator.frequency.exponentialRampToValueAtTime(40, auraAudioCtx.currentTime + 0.05);
+
+        // Envelope: instant attack, quick decay
+        gainNode.gain.setValueAtTime(0, auraAudioCtx.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.3, auraAudioCtx.currentTime + 0.01);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, auraAudioCtx.currentTime + 0.05);
+
+        oscillator.connect(gainNode);
+        gainNode.connect(auraAudioCtx.destination);
+
+        oscillator.start();
+        oscillator.stop(auraAudioCtx.currentTime + 0.06);
+    } catch (e) {
+        console.log("Audio feedback not supported or blocked.");
+    }
+}
+
+function initSmartAnalytics() {
+    // Select all potential CTAs (primary buttons, submit buttons, header buttons)
+    const ctas = document.querySelectorAll('.btn-primary, .btn-action, .btn-header-contact, .terminal-submit');
+    
+    ctas.forEach(cta => {
+        cta.addEventListener('click', (e) => {
+            // Play the tactile tick immediately
+            playTactileTick();
+
+            // Track Event with GA4
+            if (typeof gtag === 'function') {
+                const buttonText = cta.innerText || 'Unknown CTA';
+                const division = document.body.className.replace('aura-elite ', '') || 'home';
+                
+                gtag('event', 'cta_click', {
+                    'event_category': 'engagement',
+                    'event_label': buttonText,
+                    'division': division
+                });
+                
+                // Debug log in console (can be removed in pure prod)
+                console.log(`[AURA Analytics] CTA Clicked: ${buttonText} | Division: ${division}`);
+            }
+        });
+    });
 }

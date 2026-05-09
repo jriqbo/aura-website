@@ -18,24 +18,31 @@
     <script type="application/ld+json">
     [{
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": ["TransportationService", "LocalBusiness"],
         "name": "AURA Travel",
         "url": "https://auratravel.cl",
         "logo": "https://auratravel.cl/favicon.png",
-        "description": "Transporte ejecutivo e institucional premium en Chile. Cinco divisiones especializadas.",
-        "areaServed": {"@type": "Country", "name": "Chile"},
-        "contactPoint": {"@type": "ContactPoint", "telephone": "+56-9-2615-1427", "contactType": "sales", "availableLanguage": ["Spanish", "English"]},
-        "sameAs": ["https://www.linkedin.com/company/auratravel", "https://www.instagram.com/auratravelcl"]
-    },{
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "AURA Travel Chile",
         "image": "https://auratravel.cl/aura_home_8k.png",
-        "url": "https://auratravel.cl",
-        "telephone": "+56-9-2615-1427",
+        "description": "Transporte ejecutivo, diplomático e institucional premium en Chile. Cinco divisiones: Corporativo, Salud, Turismo, Eventos, Aeropuerto.",
+        "telephone": "+56926151427",
         "email": "contacto@auratravel.cl",
         "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
-        "priceRange": "$$$",
+        "priceRange": "$$$$",
+        "areaServed": [
+            {"@type": "Country", "name": "Chile"},
+            {"@type": "City", "name": "Santiago"}
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "128"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+56926151427",
+            "contactType": "Reservaciones VIP",
+            "availableLanguage": ["Spanish", "English"]
+        },
         "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}
     }]
     </script>
