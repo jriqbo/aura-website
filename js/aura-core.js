@@ -240,21 +240,46 @@ function injectMobileMenu() {
 
 
 // ====================================================
-// WHATSAPP FLOATING CTA
+// WHATSAPP FLOATING CTA (Dynamic Routing)
 // ====================================================
 function injectWhatsApp() {
     const phoneNumber = '56926151427';
-    const message = encodeURIComponent('Hola AURA Travel, necesito cotizar un servicio de transporte ejecutivo.');
+    let baseMessage = 'Hola AURA Travel, necesito cotizar un servicio de transporte ejecutivo.';
+    let tooltipText = '¿Necesita transporte? Escriba aquí';
+    
+    // Detect division context for dynamic routing
+    const path = window.location.pathname.toLowerCase();
+    const bodyClass = document.body.className;
+
+    if (path.includes('corporativo') || bodyClass.includes('corporativo')) {
+        baseMessage = 'Hola AURA. Requiero información sobre convenios corporativos de transporte.';
+        tooltipText = 'Atención Corporativa';
+    } else if (path.includes('turismo') || bodyClass.includes('turismo')) {
+        baseMessage = 'Hola AURA. Necesito coordinar un traslado VIP hacia centro de ski/destino.';
+        tooltipText = 'Coordinar Traslado Turismo';
+    } else if (path.includes('salud') || bodyClass.includes('salud')) {
+        baseMessage = 'Hola AURA. Requiero coordinar logística de traslado médico discreto.';
+        tooltipText = 'Logística de Salud DISCRETA';
+    } else if (path.includes('eventos') || bodyClass.includes('eventos')) {
+        baseMessage = 'Hola AURA. Necesito logística de transporte de alta capacidad para un evento.';
+        tooltipText = 'Logística de Eventos';
+    } else if (path.includes('aeropuerto') || bodyClass.includes('aeropuerto')) {
+        baseMessage = 'Hola AURA. Requiero agendar un transfer ejecutivo SCL con prioridad.';
+        tooltipText = 'Transfer Aeropuerto SCL';
+    } else if (path.includes('delivery') || bodyClass.includes('delivery')) {
+        baseMessage = 'Hola AURA. Necesito enviar un paquete urgente con máxima seguridad.';
+        tooltipText = 'Logística Última Milla';
+    }
     
     const whatsappBtn = document.createElement('a');
     whatsappBtn.className = 'whatsapp-float';
-    whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${message}`;
+    whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(baseMessage)}`;
     whatsappBtn.target = '_blank';
     whatsappBtn.rel = 'noopener noreferrer';
     whatsappBtn.setAttribute('aria-label', 'Contactar por WhatsApp');
     whatsappBtn.innerHTML = `
         <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">¿Necesita transporte? Escriba aquí</span>
+        <span class="whatsapp-tooltip">${tooltipText}</span>
     `;
     
     document.body.appendChild(whatsappBtn);
