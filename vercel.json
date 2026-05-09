@@ -3,9 +3,9 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/img/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=31536000, must-revalidate" }
       ]
     },
     {
@@ -14,13 +14,23 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
       ]
     }
   ],
   "rewrites": [
     { "source": "/corporativo", "destination": "/pages/corporativo.html" },
+    { "source": "/salud", "destination": "/pages/salud.html" },
+    { "source": "/turismo", "destination": "/pages/turismo.html" },
+    { "source": "/eventos", "destination": "/pages/eventos.html" },
+    { "source": "/aeropuerto", "destination": "/pages/aeropuerto.html" },
+    { "source": "/delivery", "destination": "/pages/delivery.html" },
     { "source": "/dialisis", "destination": "/pages/dialisis.html" },
+    { "source": "/transfer-aeropuerto", "destination": "/pages/transfer-aeropuerto.html" },
+    { "source": "/transfer-valle-nevado", "destination": "/pages/rutas/transfer-santiago-valle-nevado.html" },
+    { "source": "/transfer-portillo", "destination": "/pages/rutas/transfer-santiago-portillo.html" },
+    { "source": "/transfer-aeropuerto-scl", "destination": "/pages/rutas/transfer-santiago-aeropuerto-scl.html" },
     { "source": "/embajadas", "destination": "/pages/embajadas.html" },
     { "source": "/contacto", "destination": "/pages/contacto.html" }
   ]
