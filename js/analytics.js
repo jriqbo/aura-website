@@ -16,7 +16,7 @@
     // ═══════════════════════════════════════════
     // CONFIGURACIÓN — REEMPLAZAR CON TU ID REAL
     // ═══════════════════════════════════════════
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // ← Tu ID de GA4 aquí
+    const GA_MEASUREMENT_ID = 'G-9WMGVTMDMT'; // AURA Travel — Propiedad GA4 activa
 
     // Cargar script de GA4
     const script = document.createElement('script');
