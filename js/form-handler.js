@@ -65,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const quoteForms = document.querySelectorAll('form');
     
     quoteForms.forEach(form => {
+        // Anti-spam: Record when form was loaded (bots submit in < 3 seconds)
+        form.dataset.loadTime = Date.now().toString();
+        
         // Real-time field validation feedback
         const inputs = form.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
@@ -75,9 +78,47 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // === ANTI-SPAM: Inject honeypot field (hidden trap for bots) ===
+        if (!form.querySelector('.aura-hp-field')) {
+            const hp = document.createElement('div');
+            hp.className = 'aura-hp-field';
+            hp.style.cssText = 'position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;width:0;overflow:hidden;';
+            hp.innerHTML = '<input type="text" name="_aura_website_url" tabindex="-1" autocomplete="off" aria-hidden="true">';
+            form.appendChild(hp);
+        }
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
+            // === ANTI-SPAM CHECK 1: Honeypot (bots fill hidden fields) ===
+            const honeypot = form.querySelector('[name="_aura_website_url"]');
+            if (honeypot && honeypot.value.trim() !== '') {
+                console.warn('[AURA] Bot detected via honeypot');
+                // Fake success to not alert the bot
+                const fakeBtn = form.querySelector('button[type="submit"]');
+                if (fakeBtn) fakeBtn.innerHTML = '✅ TRANSMISIÓN EXITOSA';
+                return;
+            }
+            
+            // === ANTI-SPAM CHECK 2: Rate limiting (max 3 per 5 min) ===
+            const now = Date.now();
+            const submissions = JSON.parse(sessionStorage.getItem('_aura_submissions') || '[]');
+            const recentSubs = submissions.filter(t => now - t < 300000); // 5 min window
+            if (recentSubs.length >= 3) {
+                console.warn('[AURA] Rate limit exceeded');
+                alert('Ha enviado múltiples solicitudes. Por favor espere unos minutos.');
+                return;
+            }
+            recentSubs.push(now);
+            sessionStorage.setItem('_aura_submissions', JSON.stringify(recentSubs));
+            
+            // === ANTI-SPAM CHECK 3: Time-based (form filled in < 3 seconds = bot) ===
+            const formLoadTime = parseInt(form.dataset.loadTime || '0');
+            if (formLoadTime && (now - formLoadTime) < 3000) {
+                console.warn('[AURA] Bot detected via speed check');
+                return;
+            }
+
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
             
@@ -88,6 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
+            
+            // Remove honeypot field from data
+            delete data._aura_website_url;
             
             // Detect division from page context
             const division = detectDivision();
