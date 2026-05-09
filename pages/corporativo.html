@@ -1,114 +1,453 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transporte Corporativo Santiago — Contratos Empresariales | AURA Travel</title>
-  <meta name="description" content="Servicio de transporte ejecutivo con SLA 99.7%, NDA, conductor fijo y reportes mensuales. Planes desde $800.000 CLP/mes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA TRAVEL | Corporativo</title>
+    <meta name="description" content="Transporte ejecutivo institucional con SLA 99.7%, conductor dedicado bilingüe, NDA corporativo y reportes mensuales. Soluciones B2B de movilidad premium en Santiago, Chile.">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://auratravel.cl/corporativo">
+    <meta property="og:title" content="AURA TRAVEL | División Corporativa">
+    <meta property="og:description" content="Movilidad ejecutiva institucional con precisión soberana en Chile.">
+    <meta property="og:image" content="https://auratravel.cl/aura_corporate_8k.png">
+    <link rel="stylesheet" href="../css/aura.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AURA Travel — División Corporativa",
+        "provider": {"@type": "Organization", "name": "AURA Travel"},
+        "description": "Transporte ejecutivo institucional con SLA 99.7%, conductor dedicado bilingüe y reportes mensuales.",
+        "areaServed": {"@type": "Country", "name": "Chile"},
+        "serviceType": "Transporte Ejecutivo Corporativo",
+        "offers": {"@type": "Offer", "priceCurrency": "CLP", "availability": "https://schema.org/InStock"}
+    }
+    </script>
 </head>
-<body>
+<body class="aura-elite service-empresa">
+    <div class="noise-overlay"></div>
 
-  <nav class="floating-nav" role="navigation">
-    <a href="../index.html" class="nav-logo"><img src="../assets/images/logo.png" alt="AURA Logo"></a>
-    <a href="../index.html#servicios">Servicios</a>
-    <a href="#paquetes">Paquetes</a>
-    <a href="../index.html#reservar">Reservar</a>
-    <a href="../index.html#contacto">Contacto</a>
-  </nav>
+    <header class="capsule-header">
+        <nav class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">
+                    <span class="logo-aura">AURA</span>
+                    <span class="logo-travel">TRAVEL</span>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">INICIO</a>
+                    <a href="corporativo.html" class="active">CORPORATIVO</a>
+                    <a href="salud.html">SALUD</a>
+                    <a href="turismo.html">TURISMO</a>
+                    <a href="eventos.html">EVENTOS</a>
+                    <a href="aeropuerto.html">AEROPUERTO</a>
+                    <a href="delivery.html">DELIVERY</a>
+                    <a href="../index.html#contacto" class="btn-header-contact">CONTACTO</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <section class="hero" style="min-height: 70vh;">
-    <div class="hero-bg">
-      <img src="../assets/images/corporate-vehicle.png" alt="Transporte corporativo ejecutivo AURA" loading="eager">
-    </div>
-    <div class="container hero-content">
-      <div class="hero-label"><span class="dot"></span> Transporte Corporativo</div>
-      <h1 class="display-xl fade-up">Sus ejecutivos<br>merecen llegar<br><span class="text-electric">preparados.</span></h1>
-      <p class="body-lg fade-up">Transporte B2B con SLA garantizado, NDA firmado, conductor dedicado bilingüe y reportes mensuales de servicio.</p>
-      <div class="hero-actions fade-up">
-        <a href="../index.html#reservar" class="btn btn-primary">Solicitar Cotización →</a>
-        <a href="#paquetes" class="btn btn-secondary">Ver Paquetes</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust Stats -->
-  <section class="section" style="padding: var(--space-3xl) 0;">
-    <div class="container">
-      <div class="stats-bar fade-up">
-        <div class="stat-item"><div class="stat-number">99.7<span>%</span></div><div class="stat-label">Puntualidad SLA</div></div>
-        <div class="stat-item"><div class="stat-number">15<span>min</span></div><div class="stat-label">Vehículo backup</div></div>
-        <div class="stat-item"><div class="stat-number">NDA</div><div class="stat-label">Confidencialidad total</div></div>
-        <div class="stat-item"><div class="stat-number">24<span>/7</span></div><div class="stat-label">Servicio disponible</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services List -->
-  <section class="services-section section">
-    <div class="container">
-      <span class="label fade-up">Servicios Corporativos</span>
-      <h2 class="display-lg fade-up" style="margin-top: var(--space-md); margin-bottom: var(--space-3xl);">Todo lo que su empresa <span class="text-electric">necesita.</span></h2>
-    </div>
-    <div class="container">
-      <div class="service-row fade-up"><div class="service-row-content"><span class="service-number">01</span><span class="service-name">Traslado Ejecutivo Punto a Punto</span></div><span class="service-arrow">↗</span></div>
-      <div class="service-row fade-up"><div class="service-row-content"><span class="service-number">02</span><span class="service-name">Servicio de Jornada Completa</span></div><span class="service-arrow">↗</span></div>
-      <div class="service-row fade-up"><div class="service-row-content"><span class="service-number">03</span><span class="service-name">Traslado Aeropuerto Premium</span></div><span class="service-arrow">↗</span></div>
-      <div class="service-row fade-up"><div class="service-row-content"><span class="service-number">04</span><span class="service-name">Eventos Corporativos</span></div><span class="service-arrow">↗</span></div>
-      <div class="service-row fade-up"><div class="service-row-content"><span class="service-number">05</span><span class="service-name">Contrato Mensual / Anual</span></div><span class="service-arrow">↗</span></div>
-    </div>
-  </section>
-
-  <!-- Packages -->
-  <section class="section trust-section" id="paquetes">
-    <div class="container">
-      <div class="text-center">
-        <span class="label fade-up">Paquetes</span>
-        <h2 class="display-lg fade-up" style="margin-top: var(--space-md);">Inversión con <span class="text-gold">retorno.</span></h2>
-      </div>
-      <div class="trust-grid">
-        <div class="trust-card fade-up">
-          <div class="trust-icon" style="background: rgba(212,175,55,0.1);">🥉</div>
-          <h3>AURA Essential</h3>
-          <p style="color: var(--aura-gold); font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; margin: var(--space-md) 0;">$800.000 <span style="font-size: 0.8rem; color: var(--aura-gray);">CLP/mes</span></p>
-          <p>20 traslados/mes · Sedan · Reporte básico · Conductor verificado</p>
+    <section class="hero-command" id="inicio">
+        <div class="hero-slider">
+            <img src="../aura_corporate_ultimate_8k.png" alt="AURA Corporativo Strategic Background">
+            <img src="../aura_empresa_night_sanhattan_8k_gold_lighting_1777937616960.png" alt="AURA Sanhattan Night">
+            <img src="../aura_hero_sanhattan_blue_1777816905792.png" alt="AURA Corporate Command">
+            <img src="../aura_hero_executive_interior_1777815946299.png" alt="AURA Interior Ejecutivo Premium">
+            <img src="../aura_van_empresa_night_branded_8k_gold_1777937950795.png" alt="AURA Van Corporativa Nocturna">
         </div>
-        <div class="trust-card fade-up" style="border-color: var(--aura-electric);">
-          <div class="trust-icon">⭐</div>
-          <h3>AURA Professional</h3>
-          <p style="color: var(--aura-electric); font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; margin: var(--space-md) 0;">$1.800.000 <span style="font-size: 0.8rem; color: var(--aura-gray);">CLP/mes</span></p>
-          <p>50 traslados/mes · Sedan/SUV · Conductor bilingüe fijo · Reporte detallado · Ejecutiva de cuenta</p>
+        <div class="hero-overlay"></div>
+        
+        <!-- HUD GLOBAL MINIMALISTA -->
+        <div class="hero-hud-minimal">
+            <span class="hud-label">Enlace Soberano</span>
+            <span class="hud-value glow-text">SCL // EJECUTIVO_ACTIVO</span>
         </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon" style="background: rgba(212,175,55,0.1);">👑</div>
-          <h3>AURA Enterprise</h3>
-          <p style="color: var(--aura-gold); font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; margin: var(--space-md) 0;">Personalizado</p>
-          <p>Traslados ilimitados · Flota dedicada · 24/7 · NDA · SLA premium · Dashboard tiempo real</p>
+
+        <div class="container">
+            <div class="hero-content reveal">
+                <span class="bento-2-tag">DIVISIÓN CORPORATIVA // MOVILIDAD EJECUTIVA</span>
+                <h1 class="hero-display">
+                    <span class="brand-main">AURA</span>
+                    <span class="brand-sub">CORPORATIVO</span>
+                    <span class="hero-status-tag">PRECISIÓN INSTITUCIONAL GARANTIZADA</span>
+                </h1>
+                <p class="hero-tagline">
+                    Transporte ejecutivo con SLA 99.7%, conductor dedicado bilingüe, NDA y reportes mensuales. La movilidad como ventaja competitiva.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="btn-luxury-mission">
+                        <span>SOLICITAR PROPUESTA B2B</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="big-banner">
-    <div class="container">
-      <h2 class="display-lg fade-up">¿Cuánto le cuesta<br>una reunión <span style="opacity:0.8">perdida?</span></h2>
-      <p class="fade-up">Solicite una semana de prueba sin costo para su equipo directivo.</p>
-      <a href="../index.html#reservar" class="btn fade-up">Solicitar Prueba Gratuita →</a>
-    </div>
-  </section>
+        <!-- Scroll Protocol -->
+        <div class="scroll-protocol">
+            <span class="scroll-text">CENTRO DE MANDO</span>
+            <div class="scroll-line">
+                <div class="scroll-dot" style="background: var(--aura-corporate); box-shadow: 0 0 10px var(--aura-corporate);"></div>
+            </div>
+        </div>
+    </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <span>© 2026 AURA Travel. Todos los derechos reservados.</span>
-        <a href="../index.html" style="color: var(--aura-electric-light);">← Volver al inicio</a>
-      </div>
-    </div>
-  </footer>
+    <!-- BANNER CONVENIO CORPORATIVO -->
+    <section class="snow-season-banner reveal">
+        <div class="container">
+            <div class="snow-badge" style="background: rgba(29,78,216,0.2); border-color: rgba(29,78,216,0.4); color: var(--aura-corporate);">🏢 CONVENIOS CORPORATIVOS 2026</div>
+            <h2>Su Empresa <br>Merece Más.</h2>
+            <p>Cotización personalizada en menos de 24 horas. Conductor dedicado, NDA corporativo, facturación a 30 días y reportes mensuales de servicio. Sin compromiso desde el primer traslado.</p>
+            <a href="#contacto" class="btn-snow-cta" style="background: var(--aura-corporate); border-color: var(--aura-corporate);">
+                SOLICITAR CONVENIO <i class="fas fa-handshake" style="margin-left:8px;"></i>
+            </a>
+        </div>
+    </section>
 
-  <script src="../js/app.js"></script>
+    <!-- DASHBOARD DE SERVICIO -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Inteligencia Corporativa</span>
+                <h2 class="section-title">Movilidad <br>de <span style="color: var(--aura-corporate);">Alta Dirección.</span></h2>
+            </div>
+
+            <div class="command-dashboard reveal">
+                <!-- Card 1: SLA -->
+                <div class="dashboard-card featured">
+                    <div>
+                        <span class="card-hud-label">Protocolo // Ejecutivo</span>
+                        <h3 class="card-title">SLA de <br>Precisión Soberana</h3>
+                        <p class="card-body">
+                            Garantizamos puntualidad con penalidad por incumplimiento. Conductor fijo asignado, 
+                            NDA corporativo y reportes mensuales de servicio para su directorio.
+                        </p>
+                    </div>
+                    <div class="card-stat-group">
+                        <span class="card-stat">99.7%</span>
+                        <span class="card-stat-label">SLA Puntualidad</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Imagen -->
+                <div class="dashboard-card image-card">
+                    <img src="../aura_empresa_night_sanhattan_8k_gold_lighting_1777937616960.png" alt="Aura Corporativo Santiago">
+                </div>
+
+                <!-- Card 3: Flota -->
+                <div class="dashboard-card">
+                    <div>
+                        <span class="card-hud-label">Flota // Premium</span>
+                        <h3 class="card-title">Vehículos <br>de Representación</h3>
+                        <p class="card-body">
+                            Flota de menos de 3 años, limpieza diaria, WiFi, agua y cargadores. Vehículos preparados para proyectar la imagen de su organización.
+                        </p>
+                    </div>
+                    <i class="fas fa-car" style="font-size: 2rem; color: var(--aura-corporate); opacity: 0.5;"></i>
+                </div>
+
+                <!-- Card 4: Conductor Dedicado -->
+                <div class="dashboard-card featured">
+                    <div>
+                        <span class="card-hud-label">Capital // Humano</span>
+                        <h3 class="card-title">Conductor <br>Dedicado Bilingüe</h3>
+                        <p class="card-body">
+                            Mismo conductor asignado a su cuenta. Certificado en protocolo corporativo, 
+                            bilingüe (español-inglés) y con verificación de antecedentes exhaustiva.
+                        </p>
+                    </div>
+                    <div class="card-stat-group" style="display: flex; gap: 2rem;">
+                        <div>
+                            <span class="card-stat" style="font-size: 2rem;">NDA</span>
+                            <span class="card-stat-label">Confidencial</span>
+                        </div>
+                        <div>
+                            <span class="card-stat" style="font-size: 2rem;">24/7</span>
+                            <span class="card-stat-label">Operación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA ESCENARIOS CORPORATIVOS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Escenarios de Servicio</span>
+                <h2 class="section-title">Movilidad <br><span style="color: var(--aura-corporate);">En Acción.</span></h2>
+            </div>
+            <div class="snow-destination-grid reveal">
+                <div class="snow-card">
+                    <div class="snow-card-bg"><img src="../aura_hero_executive_interior_1777815946299.png" alt="Interior Ejecutivo AURA"></div>
+                    <div class="snow-card-content">
+                        <span class="snow-card-tag" style="background: rgba(29,78,216,0.3);">TRASLADO EJECUTIVO</span>
+                        <h3>Directivos & C-Level</h3>
+                        <p>Traslados de alta dirección con conductor dedicado, NDA firmado y vehículo de representación. La imagen de su empresa en cada trayecto.</p>
+                        <div class="snow-card-meta">
+                            <span><i class="fas fa-user-tie"></i> Conductor fijo</span>
+                            <span><i class="fas fa-shield-alt"></i> NDA activo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="snow-card">
+                    <div class="snow-card-bg"><img src="../aura_empresa_night_sanhattan_8k_gold_lighting_1777937616960.png" alt="Flota Corporativa AURA"></div>
+                    <div class="snow-card-content">
+                        <span class="snow-card-tag" style="background: rgba(29,78,216,0.3);">FLOTA ON-DEMAND</span>
+                        <h3>Eventos & Operativos</h3>
+                        <p>Flota coordinada para mover equipos completos. Reuniones de directorio, visitas de inversionistas y jornadas de planificación estratégica.</p>
+                        <div class="snow-card-meta">
+                            <span><i class="fas fa-users"></i> Grupos hasta 30+</span>
+                            <span><i class="fas fa-clock"></i> Coordinación 24/7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="snow-card">
+                    <div class="snow-card-bg"><img src="../aura_van_empresa_night_branded_8k_gold_1777937950795.png" alt="Van Corporativa AURA"></div>
+                    <div class="snow-card-content">
+                        <span class="snow-card-tag" style="background: rgba(29,78,216,0.3);">SHUTTLE CORPORATIVO</span>
+                        <h3>Rutas Dedicadas</h3>
+                        <p>Shuttle entre oficinas, aeropuerto y hoteles. Rutas fijas con horarios programados para equipos y visitas recurrentes.</p>
+                        <div class="snow-card-meta">
+                            <span><i class="fas fa-route"></i> Rutas fijas</span>
+                            <span><i class="fas fa-calendar-check"></i> Programado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÉTRICAS CORPORATIVAS -->
+    <section class="social-proof-bar reveal">
+        <div class="container">
+            <div class="proof-stats">
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="340" data-suffix="+">0+</span>
+                    <span class="proof-label">Ejecutivos Transportados/Mes</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="99" data-suffix=".7%">0%</span>
+                    <span class="proof-label">SLA de Puntualidad</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="15" data-suffix="+">0+</span>
+                    <span class="proof-label">Corporaciones Activas</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="3" data-prefix="<" data-suffix=" años">0</span>
+                    <span class="proof-label">Antigüedad de Flota</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALIDADES DE SERVICIO -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Soluciones B2B</span>
+                <h2 class="section-title">Modalidades de <br><span style="color: var(--aura-corporate);">Servicio.</span></h2>
+            </div>
+            <div class="command-dashboard reveal">
+                <div class="dashboard-card">
+                    <div>
+                        <span class="card-hud-label">Modalidad // Dedicado</span>
+                        <h3 class="card-title">Conductor <br>Exclusivo</h3>
+                        <p class="card-body">Un conductor fijo asignado a su empresa. Conoce sus rutas, horarios y preferencias. Disponible en exclusiva para su organización.</p>
+                    </div>
+                    <i class="fas fa-id-badge" style="font-size: 2rem; color: var(--aura-corporate); opacity: 0.5;"></i>
+                </div>
+                <div class="dashboard-card featured">
+                    <div>
+                        <span class="card-hud-label">Modalidad // Flota</span>
+                        <h3 class="card-title">Flota <br>On-Demand</h3>
+                        <p class="card-body">Solicite vehículos según demanda. Sin compromiso de volumen mínimo. Ideal para empresas con necesidades variables de movilidad.</p>
+                    </div>
+                    <div class="card-stat-group" style="display: flex; gap: 2rem;">
+                        <div><span class="card-stat" style="font-size:2rem;">∞</span><span class="card-stat-label">Sin mínimo</span></div>
+                        <div><span class="card-stat" style="font-size:2rem;">15'</span><span class="card-stat-label">Respuesta</span></div>
+                    </div>
+                </div>
+                <div class="dashboard-card">
+                    <div>
+                        <span class="card-hud-label">Modalidad // Aeropuerto</span>
+                        <h3 class="card-title">Transfer <br>Ejecutivo SCL</h3>
+                        <p class="card-body">Traslados aeroportuarios para ejecutivos y delegaciones internacionales. Monitoreo de vuelos y recepción VIP con cartel corporativo.</p>
+                    </div>
+                    <i class="fas fa-plane-arrival" style="font-size: 2rem; color: var(--aura-corporate); opacity: 0.5;"></i>
+                </div>
+                <div class="dashboard-card">
+                    <div>
+                        <span class="card-hud-label">Modalidad // Contrato</span>
+                        <h3 class="card-title">Convenio <br>Anual</h3>
+                        <p class="card-body">Tarifa preferencial con facturación consolidada a 30 días. Ejecutivo de cuenta dedicado y dashboard de uso mensual para su empresa.</p>
+                    </div>
+                    <i class="fas fa-file-contract" style="font-size: 2rem; color: var(--aura-corporate); opacity: 0.5;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL CORPORATIVO -->
+    <section class="testimonial-section reveal">
+        <div class="container">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <blockquote>
+                    "Desde que implementamos AURA como nuestro proveedor exclusivo de movilidad, la puntualidad de nuestro equipo directivo mejoró un 40%. El conductor dedicado y el NDA nos dieron la confianza que necesitábamos."
+                </blockquote>
+                <div class="testimonial-author">
+                    <div>
+                        <strong>Gerencia de Operaciones</strong>
+                        <span>Empresa Multinacional — Santiago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA INTERMEDIO -->
+    <section class="mid-cta-section reveal">
+        <div class="container">
+            <div class="mid-cta-card">
+                <div class="mid-cta-content">
+                    <h3>¿Su empresa necesita movilidad de alta dirección?</h3>
+                    <p>Reciba una propuesta personalizada en menos de 24 horas. Sin compromiso, con SLA garantizado desde el primer servicio.</p>
+                </div>
+                <a href="#contacto" class="btn-luxury-mission magnetic" style="background: var(--aura-corporate); border-color: var(--aura-corporate);">
+                    <span>SOLICITAR PROPUESTA B2B</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMINAL CORPORATIVO -->
+    <section class="institutional-dossier" id="contacto">
+        <div class="container">
+            <div class="terminal-frame reveal">
+                <div class="terminal-header">
+                    <div class="terminal-dots"><span style="background: var(--aura-corporate);"></span><span></span><span></span></div>
+                    <div class="terminal-title">AURA // DIVISIÓN CORPORATIVA // TERMINAL B2B</div>
+                    <div class="terminal-id">ID: SCL-CORP-01</div>
+                    <div class="terminal-progress-container">
+                        <div class="terminal-progress-bar" id="terminalProgress"></div>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-sidebar">
+                        <div class="terminal-nav">
+                            <button class="t-nav-btn active" style="border-left-color: var(--aura-corporate);">PROPUESTA</button>
+                            <button class="t-nav-btn">FLOTA</button>
+                            <button class="t-nav-btn">SLA DOCS</button>
+                        </div>
+                    </div>
+                    <div class="terminal-main">
+                        <div class="terminal-brand-header">
+                            <span class="terminal-brand-aura">AURA</span>
+                            <span class="terminal-brand-travel">TRAVEL</span>
+                        </div>
+                        <form class="terminal-form" id="corp-form">
+                            <div class="form-group">
+                                <input type="text" name="empresa" placeholder=" " required>
+                                <label>EMPRESA / INSTITUCIÓN</label>
+                            </div>
+                            <div class="form-group">
+                                <select name="tipo_servicio" required>
+                                    <option value="" selected disabled hidden></option>
+                                    <option value="ejecutivo">TRASLADO EJECUTIVO</option>
+                                    <option value="dedicado">CONDUCTOR DEDICADO</option>
+                                    <option value="flota">FLOTA CORPORATIVA</option>
+                                </select>
+                                <label>TIPO DE SERVICIO</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="volumen" placeholder=" " required>
+                                <label>VOLUMEN MENSUAL ESTIMADO</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder=" " required>
+                                <label>EMAIL CORPORATIVO</label>
+                            </div>
+                            <div class="form-group" style="grid-column: span 2;">
+                                <textarea name="detalle" placeholder=" "></textarea>
+                                <label>DETALLE DE REQUERIMIENTO</label>
+                            </div>
+                            <button type="submit" class="btn-terminal-submit" style="background: var(--aura-corporate);">
+                                SOLICITAR PROPUESTA INSTITUCIONAL
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-command">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-aura">AURA</span>
+                        <span class="logo-travel">TRAVEL</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Liderando la vanguardia en movilidad ejecutiva e institucional en Chile.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Divisiones</h4>
+                    <ul class="footer-links">
+                        <li><a href="corporativo.html">Corporativo</a></li>
+                        <li><a href="salud.html">Salud</a></li>
+                        <li><a href="turismo.html">Turismo</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="aeropuerto.html">Aeropuerto</a></li>
+                        <li><a href="delivery.html">Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Mando</a></li>
+                        <li><a href="#">Protocolos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:corporativo@auratravel.cl">corporativo@auratravel.cl</a></li>
+                        <li><a href="https://wa.me/56926151427" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>+56 9 2615 1427</a></li>
+                        <li><a href="#">Santiago, Chile</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-legal">&copy; 2026 AURA TRAVEL. TODOS LOS DERECHOS RESERVADOS.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/form-handler.js"></script>
+    <script src="../js/aura-core.js"></script>
 </body>
 </html>

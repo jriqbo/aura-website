@@ -1,0 +1,309 @@
+/* --- AURA Mobile Menu System --- */
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Mobile Overlay Menu */
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.97);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 0;
+}
+
+.mobile-nav-content a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1.2rem 2rem;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.mobile-nav-overlay.active .mobile-nav-content a {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-nav-content a:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav-content a:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav-content a:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav-content a:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav-content a:nth-child(5) { transition-delay: 0.3s; }
+.mobile-nav-content a:nth-child(6) { transition-delay: 0.35s; }
+.mobile-nav-content a:nth-child(7) { transition-delay: 0.4s; }
+
+.mobile-nav-content a:hover,
+.mobile-nav-content a.active {
+    color: var(--aura-champagne);
+    text-shadow: 0 0 30px rgba(var(--aura-champagne-rgb), 0.4);
+}
+
+.mobile-nav-content .mobile-cta {
+    margin-top: 2rem;
+    background: var(--aura-champagne);
+    color: #000;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    animation: whatsapp-pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 40px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float i {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.whatsapp-float .whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    background: #fff;
+    color: #333;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.whatsapp-float .whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes whatsapp-pulse {
+    0%, 100% { box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 6px 40px rgba(37, 211, 102, 0.7); }
+}
+
+/* Social Proof Bar */
+.social-proof-bar {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.01);
+}
+
+.proof-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.proof-stat {
+    text-align: center;
+}
+
+.proof-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--aura-champagne);
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.proof-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.proof-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* Notification System Enhancement */
+.aura-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.2rem 1.8rem;
+    z-index: 10000;
+    min-width: 320px;
+    animation: slideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: 'Outfit', sans-serif;
+}
+
+.aura-notification.success {
+    border-left: 3px solid var(--aura-clinical);
+}
+
+.aura-notification.error {
+    border-left: 3px solid var(--aura-ruby);
+}
+
+.notif-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--aura-champagne);
+    margin-bottom: 0.4rem;
+}
+
+.notif-msg {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.notif-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--aura-champagne);
+    border-radius: 0 0 12px 12px;
+    animation: progressBar 5s linear;
+}
+
+@keyframes progressBar {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.aura-notification.fade-out {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.5s ease;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .mobile-menu-toggle { display: block; }
+    .mobile-nav-overlay { display: block; }
+    
+    .whatsapp-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-float i { font-size: 1.5rem; }
+    .whatsapp-float .whatsapp-tooltip { display: none; }
+    
+    .proof-stats { gap: 2rem; }
+    .proof-number { font-size: 2rem; }
+    .proof-divider { display: none; }
+}

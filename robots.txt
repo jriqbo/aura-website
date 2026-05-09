@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# URLs Limpias
+Allow: /corporativo
+Allow: /salud
+Allow: /turismo
+Allow: /eventos
+Allow: /delivery
+
+Sitemap: https://auratravel.cl/sitemap.xml

@@ -4,66 +4,236 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto — AURA Travel | Transporte Premium Chile</title>
-  <meta name="description" content="Contáctenos para cotizar su servicio de transporte ejecutivo, diálisis o diplomático. WhatsApp, teléfono y email disponibles 24/7.">
+  <meta name="description" content="Contáctenos para cotizar su servicio de transporte ejecutivo. WhatsApp directo y correos por división disponibles 24/7.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/aura.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto AURA Travel",
+    "url": "https://auratravel.cl/pages/contacto.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "AURA Travel",
+      "telephone": "+56-9-2615-1427",
+      "email": "contacto@auratravel.cl",
+      "contactPoint": [
+        {"@type": "ContactPoint", "telephone": "+56-9-2615-1427", "contactType": "sales", "availableLanguage": "Spanish"},
+        {"@type": "ContactPoint", "email": "corporativo@auratravel.cl", "contactType": "corporate"},
+        {"@type": "ContactPoint", "email": "turismo@auratravel.cl", "contactType": "tourism"},
+        {"@type": "ContactPoint", "email": "salud@auratravel.cl", "contactType": "healthcare"}
+      ]
+    }
+  }
+  </script>
 </head>
-<body>
+<body class="aura-elite">
+  <div class="noise-overlay"></div>
 
-  <nav class="floating-nav" role="navigation">
-    <a href="../index.html" class="nav-logo"><img src="../assets/images/logo.png" alt="AURA Logo"></a>
-    <a href="../index.html#servicios">Servicios</a>
-    <a href="../index.html#reservar">Reservar</a>
-    <a href="#contacto-info">Contacto</a>
-  </nav>
-
-  <section class="section" style="padding-top: var(--space-5xl);" id="contacto-info">
-    <div class="container">
-      <span class="label fade-up">Contacto</span>
-      <h1 class="display-lg fade-up" style="margin-top: var(--space-md); margin-bottom: var(--space-3xl);">Conversemos sobre<br>su <span class="text-electric">transporte.</span></h1>
-
-      <div class="trust-grid">
-        <div class="trust-card fade-up">
-          <div class="trust-icon">📞</div>
-          <h3>Teléfono</h3>
-          <p><a href="tel:+56900000000" style="font-size: 1.2rem; color: var(--aura-electric-light);">+56 9 0000 0000</a></p>
-          <p style="margin-top: var(--space-sm);">Disponible 24/7</p>
-        </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon" style="background: rgba(37,211,102,0.1);">💬</div>
-          <h3>WhatsApp</h3>
-          <p><a href="https://wa.me/56900000000" target="_blank" style="font-size: 1.2rem; color: #25D366;">Abrir Chat →</a></p>
-          <p style="margin-top: var(--space-sm);">Respuesta inmediata</p>
-        </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon">✉️</div>
-          <h3>Email</h3>
-          <p><a href="mailto:contacto@auratravel.cl" style="font-size: 1rem; color: var(--aura-electric-light);">contacto@auratravel.cl</a></p>
-          <p style="margin-top: var(--space-sm);">Cotizaciones formales</p>
+  <header class="capsule-header">
+    <nav class="container">
+      <div class="nav-content">
+        <a href="../index.html" class="logo">
+          <span class="logo-aura">AURA</span>
+          <span class="logo-travel">TRAVEL</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">INICIO</a>
+          <a href="../pages/corporativo.html">CORPORATIVO</a>
+          <a href="../pages/turismo.html">TURISMO</a>
+          <a href="#contacto-info" class="active">CONTACTO</a>
         </div>
       </div>
+    </nav>
+  </header>
 
-      <div style="margin-top: var(--space-3xl);">
-        <div class="trust-card fade-up" style="max-width: 700px; margin: 0 auto;">
-          <h3 style="margin-bottom: var(--space-lg);">Horarios de Operación</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
-            <div><p class="label" style="margin-bottom: var(--space-xs);">Corporativo</p><p>24/7 · 365 días</p></div>
-            <div><p class="label" style="margin-bottom: var(--space-xs);">Diálisis</p><p>Lun-Sáb · 5:00-22:00</p></div>
-            <div><p class="label" style="margin-bottom: var(--space-xs); color: var(--aura-gold);">Diplomático</p><p>24/7 · 365 días</p></div>
-            <div><p class="label" style="margin-bottom: var(--space-xs);">Aeropuerto</p><p>24/7 · 365 días</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center" style="margin-top: var(--space-3xl);">
-        <p class="label fade-up">Cobertura</p>
-        <h2 class="display-md fade-up" style="margin-top: var(--space-md);">Santiago · Viña del Mar · Valparaíso · Todo Chile</h2>
+  <!-- ======= HERO CONTACTO ======= -->
+  <section class="hero-command" id="contacto-hero" style="min-height: 50vh;">
+    <div class="hero-overlay" style="background: linear-gradient(180deg, rgba(10,10,15,0.85) 0%, rgba(10,10,15,0.95) 100%);"></div>
+    <div class="container" style="position: relative; z-index: 2; padding-top: 140px;">
+      <div class="section-header">
+        <span class="section-label" style="color: var(--aura-champagne);">Línea Directa</span>
+        <h1 class="section-title" style="font-size: clamp(2.5rem, 5vw, 4rem);">Conversemos sobre<br>su <span style="color: var(--aura-champagne);">transporte.</span></h1>
       </div>
     </div>
   </section>
 
-  <footer class="footer"><div class="container"><div class="footer-bottom"><span>© 2026 AURA Travel.</span><a href="../index.html" style="color: var(--aura-electric-light);">← Volver al inicio</a></div></div></footer>
-  <script src="../js/app.js"></script>
+  <!-- ======= CANALES DE CONTACTO ======= -->
+  <section class="institutional-dossier" id="contacto-info" style="padding-top: 80px;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Canales Directos</span>
+        <h2 class="section-title">Contacto <span style="color: var(--aura-champagne);">Institucional</span></h2>
+      </div>
+
+      <!-- WhatsApp Principal -->
+      <div class="terminal-frame reveal" style="margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span style="background: #25D366;"></span><span></span><span></span>
+          </div>
+          <div class="terminal-title">WHATSAPP // LÍNEA DIRECTA // 24/7</div>
+        </div>
+        <div class="terminal-body" style="padding: 40px; text-align: center;">
+          <i class="fab fa-whatsapp" style="font-size: 3rem; color: #25D366; margin-bottom: 16px;"></i>
+          <h3 style="color: var(--text-titanium); font-size: 1.5rem; margin-bottom: 8px;">+56 9 2615 1427</h3>
+          <p style="color: var(--text-silver); margin-bottom: 24px;">Respuesta en menos de 30 minutos en horario hábil</p>
+          <a href="https://wa.me/56926151427?text=Hola%20AURA%20Travel,%20necesito%20cotizar%20un%20servicio%20de%20transporte." 
+             target="_blank" rel="noopener noreferrer"
+             class="btn-luxury-mission magnetic" style="background: #25D366; border-color: #25D366; display: inline-flex;">
+            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>
+            <span>ABRIR CHAT DIRECTO</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Emails por División -->
+      <div class="section-header reveal" style="margin-bottom: 40px;">
+        <span class="section-label">Correos por División</span>
+        <p style="color: var(--text-silver); max-width: 600px; margin: 12px auto 0;">Cada división tiene su propio canal de email para cotizaciones y seguimiento institucional.</p>
+      </div>
+
+      <div class="why-grid reveal" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <!-- Contacto General -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-champagne);"><i class="fas fa-envelope"></i></div>
+          <h3>Contacto General</h3>
+          <a href="mailto:contacto@auratravel.cl" style="color: var(--aura-champagne); font-size: 0.95rem;">contacto@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Consultas generales y derivación</p>
+        </div>
+        <!-- Corporativo -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-corporate);"><i class="fas fa-building"></i></div>
+          <h3>Corporativo</h3>
+          <a href="mailto:corporativo@auratravel.cl" style="color: var(--aura-corporate); font-size: 0.95rem;">corporativo@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Convenios, flotas dedicadas, NDA</p>
+        </div>
+        <!-- Turismo -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-gold);"><i class="fas fa-mountain"></i></div>
+          <h3>Turismo</h3>
+          <a href="mailto:turismo@auratravel.cl" style="color: var(--aura-gold); font-size: 0.95rem;">turismo@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Nieve, vino, Patagonia, experiencias</p>
+        </div>
+        <!-- Salud -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-clinical);"><i class="fas fa-heartbeat"></i></div>
+          <h3>Salud</h3>
+          <a href="mailto:salud@auratravel.cl" style="color: var(--aura-clinical); font-size: 0.95rem;">salud@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Diálisis, traslados médicos, rutinas</p>
+        </div>
+        <!-- Eventos -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-purple);"><i class="fas fa-glass-cheers"></i></div>
+          <h3>Eventos</h3>
+          <a href="mailto:eventos@auratravel.cl" style="color: var(--aura-purple); font-size: 0.95rem;">eventos@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Galas, congresos, logística grupal</p>
+        </div>
+        <!-- Aeropuerto -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-sky);"><i class="fas fa-plane-departure"></i></div>
+          <h3>Aeropuerto</h3>
+          <a href="mailto:aeropuerto@auratravel.cl" style="color: var(--aura-sky); font-size: 0.95rem;">aeropuerto@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Transfers SCL, VIP, delegaciones</p>
+        </div>
+        <!-- Delivery -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-ruby);"><i class="fas fa-box"></i></div>
+          <h3>Delivery</h3>
+          <a href="mailto:delivery@auratravel.cl" style="color: var(--aura-ruby); font-size: 0.95rem;">delivery@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Custodia, paquetería premium</p>
+        </div>
+        <!-- Diplomático -->
+        <div class="why-card">
+          <div class="why-icon" style="color: var(--aura-champagne);"><i class="fas fa-landmark"></i></div>
+          <h3>Diplomático</h3>
+          <a href="mailto:diplomatico@auratravel.cl" style="color: var(--aura-champagne); font-size: 0.95rem;">diplomatico@auratravel.cl</a>
+          <p style="margin-top: 8px; font-size: 0.85rem;">Embajadas, protocolo, seguridad</p>
+        </div>
+      </div>
+
+      <!-- Horarios -->
+      <div class="terminal-frame reveal" style="margin-top: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span style="background: var(--aura-champagne);"></span><span></span><span></span>
+          </div>
+          <div class="terminal-title">HORARIOS DE OPERACIÓN</div>
+        </div>
+        <div class="terminal-body" style="padding: 30px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <p style="color: var(--aura-champagne); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">Corporativo</p>
+              <p style="color: var(--text-titanium);">24/7 · 365 días</p>
+            </div>
+            <div>
+              <p style="color: var(--aura-clinical); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">Salud / Diálisis</p>
+              <p style="color: var(--text-titanium);">Lun-Sáb · 5:00–22:00</p>
+            </div>
+            <div>
+              <p style="color: var(--aura-gold); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">Turismo</p>
+              <p style="color: var(--text-titanium);">Lun-Dom · 6:00–22:00</p>
+            </div>
+            <div>
+              <p style="color: var(--aura-sky); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">Aeropuerto</p>
+              <p style="color: var(--text-titanium);">24/7 · 365 días</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cobertura -->
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <span class="section-label" style="color: var(--aura-champagne);">Cobertura</span>
+        <h2 class="section-title" style="margin-top: 12px; font-size: clamp(1.5rem, 3vw, 2.5rem);">Santiago · Viña del Mar · Valparaíso · Todo Chile</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer-command">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-aura">AURA</span>
+            <span class="logo-travel">TRAVEL</span>
+          </div>
+          <p class="footer-tagline">Liderando la vanguardia en movilidad ejecutiva e institucional en Chile.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Divisiones</h4>
+          <ul class="footer-links">
+            <li><a href="../pages/corporativo.html">Corporativo</a></li>
+            <li><a href="../pages/salud.html">Salud</a></li>
+            <li><a href="../pages/turismo.html">Turismo</a></li>
+            <li><a href="../pages/eventos.html">Eventos</a></li>
+            <li><a href="../pages/aeropuerto.html">Aeropuerto</a></li>
+            <li><a href="../pages/delivery.html">Delivery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:contacto@auratravel.cl">contacto@auratravel.cl</a></li>
+            <li><a href="https://wa.me/56926151427" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>+56 9 2615 1427</a></li>
+            <li><a href="#">Santiago, Chile</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 AURA TRAVEL. TODOS LOS DERECHOS RESERVADOS.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/aura-core.js"></script>
 </body>
 </html>

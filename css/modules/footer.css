@@ -1,0 +1,152 @@
+/* --- AURA TRAVEL Institutional Footer — ELEVATED --- */
+
+.footer-command {
+    background: var(--bg-carbon);
+    padding: 8rem 0 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient gradient atmosphere */
+.footer-command::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--aura-champagne-rgb), 0.15), transparent);
+    pointer-events: none;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-brand .logo {
+    font-size: 1.6rem !important;
+}
+
+.footer-tagline {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: var(--text-ash);
+    max-width: 320px;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.footer-col h4 {
+    font-family: var(--font-main);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+/* Subtle accent line under headings */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 1px;
+    background: rgba(var(--aura-champagne-rgb), 0.4);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.footer-links a {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    color: var(--text-ash);
+    transition: var(--transition-micro);
+    font-weight: 400;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--aura-champagne);
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-legal {
+    font-family: var(--font-main);
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 1rem;
+    transition: var(--transition-micro);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+}
+
+.footer-social a:hover {
+    color: var(--aura-champagne);
+    border-color: rgba(var(--aura-champagne-rgb), 0.3);
+    background: rgba(var(--aura-champagne-rgb), 0.05);
+}
+
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-command { padding: 5rem 0 3rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+    .footer-links { align-items: center; }
+}

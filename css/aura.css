@@ -1,0 +1,1000 @@
+/* ==========================================================================
+   AURA TRAVEL — SOVEREIGN INTERFACE SYSTEM (v2.0 Modular)
+   ========================================================================== */
+
+@import url('modules/vars.css');
+@import url('modules/reset.css');
+@import url('modules/header.css');
+@import url('modules/hero.css');
+@import url('modules/hero-sovereign.css');
+@import url('modules/components.css');
+@import url('modules/terminal.css');
+@import url('modules/footer.css');
+@import url('modules/mobile-menu.css');
+@import url('modules/turismo.css');
+@import url('modules/responsive.css');
+
+/* ==========================================================================
+   HOME HERO — RETINA-BURN BRAND MONUMENT
+   ========================================================================== */
+
+/* Colossal AURA text — dominates the viewport */
+.hero-home-display {
+    line-height: 0.9 !important;
+}
+
+.hero-home-display .brand-main {
+    font-weight: 900;
+    font-size: clamp(6rem, 18vw, 16rem) !important;
+    letter-spacing: -0.05em;
+    display: block;
+    position: relative;
+}
+
+.hero-home-display .brand-sub {
+    font-size: clamp(1rem, 1.8vw, 1.8rem) !important;
+    letter-spacing: 1.0em;
+    margin-left: 0.5rem;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 1;
+    color: var(--aura-champagne) !important;
+    -webkit-text-fill-color: var(--aura-champagne) !important;
+    text-shadow:
+        0 0 15px rgba(0, 0, 0, 0.9),
+        0 0 25px rgba(201, 169, 110, 0.6),
+        0 0 60px rgba(201, 169, 110, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.8);
+    font-family: var(--font-main) !important;
+    animation: auroraGlow 4s ease-in-out infinite alternate;
+}
+
+/* --- TITANIUM WHITE EFFECT — "AURA" --- */
+.aura-titanium-white {
+    color: #FFFFFF !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 
+                 0 0 60px rgba(255, 255, 255, 0.2) !important;
+    background: none !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
+/* --- LIQUID CHROME EFFECT (Legacy) --- */
+.aura-liquid-chrome {
+    background: linear-gradient(
+        100deg,
+        #FFFFFF 0%,
+        #FFFFFF 10%,
+        var(--aura-champagne) 22%,
+        #FFFFFF 35%,
+        #FFFFFF 48%,
+        var(--aura-champagne) 60%,
+        #FFFFFF 73%,
+        #FFFFFF 85%,
+        var(--aura-champagne) 95%,
+        #FFFFFF 100%
+    ) !important;
+    background-size: 300% auto !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    animation: liquidChromeFlow 6s linear infinite !important;
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.15))
+           drop-shadow(0 0 100px rgba(201, 169, 110, 0.35)) !important;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+/* Chrome gradient sweep */
+@keyframes liquidChromeFlow {
+    0%   { background-position: 0% center; }
+    100% { background-position: 300% center; }
+}
+
+/* --- AURORA GLOW — "TRAVEL" subtitle --- */
+.aura-travel-glow {
+    color: var(--aura-champagne) !important;
+    -webkit-text-fill-color: var(--aura-champagne) !important;
+    text-shadow:
+        0 0 15px rgba(0, 0, 0, 0.9),
+        0 0 30px rgba(201, 169, 110, 0.4),
+        0 0 60px rgba(201, 169, 110, 0.15),
+        0 0 120px rgba(201, 169, 110, 0.05) !important;
+    animation: auroraGlow 4s ease-in-out infinite alternate !important;
+    font-style: italic;
+}
+
+@keyframes auroraGlow {
+    0%   { 
+        text-shadow: 
+            0 0 20px rgba(201, 169, 110, 0.3),
+            0 0 40px rgba(201, 169, 110, 0.1);
+        opacity: 0.9;
+    }
+    100% { 
+        text-shadow: 
+            0 0 40px rgba(201, 169, 110, 0.6),
+            0 0 80px rgba(201, 169, 110, 0.25),
+            0 0 160px rgba(201, 169, 110, 0.08);
+        opacity: 1;
+    }
+}
+
+/* --- Responsive Home Hero --- */
+@media (max-width: 768px) {
+    .hero-home-display .brand-main {
+        font-size: clamp(4rem, 16vw, 8rem) !important;
+    }
+    .hero-home-display .brand-sub {
+        font-size: clamp(1.2rem, 3.5vw, 2rem) !important;
+        letter-spacing: 0.5em;
+    }
+}
+
+/* Global Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* High-End Animations */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.fade-in-slow {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+.fade-in-slow.visible {
+    opacity: 1;
+}
+
+.magnetic {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Common Section Spacing */
+section {
+    padding: 10rem 0;
+    position: relative;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+/* Division Color Overrides & Cinematic Filters */
+.service-salud { 
+    --aura-electric: var(--aura-clinical); 
+    --hero-tint: rgba(16, 185, 129, 0.25); /* Teal/Emerald cinematic filter */
+}
+.service-empresa { 
+    --aura-electric: var(--aura-corporate); 
+    --accent-glow: rgba(29, 78, 216, 0.5); /* Improved contrast glow */
+    --hero-tint: rgba(29, 78, 216, 0.25); /* Deep Blue cinematic filter */
+}
+.service-turismo { 
+    --aura-electric: var(--aura-gold); 
+    --hero-tint: rgba(212, 175, 55, 0.25); /* Golden cinematic filter */
+}
+.service-eventos { 
+    --aura-electric: var(--aura-purple); 
+    --hero-tint: rgba(139, 92, 246, 0.25); /* Purple/Indigo cinematic filter */
+}
+.service-aeropuerto { 
+    --aura-electric: var(--aura-sky); 
+    --hero-tint: rgba(6, 182, 212, 0.25); /* Cyan cinematic filter */
+}
+.service-delivery { 
+    --aura-electric: var(--aura-ruby); 
+    --hero-tint: rgba(239, 68, 68, 0.25); /* Crimson cinematic filter */
+}
+.service-diplomatico { 
+    --aura-electric: var(--aura-diplomatic); 
+    --hero-tint: rgba(184, 134, 11, 0.25); /* Dark Gold/Amber cinematic filter */
+}
+
+/* ==========================================================================
+   HERO PARTICLES CANVAS
+   ========================================================================== */
+.hero-particles-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   AURA SHIMMER — Logo Animation
+   ========================================================================== */
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.aura-shimmer {
+    background: linear-gradient(
+        90deg,
+        #CBD5E1 0%,
+        #fff 25%,
+        #E2E8F0 50%,
+        #fff 75%,
+        #CBD5E1 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 5s linear infinite;
+}
+
+/* ==========================================================================
+   TRUST BAR
+   ========================================================================== */
+.trust-bar {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(180deg, rgba(14, 16, 30, 0.5) 0%, rgba(8, 10, 22, 0.4) 100%);
+    position: relative;
+}
+
+.trust-label {
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-ash);
+    margin-bottom: 2rem;
+}
+
+.trust-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-silver);
+    transition: var(--transition-micro);
+}
+
+.trust-item i {
+    font-size: 1.5rem;
+    color: var(--text-ash);
+    transition: var(--transition-micro);
+}
+
+.trust-item span {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.trust-item:hover {
+    color: var(--aura-white);
+}
+
+.trust-item:hover i {
+    color: var(--aura-white);
+    transform: scale(1.15);
+}
+
+/* ==========================================================================
+   WHY AURA SECTION
+   ========================================================================== */
+.why-aura-section {
+    padding: 8rem 0;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.why-card {
+    background: linear-gradient(165deg, rgba(24, 26, 45, 0.88) 0%, rgba(14, 16, 30, 0.82) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: var(--transition-sovereign);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 24px rgba(0,0,0,0.25),
+        0 1px 0 rgba(255,255,255,0.04) inset;
+}
+
+.why-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.why-card:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+    border-top-color: rgba(255, 255, 255, 0.40);
+    transform: translateY(-8px);
+    box-shadow: 
+        0 24px 50px rgba(0,0,0,0.4),
+        0 0 40px rgba(var(--aura-champagne-rgb), 0.04);
+    background: linear-gradient(165deg, rgba(30, 32, 55, 0.95) 0%, rgba(20, 22, 38, 0.90) 100%);
+}
+
+.why-card:hover::before {
+    opacity: 1;
+}
+
+.why-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition-micro);
+}
+
+.why-icon i {
+    font-size: 1.3rem;
+    color: var(--text-silver);
+}
+
+.why-card:hover .why-icon {
+    background: rgba(var(--aura-champagne-rgb), 0.12);
+    border-color: rgba(var(--aura-champagne-rgb), 0.25);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(var(--aura-champagne-rgb), 0.08);
+}
+
+.why-card:hover .why-icon i {
+    color: var(--aura-champagne);
+}
+
+.why-card h3 {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-titanium);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.why-card p {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--text-silver);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   SOCIAL PROOF BAR (COUNTERS)
+   ========================================================================== */
+.social-proof-bar {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, rgba(10, 12, 28, 0.6) 0%, rgba(8, 10, 22, 0.5) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+
+.proof-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.proof-stat {
+    text-align: center;
+}
+
+.proof-number {
+    font-family: var(--font-main);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-titanium);
+    line-height: 1;
+    display: block;
+}
+
+.proof-label {
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-ash);
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.proof-divider {
+    width: 1px;
+    height: 50px;
+    background: var(--aura-glass-border);
+}
+
+/* ==========================================================================
+   3D TILT EFFECT (Bento Cards)
+   ========================================================================== */
+.bento-2-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* ==========================================================================
+   RESPONSIVE: New Sections
+   ========================================================================== */
+@media (max-width: 768px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .why-card {
+        padding: 1.5rem 1rem;
+    }
+    .trust-logos {
+        gap: 1.5rem;
+    }
+    .proof-stats {
+        gap: 1.5rem;
+    }
+    .proof-number {
+        font-size: 2.5rem;
+    }
+    .proof-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    .trust-logos {
+        gap: 1rem;
+    }
+    .trust-item i {
+        font-size: 1.2rem;
+    }
+}
+
+/* ==========================================================================
+   TESTIMONIAL SECTION
+   ========================================================================== */
+.testimonial-section {
+    padding: 6rem 0;
+}
+
+.testimonial-card {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(165deg, rgba(22, 24, 42, 0.88) 0%, rgba(14, 16, 28, 0.82) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius-lg);
+    position: relative;
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.25),
+        0 1px 0 rgba(255,255,255,0.04) inset;
+}
+
+.testimonial-quote {
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-quote i {
+    font-size: 2rem;
+    color: var(--aura-electric);
+    opacity: 0.4;
+}
+
+.testimonial-card blockquote {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-platinum);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.testimonial-author {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--aura-glass-border);
+}
+
+.testimonial-author strong {
+    display: block;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--aura-electric);
+    letter-spacing: 1px;
+}
+
+.testimonial-author span {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    color: var(--text-ash);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   MID-PAGE CTA SECTION
+   ========================================================================== */
+.mid-cta-section {
+    padding: 4rem 0;
+}
+
+.mid-cta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(var(--aura-champagne-rgb), 0.10), rgba(var(--aura-champagne-rgb), 0.03), rgba(14, 16, 28, 0.6));
+    border: 1px solid rgba(var(--aura-champagne-rgb), 0.15);
+    border-top: 1px solid rgba(var(--aura-champagne-rgb), 0.25);
+    border-radius: var(--radius-lg);
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.25),
+        0 0 40px rgba(var(--aura-champagne-rgb), 0.03);
+}
+
+.mid-cta-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-titanium);
+    margin-bottom: 0.5rem;
+}
+
+.mid-cta-content p {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: var(--text-silver);
+    max-width: 500px;
+}
+
+.mid-cta-card .btn-luxury-mission {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .mid-cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    .mid-cta-content p {
+        max-width: 100%;
+    }
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+    .testimonial-card blockquote {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   DIVISION-SPECIFIC COLOR MAPPING
+   Counters, testimonial icons, and CTA accents per division
+   ========================================================================== */
+.service-empresa .proof-number,
+.service-empresa .testimonial-quote i,
+.service-empresa .testimonial-author strong { color: var(--aura-corporate); }
+
+.service-salud .proof-number,
+.service-salud .testimonial-quote i,
+.service-salud .testimonial-author strong { color: var(--aura-clinical); }
+
+.service-turismo .proof-number,
+.service-turismo .testimonial-quote i,
+.service-turismo .testimonial-author strong { color: var(--aura-gold); }
+
+.service-eventos .proof-number,
+.service-eventos .testimonial-quote i,
+.service-eventos .testimonial-author strong { color: var(--aura-purple); }
+
+.service-delivery .proof-number,
+.service-delivery .testimonial-quote i,
+.service-delivery .testimonial-author strong { color: var(--aura-ruby); }
+
+.service-aeropuerto .proof-number,
+.service-aeropuerto .testimonial-quote i,
+.service-aeropuerto .testimonial-author strong { color: var(--aura-sky); }
+
+/* ==========================================================================
+   DIVISION-SPECIFIC BUTTON COLORS
+   Hero CTA, Terminal Submit, and Mid-CTA buttons
+   ========================================================================== */
+/* Corporativo (Blue) */
+.service-empresa .btn-luxury-mission,
+.service-empresa .btn-terminal-submit,
+.service-empresa .btn-primary {
+    background: var(--aura-corporate);
+    color: var(--aura-white);
+}
+.service-empresa .btn-luxury-mission:hover,
+.service-empresa .btn-terminal-submit:hover,
+.service-empresa .btn-primary:hover {
+    box-shadow: 0 15px 50px rgba(var(--aura-corporate-rgb), 0.3), 0 0 60px rgba(var(--aura-corporate-rgb), 0.1);
+}
+
+/* Salud (Green) */
+.service-salud .btn-luxury-mission,
+.service-salud .btn-terminal-submit,
+.service-salud .btn-primary {
+    background: var(--aura-clinical);
+    color: var(--aura-white);
+}
+.service-salud .btn-luxury-mission:hover,
+.service-salud .btn-terminal-submit:hover,
+.service-salud .btn-primary:hover {
+    box-shadow: 0 15px 50px rgba(var(--aura-clinical-rgb), 0.3), 0 0 60px rgba(var(--aura-clinical-rgb), 0.1);
+}
+
+/* Turismo (Gold) */
+.service-turismo .btn-luxury-mission,
+.service-turismo .btn-terminal-submit,
+.service-turismo .btn-primary {
+    background: var(--aura-gold);
+    color: var(--aura-black);
+}
+.service-turismo .btn-luxury-mission:hover,
+.service-turismo .btn-terminal-submit:hover,
+.service-turismo .btn-primary:hover {
+    box-shadow: 0 15px 50px rgba(var(--aura-gold-rgb), 0.3), 0 0 60px rgba(var(--aura-gold-rgb), 0.1);
+}
+
+/* Eventos (Purple) */
+.service-eventos .btn-luxury-mission,
+.service-eventos .btn-terminal-submit,
+.service-eventos .btn-primary {
+    background: var(--aura-purple);
+    color: var(--aura-white);
+}
+.service-eventos .btn-luxury-mission:hover,
+.service-eventos .btn-terminal-submit:hover,
+.service-eventos .btn-primary:hover {
+    box-shadow: 0 15px 50px rgba(var(--aura-purple-rgb), 0.3), 0 0 60px rgba(var(--aura-purple-rgb), 0.1);
+}
+
+/* Delivery (Ruby) */
+.service-delivery .btn-luxury-mission,
+.service-delivery .btn-terminal-submit,
+.service-delivery .btn-primary {
+    background: var(--aura-ruby);
+    color: var(--aura-white);
+}
+.service-delivery .btn-luxury-mission:hover,
+.service-delivery .btn-terminal-submit:hover,
+.service-delivery .btn-primary:hover {
+    box-shadow: 0 15px 50px rgba(var(--aura-ruby-rgb), 0.3), 0 0 60px rgba(var(--aura-ruby-rgb), 0.1);
+}
+
+/* Aeropuerto (Sky) */
+.service-aeropuerto .btn-luxury-mission,
+.service-aeropuerto .btn-terminal-submit,
+.service-aeropuerto .btn-primary {
+    background: var(--aura-sky);
+    color: var(--aura-black);
+}
+.service-aeropuerto .btn-luxury-mission:hover,
+.service-aeropuerto .btn-terminal-submit:hover,
+.service-aeropuerto .btn-primary:hover {
+    box-shadow: 0 15px 50px rgba(var(--aura-sky-rgb), 0.3), 0 0 60px rgba(var(--aura-sky-rgb), 0.1);
+}
+
+/* Diplomático (Dark Gold) */
+.service-diplomatico .proof-number,
+.service-diplomatico .testimonial-quote i,
+.service-diplomatico .testimonial-author strong { color: var(--aura-diplomatic); }
+
+.service-diplomatico .btn-luxury-mission,
+.service-diplomatico .btn-terminal-submit,
+.service-diplomatico .btn-primary {
+    background: var(--aura-diplomatic);
+    color: var(--aura-black);
+}
+.service-diplomatico .btn-luxury-mission:hover,
+.service-diplomatico .btn-terminal-submit:hover,
+.service-diplomatico .btn-primary:hover {
+    box-shadow: 0 15px 50px rgba(var(--aura-diplomatic-rgb), 0.3), 0 0 60px rgba(var(--aura-diplomatic-rgb), 0.1);
+}
+
+/* ==========================================================================
+   FLEET PREMIUM SECTION
+   ========================================================================== */
+.fleet-section {
+    padding: 10rem 0;
+    background: linear-gradient(180deg, rgba(6, 6, 16, 1) 0%, var(--aura-black) 50%, rgba(6, 6, 16, 1) 100%);
+    position: relative;
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.fleet-card {
+    position: relative;
+    min-height: 420px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    transition: var(--transition-sovereign);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        0 2px 0 rgba(255,255,255,0.03) inset;
+}
+
+.fleet-card-large { min-height: 420px; }
+
+.fleet-card:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+    border-top-color: rgba(255, 255, 255, 0.40);
+    transform: translateY(-8px);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.5),
+        0 0 60px rgba(var(--aura-champagne-rgb), 0.05);
+}
+
+.fleet-card-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.fleet-card-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.8) brightness(0.7);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.fleet-card:hover .fleet-card-bg img {
+    transform: scale(1.06);
+    filter: saturate(1) brightness(0.8);
+}
+
+.fleet-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(3,3,8,0.95) 0%, rgba(3,3,8,0.5) 50%, transparent 100%);
+    z-index: 1;
+}
+
+.fleet-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem;
+}
+
+.fleet-card-tag {
+    font-family: var(--font-main);
+    font-size: 0.5rem;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    color: var(--aura-champagne);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.fleet-card-content h3 {
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--aura-white);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.fleet-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fleet-specs li {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: var(--text-silver);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fleet-specs li:last-child { border-bottom: none; }
+
+.fleet-specs li i {
+    color: var(--aura-champagne);
+    width: 20px;
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.fleet-desc {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--text-silver);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   COVERAGE SECTION — Geographic Routes
+   ========================================================================== */
+.coverage-section {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, var(--aura-black) 0%, rgba(8, 10, 22, 0.6) 50%, var(--aura-black) 100%);
+}
+
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.coverage-route {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(165deg, rgba(22, 24, 42, 0.88) 0%, rgba(14, 16, 28, 0.82) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-sovereign);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.coverage-route:hover {
+    border-color: rgba(var(--aura-champagne-rgb), 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 30px rgba(var(--aura-champagne-rgb), 0.04);
+}
+
+.coverage-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(var(--aura-champagne-rgb), 0.08);
+    border: 1px solid rgba(var(--aura-champagne-rgb), 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.coverage-icon i {
+    font-size: 0.9rem;
+    color: var(--aura-champagne);
+}
+
+.coverage-route:hover .coverage-icon {
+    background: rgba(var(--aura-champagne-rgb), 0.15);
+    box-shadow: 0 0 20px rgba(var(--aura-champagne-rgb), 0.1);
+}
+
+.coverage-info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.coverage-origin {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-titanium);
+    letter-spacing: 0.05em;
+}
+
+.coverage-arrow {
+    color: var(--aura-champagne);
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.coverage-dest {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--aura-champagne);
+    letter-spacing: 0.05em;
+}
+
+.coverage-time {
+    font-family: var(--font-main);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--text-ash);
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE: Fleet + Coverage
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .fleet-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .fleet-card-large {
+        grid-column: span 2;
+    }
+    .coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .fleet-grid {
+        grid-template-columns: 1fr;
+    }
+    .fleet-card-large {
+        grid-column: span 1;
+    }
+    .fleet-card { min-height: 300px; }
+    .coverage-grid {
+        grid-template-columns: 1fr;
+    }
+    .coverage-route {
+        padding: 1.2rem 1.5rem;
+    }
+}
+

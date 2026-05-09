@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #0A0A0F; color: #CBD5E1; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 20px auto; background-color: #111118; border: 1px solid #C9A96E; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .header { background-color: #0A0A0F; padding: 40px; text-align: center; border-bottom: 1px solid rgba(201, 169, 110, 0.2); }
+        .content { padding: 40px; line-height: 1.6; }
+        .footer { background-color: #07070A; padding: 30px; text-align: center; font-size: 11px; color: #64748b; letter-spacing: 1px; }
+        h1 { color: #C9A96E; font-size: 26px; margin: 0; letter-spacing: 4px; font-weight: 300; }
+        .data-box { background: rgba(201, 169, 110, 0.03); border-left: 2px solid #C9A96E; padding: 25px; margin: 25px 0; border-radius: 4px; }
+        .btn { display: inline-block; padding: 14px 35px; background-color: #C9A96E; color: #0A0A0F; text-decoration: none; font-weight: bold; border-radius: 2px; margin-top: 25px; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; }
+        .highlight { color: #C9A96E; font-weight: 600; }
+        .label { color: #94A3B8; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AURA TRAVEL</h1>
+            <p style="margin:10px 0 0 0; font-size: 10px; letter-spacing: 5px; color: #94A3B8; text-transform: uppercase;">Estándar Diplomático</p>
+        </div>
+        <div class="content">
+            <p>Estimado/a <span class="highlight">{{nombre}}</span>,</p>
+            <p>Confirmamos la recepción de su solicitud para nuestra división de <span class="highlight">{{division}}</span>. Su requerimiento ha sido ingresado a nuestro sistema de prioridad ejecutiva.</p>
+            
+            <div class="data-box">
+                <span class="label">ID de Seguimiento</span>
+                <span class="highlight" style="font-size: 18px;">{{lead_id}}</span>
+                <br><br>
+                <span class="label">Detalle del Servicio</span>
+                • Trayecto: {{origen}} → {{destino}}<br>
+                • Fecha solicitada: {{fecha_servicio}}<br>
+                • Pasajeros: {{pasajeros}}
+            </div>
+
+            <p>Un concierge de nuestra división se pondrá en contacto con usted en un plazo máximo de <span class="highlight">30 minutos</span> para finalizar la coordinación logística.</p>
+            
+            <div style="text-align: center;">
+                <a href="https://wa.me/56926151427?text=Hola,%20solicito%20coordinar%20mi%20servicio%20ID:%20{{lead_id}}" class="btn">Contactar Concierge</a>
+            </div>
+        </div>
+        <div class="footer">
+            AURA TRAVEL — CHILE<br>
+            Santiago · Aeropuerto SCL · Centros de Ski<br>
+            <a href="https://auratravel.cl" style="color: #C9A96E; text-decoration: none;">auratravel.cl</a>
+        </div>
+    </div>
+</body>
+</html>

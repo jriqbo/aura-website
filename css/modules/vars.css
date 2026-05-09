@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+@font-face {
+    font-family: 'Ethnocentric';
+    src: url('../../fonts/ethnocentric/Ethnocentric-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* --- Unified Institutional Palette --- */
+    --aura-black: #0A0A0F;
+    --aura-white: #FFFFFF;
+    --aura-platinum: #E2E8F0;
+    --aura-gold: #C9A96E;
+    --aura-gold-rgb: 201, 169, 110;
+    --aura-champagne: #C9A96E;
+    --aura-champagne-rgb: 201, 169, 110;
+    --aura-electric: var(--aura-champagne);
+    --aura-electric-rgb: var(--aura-champagne-rgb);
+    
+    /* Division Colors */
+    --aura-corporate: #1D4ED8;
+    --aura-corporate-rgb: 29, 78, 216;
+    --aura-clinical: #10b981;
+    --aura-clinical-rgb: 16, 185, 129;
+    --aura-purple: #8b5cf6;
+    --aura-purple-rgb: 139, 92, 246;
+    --aura-ruby: #ef4444;
+    --aura-ruby-rgb: 239, 68, 68;
+    --aura-sky: #06B6D4;
+    --aura-sky-rgb: 6, 182, 212;
+    --aura-indigo: #4b0082;
+    --aura-indigo-rgb: 75, 0, 130;
+    --aura-diplomatic: #B8860B;
+    --aura-diplomatic-rgb: 184, 134, 11;
+    
+    /* Background & Glass — ELEVATED */
+    --bg-obsidian: #0A0A0F;
+    --bg-carbon: #1E293B;
+    --bg-onyx: #0c0c14;
+    --text-titanium: #CBD5E1;
+    --text-silver: #94a3b8;
+    --text-ash: #64748b;
+    --accent-glow: rgba(var(--aura-electric-rgb), 0.5);
+    --aura-glass-dark: rgba(10, 10, 15, 0.9);
+    --aura-glass-border: rgba(255, 255, 255, 0.10);
+    --aura-glass-border-hover: rgba(255, 255, 255, 0.22);
+    
+    /* Premium Typography */
+    --font-main: 'Inter', sans-serif;
+    --font-display: 'Playfair Display', serif;
+    --font-monolith: 'Ethnocentric', sans-serif;
+    
+    /* Structural Tokens */
+    --container-max: 1400px;
+    --transition-sovereign: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-micro: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Spacing Scale (Premium) */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+    --space-2xl: 12rem;
+    
+    /* Border Radius Scale */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-pill: 100px;
+}

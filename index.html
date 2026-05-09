@@ -1,354 +1,622 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA Travel — Transporte Ejecutivo Premium en Santiago, Chile</title>
-  <meta name="description" content="Transporte corporativo, diálisis y diplomático con SLA garantizado. Flota premium, conductores bilingües certificados. Cotice ahora.">
-  <meta property="og:title" content="AURA Travel — Transporte Premium Chile">
-  <meta property="og:description" content="Transporte ejecutivo, pacientes de diálisis y servicios diplomáticos con excelencia garantizada.">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/index.css">
-  <meta name="google-site-verification" content="phItmKLcG7eCb2aKMHUCZv65nc_w2JTfPVj5G60VgmI" />
-  <!-- Google Analytics — Reemplazar G-XXXXXXXXXX con tu ID real -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TransportService",
-    "name": "AURA Travel",
-    "description": "Transporte premium de pasajeros: corporativo, diálisis y diplomático en Chile",
-    "url": "https://auratravel.cl",
-    "areaServed": "Chile",
-    "serviceType": ["Executive Transport", "Medical Transport", "Diplomatic Transport"],
-    "priceRange": "$$$"
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA TRAVEL | Movilidad Ejecutiva e Institucional en Chile</title>
+    <meta name="description" content="Transporte corporativo, salud, turismo, eventos y logística con SLA garantizado. Flota premium, conductores certificados. Cotice ahora.">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://auratravel.cl">
+    <meta property="og:title" content="AURA TRAVEL | Movilidad Ejecutiva e Institucional">
+    <meta property="og:description" content="Centro de operaciones de movilidad premium en Chile. Cinco divisiones especializadas.">
+    <meta property="og:image" content="https://auratravel.cl/aura_home_8k.png">
+    <link rel="stylesheet" href="css/aura.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="google-site-verification" content="phItmKLcG7eCb2aKMHUCZv65nc_w2JTfPVj5G60VgmI" />
+    <script type="application/ld+json">
+    [{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AURA Travel",
+        "url": "https://auratravel.cl",
+        "logo": "https://auratravel.cl/favicon.png",
+        "description": "Transporte ejecutivo e institucional premium en Chile. Cinco divisiones especializadas.",
+        "areaServed": {"@type": "Country", "name": "Chile"},
+        "contactPoint": {"@type": "ContactPoint", "telephone": "+56-9-2615-1427", "contactType": "sales", "availableLanguage": ["Spanish", "English"]},
+        "sameAs": ["https://www.linkedin.com/company/auratravel", "https://www.instagram.com/auratravelcl"]
+    },{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "AURA Travel Chile",
+        "image": "https://auratravel.cl/aura_home_8k.png",
+        "url": "https://auratravel.cl",
+        "telephone": "+56-9-2615-1427",
+        "email": "contacto@auratravel.cl",
+        "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+        "priceRange": "$$$",
+        "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}
+    }]
+    </script>
 </head>
-<body>
+<body class="aura-elite">
+    <div class="noise-overlay"></div>
 
-  <!-- ======= FLOATING BOTTOM NAV ======= -->
-  <nav class="floating-nav" id="main-nav" role="navigation" aria-label="Navegación principal">
-    <a href="#" class="nav-logo"><img src="assets/images/logo.png" alt="AURA Logo"></a>
-    <a href="#servicios" class="active" id="nav-servicios">Servicios</a>
-    <a href="#nosotros" id="nav-nosotros">Nosotros</a>
-    <a href="#reservar" id="nav-reservar">Reservar</a>
-    <a href="#contacto" id="nav-contacto">Contacto</a>
-  </nav>
+    <header class="capsule-header">
+        <nav class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-aura">AURA</span>
+                    <span class="logo-travel">TRAVEL</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="active">INICIO</a>
+                    <a href="pages/corporativo.html">CORPORATIVO</a>
+                    <a href="pages/salud.html">SALUD</a>
+                    <a href="pages/turismo.html">TURISMO</a>
+                    <a href="pages/eventos.html">EVENTOS</a>
+                    <a href="pages/aeropuerto.html">AEROPUERTO</a>
+                    <a href="pages/delivery.html">DELIVERY</a>
+                    <a href="#contacto" class="btn-header-contact">CONTACTO</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <!-- ======= HERO SECTION ======= -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg">
-      <img src="assets/images/hero-torres-paine.png" alt="Vista panorámica de Torres del Paine, Patagonia chilena" loading="eager">
-    </div>
-    <div class="container hero-content">
-      <div class="hero-label">
-        <span class="dot"></span>
-        Operando en todo Chile
-      </div>
-      <h1 class="display-xl fade-up">
-        Transporte<br>que protege<br>lo que más<br><span class="text-electric">importa.</span>
-      </h1>
-      <p class="body-lg fade-up">
-        Servicio premium de transporte para ejecutivos, pacientes de diálisis y misiones diplomáticas. Puntualidad del 99.7%, conductores certificados y flota de última generación.
-      </p>
-      <div class="hero-actions fade-up">
-        <a href="#reservar" class="btn btn-primary" id="hero-cta-reservar">Reservar Ahora →</a>
-        <a href="#servicios" class="btn btn-secondary" id="hero-cta-servicios">Ver Servicios</a>
-      </div>
-    </div>
-  </section>
+    <!-- ======= SOVEREIGN HERO — HOME EXCLUSIVE ======= -->
+    <!-- Layer 1: Monolith Reveal — Cinematic Entrance Ceremony -->
+    <div class="sovereign-curtain"></div>
+    <div class="sovereign-genesis-line"></div>
 
-  <!-- ======= STATS BAR ======= -->
-  <section class="section" style="padding: var(--space-3xl) 0;">
-    <div class="container">
-      <div class="stats-bar fade-up">
-        <div class="stat-item">
-          <div class="stat-number">99.7<span>%</span></div>
-          <div class="stat-label">Puntualidad garantizada</div>
+    <section class="hero-sovereign" id="inicio">
+        <!-- Background Slider (same 5 images, entrance-controlled opacity) -->
+        <div class="hero-slider" data-parallax="0.3">
+            <img src="aura_supreme_hero_night_motion_8k_gold_1777938401922.png" alt="AURA Travel Hero - Movilidad Ejecutiva Premium">
+            <img src="aura_hero_santiago_above_1777815917969.png" alt="AURA Santiago Command">
+            <img src="aura_luxury_van_airport_night_1777851584322.png" alt="AURA Luxury Airport Transfer">
+            <img src="aura_hero_patagonia_drive_1777815932285.png" alt="AURA Patagonia Expedition Drive">
+            <img src="aura_luxury_van_andes_sunset_1777851568919.png" alt="AURA Andes Golden Hour">
         </div>
-        <div class="stat-item">
-          <div class="stat-number">24<span>/7</span></div>
-          <div class="stat-label">Servicio disponible</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">5K<span>+</span></div>
-          <div class="stat-label">Traslados mensuales</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">15<span>+</span></div>
-          <div class="stat-label">Años de experiencia</div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="hero-overlay"></div>
 
-  <!-- ======= SERVICES (iO Digital rows) ======= -->
-  <section class="services-section section" id="servicios">
-    <div class="container">
-      <span class="label fade-up">Nuestros Servicios</span>
-      <h2 class="display-lg fade-up" style="margin-top: var(--space-md); margin-bottom: var(--space-3xl);">
-        Soluciones de<br>transporte <span class="text-electric">a medida.</span>
-      </h2>
-    </div>
+        <!-- Layer 2: Atmospheric Sovereignty — 4 Sub-layers -->
+        <div class="sovereign-fog"></div>
+        <div class="sovereign-light-scan"></div>
+        <div class="sovereign-aberration"></div>
+        <canvas id="hero-particles" class="hero-particles-canvas"></canvas>
 
-    <div class="container">
-      <a href="pages/corporativo.html" class="service-row fade-up" id="service-corporativo">
-        <div class="service-row-content">
-          <span class="service-number">01</span>
-          <span class="service-name">Transporte Corporativo</span>
-          <span class="service-desc">Traslados ejecutivos con SLA, NDA y conductor fijo bilingüe para su empresa.</span>
-        </div>
-        <span class="service-arrow">↗</span>
-      </a>
+        <!-- Layer 3: Live Command HUD — Telemetry Dashboard -->
+        <div class="sovereign-hud">
+            <!-- Top-Left: Clock + Location -->
+            <div class="hud-clock">
+                <span class="hud-clock-time" id="sovereign-clock">--:--:--</span>
+                <span class="hud-clock-label">SANTIAGO · SCL · UTC-4</span>
+            </div>
 
-      <a href="pages/dialisis.html" class="service-row fade-up" id="service-dialisis">
-        <div class="service-row-content">
-          <span class="service-number">02</span>
-          <span class="service-name">Pacientes de Diálisis</span>
-          <span class="service-desc">Transporte especializado con conductor certificado en primeros auxilios.</span>
-        </div>
-        <span class="service-arrow">↗</span>
-      </a>
+            <!-- Top-Right: Fleet Status -->
+            <div class="hud-fleet-status">
+                <div class="hud-fleet-dot"></div>
+                <div>
+                    <span class="hud-fleet-text">FLOTA EN RUTA: <span class="hud-fleet-count" id="sovereign-fleet">--</span></span>
+                </div>
+            </div>
 
-      <a href="pages/embajadas.html" class="service-row fade-up" id="service-embajadas">
-        <div class="service-row-content">
-          <span class="service-number">03</span>
-          <span class="service-name">Servicios Diplomáticos</span>
-          <span class="service-desc">Protocolo diplomático, conductores bilingües y máxima discreción.</span>
-        </div>
-        <span class="service-arrow">↗</span>
-      </a>
+            <!-- Left Edge: Telemetry Line -->
+            <div class="hud-telemetry-line">
+                <div class="hud-telemetry-pulse"></div>
+                <div class="hud-telemetry-nodes">
+                    <span class="hud-telemetry-node">CORP</span>
+                    <span class="hud-telemetry-node">SALUD</span>
+                    <span class="hud-telemetry-node">TURISMO</span>
+                    <span class="hud-telemetry-node">EVENTOS</span>
+                    <span class="hud-telemetry-node">AEROP</span>
+                </div>
+            </div>
 
-      <a href="#reservar" class="service-row fade-up" id="service-aeropuerto">
-        <div class="service-row-content">
-          <span class="service-number">04</span>
-          <span class="service-name">Traslados Aeropuerto</span>
-          <span class="service-desc">Monitoreo de vuelos en tiempo real y espera sin costo por retrasos.</span>
+            <!-- Bottom: Service Ticker -->
+            <div class="hud-ticker">
+                <div class="hud-ticker-track">
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>CORPORATIVO · SLA 99.7%</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>SALUD · DIÁLISIS PROGRAMADA</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>TURISMO · TEMPORADA NIEVE 2026</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>EVENTOS · COORDINACIÓN DE GALA</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>AEROPUERTO · MONITOREO DE VUELOS</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>DELIVERY · CUSTODIA CRÍTICA 24/7</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>CORPORATIVO · SLA 99.7%</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>SALUD · DIÁLISIS PROGRAMADA</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>TURISMO · TEMPORADA NIEVE 2026</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>EVENTOS · COORDINACIÓN DE GALA</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>AEROPUERTO · MONITOREO DE VUELOS</span>
+                    <span class="hud-ticker-item"><span class="ticker-dot"></span>DELIVERY · CUSTODIA CRÍTICA 24/7</span>
+                </div>
+            </div>
         </div>
-        <span class="service-arrow">↗</span>
-      </a>
 
-      <a href="#reservar" class="service-row fade-up" id="service-rutas">
-        <div class="service-row-content">
-          <span class="service-number">05</span>
-          <span class="service-name">Rutas Premium Chile</span>
-          <span class="service-desc">Patagonia, Atacama, Viña del Mar — viajes ejecutivos por todo Chile.</span>
+        <!-- HUD GLOBAL MINIMALISTA -->
+        <div class="hero-hud-minimal">
+            <span class="hud-label">Enlace Soberano</span>
+            <span class="hud-value glow-text">SCL // SISTEMA_ACTIVO</span>
         </div>
-        <span class="service-arrow">↗</span>
-      </a>
-    </div>
-  </section>
 
-  <!-- ======= VERTICALS (Cards con imagen) ======= -->
-  <section class="section" id="verticales">
-    <div class="container">
-      <span class="label fade-up">Verticales Especializadas</span>
-      <h2 class="display-lg fade-up" style="margin-top: var(--space-md); margin-bottom: var(--space-lg);">
-        Tres mundos,<br>un solo <span class="text-gold">estándar.</span>
-      </h2>
-      <div class="verticals-grid">
-        <div class="vertical-card fade-up" id="vertical-corp">
-          <img src="assets/images/corporate-vehicle.png" alt="Vehículo ejecutivo AURA frente a oficina corporativa">
-          <div class="vertical-card-overlay">
-            <span class="label">Corporativo</span>
-            <h3>Ejecutivos que llegan preparados</h3>
-            <p>SLA 99.7% · NDA · Conductor fijo · Reportes mensuales</p>
-          </div>
+        <div class="container">
+            <div class="hero-content">
+                <!-- Cinematic light sweep effect -->
+                <div class="cinematic-flare"></div>
+                <h1 class="hero-display hero-home-display">
+                    <span class="brand-main aura-titanium-white">AURA</span>
+                    <span class="brand-sub aura-travel-glow">TRAVEL</span>
+                </h1>
+                <script>
+                    // INLINE ENTRANCE CEREMONY — Runs immediately, no dependencies
+                    // This guarantees AURA/TRAVEL are visible even if aura-core.js crashes
+                    (function(){
+                        var h = document.querySelector('.hero-display');
+                        if(!h) return;
+                        h.style.opacity = '0';
+                        h.style.transform = 'translateY(30px)';
+                        h.style.transition = 'none';
+                        setTimeout(function(){
+                            h.style.transition = 'opacity 2s cubic-bezier(0.16,1,0.3,1), transform 2s cubic-bezier(0.16,1,0.3,1)';
+                            h.style.opacity = '1';
+                            h.style.transform = 'translateY(0)';
+                        }, 1200);
+                    })();
+                </script>
+                <div class="hero-actions" style="display: flex; gap: 1rem; align-items: center; margin-top: 2rem;">
+                    <a href="#centro-operaciones" class="btn-luxury-mission magnetic">
+                        <span>INICIAR PROTOCOLO</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#contacto" class="btn-outline magnetic" style="padding: 1.2rem 2.5rem;">
+                        <span>SOLICITAR COTIZACIÓN</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="vertical-card fade-up" id="vertical-dialisis">
-          <img src="assets/images/dialysis-care.png" alt="Conductor AURA asistiendo a paciente con cuidado">
-          <div class="vertical-card-overlay">
-            <span class="label" style="color: var(--aura-success);">Diálisis</span>
-            <h3>Cuidado que marca la diferencia</h3>
-            <p>Conductor certificado · Mismo chofer siempre · Coordinación con clínica</p>
-          </div>
-        </div>
-        <div class="vertical-card fade-up" id="vertical-diplo">
-          <img src="assets/images/hero-torres-paine.png" alt="Paisaje premium de Chile para servicios diplomáticos">
-          <div class="vertical-card-overlay">
-            <span class="label" style="color: var(--aura-gold);">Diplomático</span>
-            <h3>Protocolo y discreción total</h3>
-            <p>Bilingüe · Seguridad · Facturación internacional</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ======= TRUST SECTION ======= -->
-  <section class="section trust-section" id="nosotros">
-    <div class="container">
-      <div class="text-center">
-        <span class="label fade-up">¿Por Qué AURA?</span>
-        <h2 class="display-lg fade-up" style="margin-top: var(--space-md);">
-          Confianza que se<br><span class="text-electric">demuestra.</span>
-        </h2>
-      </div>
-      <div class="trust-grid">
-        <div class="trust-card fade-up">
-          <div class="trust-icon">🛡️</div>
-          <h3>Seguridad Certificada</h3>
-          <p>Seguros completos, conductores verificados con antecedentes, vehículos con revisión técnica al día y GPS en tiempo real.</p>
+        <!-- Scroll Protocol -->
+        <div class="scroll-protocol">
+            <span class="scroll-text">CENTRO DE MANDO</span>
+            <div class="scroll-line">
+                <div class="scroll-dot" style="background: var(--aura-champagne); box-shadow: 0 0 10px var(--aura-champagne);"></div>
+            </div>
         </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon">⏱️</div>
-          <h3>Puntualidad 99.7%</h3>
-          <p>Nuestro SLA garantiza puntualidad con penalidad por incumplimiento. Si no llegamos a tiempo, usted no paga.</p>
-        </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon">🤝</div>
-          <h3>Conductor Dedicado</h3>
-          <p>Mismo conductor asignado para generar confianza y rutina. Especialmente importante para pacientes de diálisis.</p>
-        </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon">🌐</div>
-          <h3>Bilingüe / Multilingüe</h3>
-          <p>Conductores fluidos en español e inglés. Servicio en francés y portugués disponible para misiones diplomáticas.</p>
-        </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon">📊</div>
-          <h3>Reportes Mensuales</h3>
-          <p>Dashboard con métricas de servicio: viajes realizados, puntualidad, incidencias y ahorro generado para su empresa.</p>
-        </div>
-        <div class="trust-card fade-up">
-          <div class="trust-icon">🚗</div>
-          <h3>Flota Premium</h3>
-          <p>Vehículos de menos de 3 años, limpieza y desinfección diaria, WiFi, agua, cargadores y aire acondicionado.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======= BOOKING FORM ======= -->
-  <section class="section booking-section" id="reservar">
-    <div class="container text-center">
-      <span class="label fade-up">Solicitar Servicio</span>
-      <h2 class="display-lg fade-up" style="margin-top: var(--space-md);">
-        Reserve su <span class="text-electric">traslado.</span>
-      </h2>
-    </div>
-    <div class="container">
-      <form class="booking-form fade-up" id="booking-form">
-        <div class="form-tabs">
-          <button type="button" class="form-tab active" data-tab="corporativo" id="tab-corporativo">Corporativo</button>
-          <button type="button" class="form-tab" data-tab="dialisis" id="tab-dialisis">Diálisis</button>
-          <button type="button" class="form-tab" data-tab="diplomatico" id="tab-diplomatico">Diplomático</button>
-          <button type="button" class="form-tab" data-tab="aeropuerto" id="tab-aeropuerto">Aeropuerto</button>
-        </div>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" placeholder="correo@empresa.com" required>
-          </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono / WhatsApp</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+56 9 XXXX XXXX" required>
-          </div>
-          <div class="form-group">
-            <label for="empresa">Empresa / Institución</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Nombre de su empresa">
-          </div>
-          <div class="form-group">
-            <label for="origen">Punto de Origen</label>
-            <input type="text" id="origen" name="origen" placeholder="Dirección de recogida" required>
-          </div>
-          <div class="form-group">
-            <label for="destino">Punto de Destino</label>
-            <input type="text" id="destino" name="destino" placeholder="Dirección de destino" required>
-          </div>
-          <div class="form-group">
-            <label for="fecha">Fecha del Servicio</label>
-            <input type="date" id="fecha" name="fecha" required>
-          </div>
-          <div class="form-group">
-            <label for="hora">Hora</label>
-            <input type="time" id="hora" name="hora" required>
-          </div>
-          <div class="form-group full">
-            <label for="comentarios">Comentarios Adicionales</label>
-            <textarea id="comentarios" name="comentarios" placeholder="Necesidades especiales, número de pasajeros, equipaje..."></textarea>
-          </div>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-primary" id="btn-submit-booking">Solicitar Cotización →</button>
-        </div>
-      </form>
-    </div>
-  </section>
+    <!-- ======= CENTRO DE OPERACIONES BENTO ======= -->
+    <section class="services-bento-section" id="centro-operaciones">
+        <div class="tactical-grid-overlay"></div>
+        <div class="radar-sweep"></div>
+        
+        <span class="hud-coordinate hud-tl">lat: -33.4489 // lng: -70.6693</span>
+        <span class="hud-coordinate hud-tr">status: operational</span>
+        <span class="hud-coordinate hud-bl">network: scl-hub</span>
+        <span class="hud-coordinate hud-br">uptime: 99.97%</span>
 
-  <!-- ======= BIG BANNER CTA ======= -->
-  <section class="big-banner" id="contacto">
-    <div class="container">
-      <h2 class="display-lg fade-up">
-        ¿Listo para elevar<br>su transporte?
-      </h2>
-      <p class="fade-up">
-        Contáctenos hoy y reciba una propuesta personalizada para su empresa, clínica o misión diplomática.
-      </p>
-      <a href="https://wa.me/56900000000?text=Hola%20AURA,%20necesito%20información%20sobre%20sus%20servicios" class="btn btn-whatsapp fade-up" id="cta-whatsapp" target="_blank" rel="noopener">
-        💬 Contactar por WhatsApp
-      </a>
-    </div>
-  </section>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Centro de Operaciones</span>
+                <h2 class="section-title">Divisiones <br>de <span style="color: var(--aura-champagne);">Excelencia.</span></h2>
+            </div>
 
-  <!-- ======= FOOTER ======= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>AURA<span>.</span></h3>
-          <p>Transporte premium de pasajeros en Chile. Corporativo, diálisis y diplomático con excelencia garantizada.</p>
-          <a href="mailto:contacto@auratravel.cl" class="body-sm">contacto@auratravel.cl</a>
-        </div>
-        <div class="footer-col">
-          <h4>Servicios</h4>
-          <ul>
-            <li><a href="pages/corporativo.html">Corporativo</a></li>
-            <li><a href="pages/dialisis.html">Diálisis</a></li>
-            <li><a href="pages/embajadas.html">Diplomático</a></li>
-            <li><a href="#service-aeropuerto">Aeropuerto</a></li>
-            <li><a href="#service-rutas">Rutas Chile</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Empresa</h4>
-          <ul>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#vertical-corp">Flota</a></li>
-            <li><a href="#">Certificaciones</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <ul>
-            <li><a href="tel:+56900000000">+56 9 0000 0000</a></li>
-            <li><a href="mailto:contacto@auratravel.cl">contacto@auratravel.cl</a></li>
-            <li><a href="#">Santiago, Chile</a></li>
-            <li><a href="#">Lun-Dom 24/7</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 AURA Travel. Todos los derechos reservados.</span>
-        <span>Diseñado con excelencia en Chile 🇨🇱</span>
-      </div>
-    </div>
-  </footer>
+            <div class="services-bento-2 reveal">
+                <!-- Columna Izquierda -->
+                <div class="bento-column">
+                    <!-- Card Grande: Corporativo -->
+                    <a href="pages/corporativo.html" class="bento-2-card tall magnetic reveal-up">
+                        <div class="bento-2-bg">
+                            <img src="aura_fleet_night_8k_1778058439627.png" alt="AURA Corporativo Flota">
+                        </div>
+                        <div class="bento-2-content">
+                            <span class="bento-2-tag" style="color: var(--aura-corporate);">DIVISIÓN CORPORATIVA</span>
+                            <h3 style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-top: 0.5rem;">Transporte<br>Ejecutivo</h3>
+                        </div>
+                    </a>
+                    <!-- Row: Salud + Turismo -->
+                    <div class="bento-row-small">
+                        <a href="pages/salud.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.1s;">
+                            <div class="bento-2-bg">
+                                <img src="aura_van_salud_night_branded_8k_amber_gold_1777937962791.png" alt="AURA Salud">
+                            </div>
+                            <div class="bento-2-content">
+                                <span class="bento-2-tag" style="color: var(--aura-clinical);">SALUD</span>
+                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Logística<br>Clínica</h3>
+                            </div>
+                        </a>
+                        <a href="pages/turismo.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.2s;">
+                            <div class="bento-2-bg">
+                                <img src="aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png" alt="AURA Turismo">
+                            </div>
+                            <div class="bento-2-content">
+                                <span class="bento-2-tag" style="color: var(--aura-gold);">TURISMO</span>
+                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Experiencias<br>Premium</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-  <script src="js/app.js"></script>
+                <!-- Columna Derecha -->
+                <div class="bento-column">
+                    <!-- Row: Eventos + Delivery -->
+                    <div class="bento-row-small">
+                        <a href="pages/eventos.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.1s;">
+                            <div class="bento-2-bg">
+                                <img src="aura_van_eventos_night_branded_8k_gold_gala_1777937993359.png" alt="AURA Eventos">
+                            </div>
+                            <div class="bento-2-content">
+                                <span class="bento-2-tag" style="color: var(--aura-purple);">EVENTOS</span>
+                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Logística<br>de Gala</h3>
+                            </div>
+                        </a>
+                        <a href="pages/delivery.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.2s;">
+                            <div class="bento-2-bg">
+                                <img src="aura_van_delivery_night_branded_8k_gold_courier_1777938005840.png" alt="AURA Delivery">
+                            </div>
+                            <div class="bento-2-content">
+                                <span class="bento-2-tag" style="color: var(--aura-ruby);">DELIVERY</span>
+                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Custodia<br>Crítica</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Card Grande: Aeropuerto -->
+                    <a href="pages/aeropuerto.html" class="bento-2-card tall magnetic reveal-up" style="transition-delay: 0.3s;">
+                        <div class="bento-2-bg">
+                            <img src="aura_aeropuerto_hero_8k_1778059260900.png" alt="AURA Aeropuerto VIP">
+                        </div>
+                        <div class="bento-2-content">
+                            <span class="bento-2-tag" style="color: var(--aura-sky);">DIVISIÓN AEROPUERTO</span>
+                            <h3 style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-top: 0.5rem;">Traslados<br>Aeropuerto</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= SOCIAL PROOF BAR ======= -->
+    <section class="social-proof-bar reveal">
+        <div class="container">
+            <div class="proof-stats">
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="12500" data-suffix="+">0+</span>
+                    <span class="proof-label">Traslados Ejecutivos</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="99" data-suffix=".7%">0%</span>
+                    <span class="proof-label">SLA de Puntualidad</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="47" data-suffix="+">0+</span>
+                    <span class="proof-label">Clientes Corporativos</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="24" data-suffix="/7">0</span>
+                    <span class="proof-label">Operación Continua</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= TRUST BAR ======= -->
+    <section class="trust-bar reveal">
+        <div class="container">
+            <p class="trust-label">SERVICIO DE CONFIANZA PARA</p>
+            <div class="trust-logos">
+                <div class="trust-item"><i class="fas fa-landmark"></i><span>Embajadas</span></div>
+                <div class="trust-item"><i class="fas fa-hospital"></i><span>Clínicas</span></div>
+                <div class="trust-item"><i class="fas fa-building"></i><span>Corporaciones</span></div>
+                <div class="trust-item"><i class="fas fa-hotel"></i><span>Hoteles 5★</span></div>
+                <div class="trust-item"><i class="fas fa-plane"></i><span>Aerolíneas</span></div>
+                <div class="trust-item"><i class="fas fa-university"></i><span>Universidades</span></div>
+                <div class="trust-item"><i class="fas fa-gavel"></i><span>Tribunales</span></div>
+                <div class="trust-item"><i class="fas fa-theater-masks"></i><span>Galas</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FLOTA PREMIUM STRIP ======= -->
+    <section class="fleet-section" id="flota">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Flota Institucional</span>
+                <h2 class="section-title">Vehículos de <br><span style="color: var(--aura-champagne);">Estándar Diplomático.</span></h2>
+            </div>
+            <div class="fleet-grid reveal">
+                <div class="fleet-card fleet-card-large">
+                    <div class="fleet-card-bg">
+                        <img loading="lazy" decoding="async" src="aura_luxury_interior_warm_glow_1777850744659.png" alt="Interior Ejecutivo AURA">
+                    </div>
+                    <div class="fleet-card-overlay"></div>
+                    <div class="fleet-card-content">
+                        <span class="fleet-card-tag">INTERIOR EJECUTIVO</span>
+                        <h3>Cabina de Mando</h3>
+                        <ul class="fleet-specs">
+                            <li><i class="fas fa-wifi"></i> WiFi 5G Dedicado</li>
+                            <li><i class="fas fa-charging-station"></i> Cargadores USB-C / Wireless</li>
+                            <li><i class="fas fa-temperature-low"></i> Climatización Bizona</li>
+                            <li><i class="fas fa-volume-mute"></i> Aislamiento Acústico Premium</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-card-bg">
+                        <img loading="lazy" decoding="async" src="aura_concierge_detail_8k_1778058457742.png" alt="Concierge AURA">
+                    </div>
+                    <div class="fleet-card-overlay"></div>
+                    <div class="fleet-card-content">
+                        <span class="fleet-card-tag">CONCIERGE</span>
+                        <h3>Atención Personalizada</h3>
+                        <p class="fleet-desc">Conductor certificado, bilingüe y con verificación de antecedentes exhaustiva.</p>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-card-bg">
+                        <img loading="lazy" decoding="async" src="aura_luxury_van_airport_night_1777851584322.png" alt="AURA Van Nocturna">
+                    </div>
+                    <div class="fleet-card-overlay"></div>
+                    <div class="fleet-card-content">
+                        <span class="fleet-card-tag">FLOTA &lt;3 AÑOS</span>
+                        <h3>Tecnología de Punta</h3>
+                        <p class="fleet-desc">GPS en tiempo real, monitoreo satelital y protocolos de seguridad activos 24/7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= COBERTURA GEOGRÁFICA ======= -->
+    <section class="coverage-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Red de Cobertura</span>
+                <h2 class="section-title">Donde usted <br>nos <span style="color: var(--aura-champagne);">necesite.</span></h2>
+            </div>
+            <div class="coverage-grid">
+                <div class="coverage-route">
+                    <div class="coverage-icon"><i class="fas fa-plane-arrival"></i></div>
+                    <div class="coverage-info">
+                        <span class="coverage-origin">Aeropuerto SCL</span>
+                        <span class="coverage-arrow">→</span>
+                        <span class="coverage-dest">Santiago Centro</span>
+                    </div>
+                    <span class="coverage-time">35 min</span>
+                </div>
+                <div class="coverage-route">
+                    <div class="coverage-icon"><i class="fas fa-mountain"></i></div>
+                    <div class="coverage-info">
+                        <span class="coverage-origin">Santiago</span>
+                        <span class="coverage-arrow">→</span>
+                        <span class="coverage-dest">Valle Nevado</span>
+                    </div>
+                    <span class="coverage-time">90 min</span>
+                </div>
+                <div class="coverage-route">
+                    <div class="coverage-icon"><i class="fas fa-wine-glass-alt"></i></div>
+                    <div class="coverage-info">
+                        <span class="coverage-origin">Santiago</span>
+                        <span class="coverage-arrow">→</span>
+                        <span class="coverage-dest">Viñedos Colchagua</span>
+                    </div>
+                    <span class="coverage-time">2h 30 min</span>
+                </div>
+                <div class="coverage-route">
+                    <div class="coverage-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <div class="coverage-info">
+                        <span class="coverage-origin">Santiago</span>
+                        <span class="coverage-arrow">→</span>
+                        <span class="coverage-dest">Viña del Mar</span>
+                    </div>
+                    <span class="coverage-time">1h 20 min</span>
+                </div>
+                <div class="coverage-route">
+                    <div class="coverage-icon"><i class="fas fa-hospital"></i></div>
+                    <div class="coverage-info">
+                        <span class="coverage-origin">Domicilio</span>
+                        <span class="coverage-arrow">→</span>
+                        <span class="coverage-dest">Clínica Las Condes</span>
+                    </div>
+                    <span class="coverage-time">Bajo demanda</span>
+                </div>
+                <div class="coverage-route">
+                    <div class="coverage-icon"><i class="fas fa-skiing"></i></div>
+                    <div class="coverage-info">
+                        <span class="coverage-origin">Santiago</span>
+                        <span class="coverage-arrow">→</span>
+                        <span class="coverage-dest">Portillo</span>
+                    </div>
+                    <span class="coverage-time">2h 45 min</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= POR QUÉ AURA ======= -->
+    <section class="why-aura-section" id="por-que-aura">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">¿Por Qué AURA?</span>
+                <h2 class="section-title">Lo que nos <br>hace <span style="color: var(--aura-champagne);">diferentes.</span></h2>
+            </div>
+            <div class="why-grid reveal">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3>NDA Corporativo</h3>
+                    <p>Confidencialidad contractual en cada servicio. Sus rutas, pasajeros y conversaciones están protegidos.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Conductor Fijo</h3>
+                    <p>Mismo conductor asignado a su cuenta. Certificado, bilingüe y con verificación de antecedentes exhaustiva.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-car"></i></div>
+                    <h3>Flota &lt;3 Años</h3>
+                    <p>Vehículos de última generación con WiFi, agua, cargadores y limpieza certificada diaria.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <h3>Monitoreo GPS</h3>
+                    <p>Rastreo en tiempo real de cada unidad. Reportes de ruta, puntualidad y alertas automáticas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= TESTIMONIAL INSTITUCIONAL ======= -->
+    <section class="testimonial-section reveal">
+        <div class="container">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <blockquote>
+                    AURA transformó por completo nuestra logística de traslados ejecutivos. La puntualidad es impecable, la discreción absoluta y la calidad del servicio supera cualquier alternativa que hayamos evaluado. Nuestros directivos internacionales siempre preguntan por AURA cuando vuelven a Santiago.
+                </blockquote>
+                <div class="testimonial-author">
+                    <strong>María Fernanda Contreras</strong>
+                    <span>Gerenta de Operaciones · Multinacional del Sector Financiero</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= MID-CTA URGENCIA ======= -->
+    <section class="mid-cta-section reveal">
+        <div class="container">
+            <div class="mid-cta-card">
+                <div class="mid-cta-content">
+                    <h3>¿Necesita un servicio con estándar diplomático?</h3>
+                    <p>Cotización personalizada en menos de 30 minutos. Sin compromiso, sin intermediarios. Directamente con nuestro equipo de concierge.</p>
+                </div>
+                <a href="#contacto" class="btn-luxury-mission magnetic">
+                    <span>SOLICITAR COTIZACIÓN</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= TERMINAL DE CONTACTO ======= -->
+    <section class="institutional-dossier" id="contacto">
+        <div class="container">
+            <div class="terminal-frame reveal">
+                <div class="terminal-header">
+                    <div class="terminal-dots"><span style="background: var(--aura-champagne);"></span><span></span><span></span></div>
+                    <div class="terminal-title">AURA // CENTRO DE MANDO // TERMINAL GENERAL</div>
+                    <div class="terminal-id">ID: SCL-HQ-00</div>
+                    <div class="terminal-progress-container">
+                        <div class="terminal-progress-bar" id="terminalProgress"></div>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-sidebar">
+                        <div class="terminal-nav">
+                            <button class="t-nav-btn active" style="border-left-color: var(--aura-champagne);">COTIZACIÓN</button>
+                            <button class="t-nav-btn">CORPORATIVO</button>
+                            <button class="t-nav-btn">SOPORTE</button>
+                        </div>
+                    </div>
+                    <div class="terminal-main">
+                        <div class="terminal-brand-header">
+                            <span class="terminal-brand-aura">AURA</span>
+                            <span class="terminal-brand-travel">TRAVEL</span>
+                        </div>
+                        <form class="terminal-form" id="contact-form">
+                            <div class="form-group">
+                                <input type="text" name="empresa" placeholder=" " required>
+                                <label>NOMBRE / EMPRESA</label>
+                            </div>
+                            <div class="form-group">
+                                <select name="servicio" required>
+                                    <option value="" selected disabled hidden></option>
+                                    <option value="corporativo">CORPORATIVO</option>
+                                    <option value="salud">SALUD / DIÁLISIS</option>
+                                    <option value="turismo">TURISMO PREMIUM</option>
+                                    <option value="eventos">EVENTOS / GALA</option>
+                                    <option value="delivery">LOGÍSTICA / DELIVERY</option>
+                                    <option value="aeropuerto">AEROPUERTO</option>
+                                </select>
+                                <label>TIPO DE SERVICIO</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="fecha" placeholder=" " required>
+                                <label>FECHA REQUERIDA</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder=" " required>
+                                <label>EMAIL DE ENLACE</label>
+                            </div>
+                            <div class="form-group" style="grid-column: span 2;">
+                                <textarea name="detalle" placeholder=" "></textarea>
+                                <label>DETALLE DE REQUERIMIENTO</label>
+                            </div>
+                            <button type="submit" class="btn-terminal-submit magnetic" style="background: var(--aura-champagne); color: #000;">
+                                SOLICITAR COTIZACIÓN INSTITUCIONAL
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-command">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-aura">AURA</span>
+                        <span class="logo-travel">TRAVEL</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Liderando la vanguardia en movilidad ejecutiva e institucional en Chile.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Divisiones</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/corporativo.html">Corporativo</a></li>
+                        <li><a href="pages/salud.html">Salud</a></li>
+                        <li><a href="pages/turismo.html">Turismo</a></li>
+                        <li><a href="pages/eventos.html">Eventos</a></li>
+                        <li><a href="pages/aeropuerto.html">Aeropuerto</a></li>
+                        <li><a href="pages/delivery.html">Delivery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de Mando</a></li>
+                        <li><a href="#">Protocolos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contacto@auratravel.cl">contacto@auratravel.cl</a></li>
+                        <li><a href="https://wa.me/56926151427" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>+56 9 2615 1427</a></li>
+                        <li><a href="#">Santiago, Chile</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-legal">&copy; 2026 AURA TRAVEL. TODOS LOS DERECHOS RESERVADOS.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/aura-core.js"></script>
 </body>
 </html>

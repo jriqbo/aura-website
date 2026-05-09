@@ -1,0 +1,419 @@
+/* --- AURA Interactive Elements & Components — ELEVATED --- */
+
+.btn-primary, .btn-outline {
+    padding: 1.2rem 3rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-main);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: var(--transition-sovereign);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary { 
+    background: var(--aura-electric); 
+    color: #000 !important; 
+}
+
+.btn-primary:hover { 
+    background: #fff; 
+    box-shadow: 0 20px 60px rgba(var(--aura-electric-rgb), 0.3); 
+    transform: translateY(-3px);
+}
+
+.btn-outline { 
+    background: transparent; 
+    color: #fff !important; 
+    border: 1px solid var(--aura-glass-border); 
+}
+
+.btn-outline:hover { 
+    background: rgba(255, 255, 255, 0.04); 
+    border-color: var(--aura-glass-border-hover); 
+}
+
+/* ============================================
+   BENTO GRID SYSTEM — ELEVATED
+   ============================================ */
+
+.services-bento-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.bento-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bento-row-small {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.bento-2-card {
+    position: relative;
+    background: linear-gradient(165deg, rgba(22, 24, 42, 0.92) 0%, rgba(14, 16, 28, 0.88) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition-sovereign);
+    text-decoration: none;
+    color: #fff !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    min-height: 350px;
+    z-index: 1;
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.4),
+        0 2px 0 rgba(255,255,255,0.03) inset,
+        0 -1px 0 rgba(0,0,0,0.5);
+}
+
+.bento-2-card.tall { min-height: 600px; }
+
+.bento-2-card:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+    border-top-color: rgba(255, 255, 255, 0.40);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 
+        0 30px 80px rgba(0,0,0,0.6), 
+        0 0 80px rgba(var(--aura-electric-rgb), 0.06),
+        0 2px 0 rgba(255,255,255,0.06) inset;
+}
+
+/* Premium inner glow on hover */
+.bento-2-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 100%, rgba(var(--aura-electric-rgb), 0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bento-2-card:hover::after {
+    opacity: 1;
+}
+
+.bento-2-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bento-2-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(to top, 
+        rgba(3,3,8,0.97) 0%, 
+        rgba(3,3,8,0.7) 40%, 
+        transparent 100%);
+    z-index: 1;
+}
+
+.bento-2-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+    filter: saturate(0.8);
+}
+
+.bento-2-card:hover .bento-2-bg img {
+    transform: scale(1.08);
+    filter: saturate(1);
+}
+
+.bento-2-content {
+    position: relative;
+    z-index: 2;
+}
+
+.bento-2-tag {
+    font-family: var(--font-main);
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* ============================================
+   COMMAND DASHBOARD — ELEVATED
+   ============================================ */
+
+.bento-title-display {
+    font-family: var(--font-main);
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    line-height: 0.85;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    -webkit-box-reflect: below 5px linear-gradient(transparent 50%, rgba(255, 255, 255, 0.12));
+    margin-bottom: 12rem;
+}
+
+.bento-title-display::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.08), 
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: titleShimmer 8s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes titleShimmer {
+    0% { left: -100%; }
+    20% { left: 150%; }
+    100% { left: 150%; }
+}
+
+.text-hollow {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+    transition: var(--transition-sovereign);
+}
+
+.text-glow {
+    color: var(--aura-electric);
+    text-shadow: 0 0 30px rgba(var(--aura-electric-rgb), 0.2);
+}
+
+.command-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(350px, auto));
+    gap: 1.2rem;
+    margin: 5rem 0;
+}
+
+.dashboard-card {
+    background: linear-gradient(160deg, rgba(22, 24, 40, 0.85) 0%, rgba(12, 14, 26, 0.80) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(40px) saturate(160%);
+    -webkit-backdrop-filter: blur(40px) saturate(160%);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-sovereign);
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.35),
+        0 2px 0 rgba(255,255,255,0.04) inset;
+}
+
+/* Ambient gradient */
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top left, var(--aura-electric), transparent 70%);
+    opacity: 0.03;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.dashboard-card:hover {
+    background: linear-gradient(160deg, rgba(28, 30, 50, 0.92) 0%, rgba(18, 20, 34, 0.88) 100%);
+    border-color: rgba(255, 255, 255, 0.28);
+    border-top-color: rgba(255, 255, 255, 0.38);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 24px 60px rgba(0,0,0,0.5), 
+        0 0 50px rgba(var(--aura-electric-rgb), 0.05),
+        0 2px 0 rgba(255,255,255,0.08) inset;
+}
+
+.dashboard-card:hover::before {
+    opacity: 0.06;
+}
+
+.dashboard-card.featured {
+    grid-column: span 2;
+    background: linear-gradient(145deg, rgba(25, 22, 40, 0.75) 0%, rgba(18, 16, 32, 0.6) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dashboard-card.image-card { padding: 0; }
+
+.dashboard-card.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: saturate(0.7);
+}
+
+.dashboard-card.image-card:hover img {
+    transform: scale(1.06);
+    opacity: 0.7;
+    filter: saturate(0.9);
+}
+
+.card-hud-label {
+    font-family: var(--font-main);
+    font-size: 0.5rem;
+    font-weight: 800;
+    letter-spacing: 0.5em;
+    color: var(--text-silver);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.card-title {
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--aura-white);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.card-body {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: var(--text-ash);
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+/* ============================================
+   TACTICAL ENVIRONMENT — ELEVATED
+   ============================================ */
+
+.services-bento-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--aura-black) 0%, rgba(6, 6, 16, 1) 50%, var(--aura-black) 100%);
+    padding: 14rem 0;
+}
+
+/* Premium grid pattern */
+.tactical-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 100px 100px;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 70% 50% at center, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 50% at center, black 20%, transparent 70%);
+}
+
+.radar-sweep {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, rgba(var(--aura-champagne-rgb), 0.015), transparent);
+    z-index: 0;
+    animation: radarSweep 15s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes radarSweep {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(1200%); }
+}
+
+.hud-coordinate {
+    position: absolute;
+    font-family: var(--font-main);
+    font-size: 0.45rem;
+    color: rgba(255, 255, 255, 0.07);
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hud-tl { top: 2rem; left: 2rem; }
+.hud-tr { top: 2rem; right: 2rem; }
+.hud-bl { bottom: 2rem; left: 2rem; }
+.hud-br { bottom: 2rem; right: 2rem; }
+
+.card-stat-group { margin-top: 2rem; }
+
+.card-stat {
+    font-family: var(--font-main);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--aura-white);
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.card-stat-label {
+    font-family: var(--font-main);
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-ash);
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* ============================================
+   RESPONSIVE — DASHBOARD
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .command-dashboard { grid-template-columns: 1fr 1fr; }
+    .dashboard-card.featured { grid-column: span 1; }
+}
+
+@media (max-width: 768px) {
+    .command-dashboard { grid-template-columns: 1fr; }
+}

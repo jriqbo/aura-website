@@ -1,0 +1,75 @@
+/* --- AURA Reset & Base Layer — ELEVATED --- */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-main);
+    background: #06060E;
+    background-image: 
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15, 18, 50, 0.5) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 90% 30%, rgba(201, 169, 110, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 50% at 10% 60%, rgba(30, 20, 60, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 45% 40% at 75% 85%, rgba(201, 169, 110, 0.03) 0%, transparent 45%);
+    color: var(--text-titanium);
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* Premium Noise Texture Overlay */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+}
+
+/* Custom Selection */
+::selection {
+    background: rgba(var(--aura-champagne-rgb), 0.3);
+    color: #fff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #06060E;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(var(--aura-champagne-rgb), 0.2), rgba(255,255,255,0.08));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(var(--aura-champagne-rgb), 0.4), rgba(255,255,255,0.15));
+}
+
+/* Links global */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
