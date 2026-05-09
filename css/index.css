@@ -654,10 +654,32 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.fade-in-slow {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.fade-in-slow.visible {
+  opacity: 1;
+}
+
+.magnetic {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @keyframes float {

@@ -15,3 +15,19 @@ desktop.ini
 # Logs
 *.log
 npm-debug.log*
+
+# Temp files
+scratch/
+temp_restore/
+temp_log.txt
+raw_step_*.json
+restore.js
+restore_original.py
+update_css.js
+stitch-ui.html
+
+# Root-level generated PNGs (keep img/ folder)
+/*.png
+
+# Agents (internal ops, not for production)
+.agents/

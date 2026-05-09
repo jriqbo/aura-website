@@ -66,7 +66,7 @@ function initBookingForm() {
       `Fecha: ${fecha} - Hora: ${hora}\n` +
       `Notas: ${comentarios}`;
 
-    const whatsappUrl = `https://wa.me/56900000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/56926151427?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     // Show success feedback
