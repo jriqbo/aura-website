@@ -61,6 +61,30 @@ const DIVISION_CONFIG = {
     }
 };
 
+/**
+ * Initialize Google Places Autocomplete for specific fields
+ */
+function initAutocomplete() {
+    const originInput = document.getElementById('direccion-origen');
+    if (originInput && typeof google !== 'undefined') {
+        const autocomplete = new google.maps.places.Autocomplete(originInput, {
+            componentRestrictions: { country: "cl" },
+            fields: ["address_components", "geometry", "icon", "name"],
+            types: ["address"]
+        });
+        
+        autocomplete.addListener("place_changed", () => {
+            const place = autocomplete.getPlace();
+            if (place.geometry) {
+                console.log('[AURA MAPS] Origen validado:', place.formatted_address);
+            }
+        });
+    }
+}
+
+// Global exposure for Google Maps callback
+window.initAutocomplete = initAutocomplete;
+
 document.addEventListener('DOMContentLoaded', () => {
     const quoteForms = document.querySelectorAll('form');
     
@@ -256,6 +280,11 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('click', () => setTimeout(updatePrices, 50));
     });
     updatePrices();
+
+    // Init Autocomplete if API is already loaded
+    if (typeof google !== 'undefined' && google.maps && google.maps.places) {
+        initAutocomplete();
+    }
 });
 
 /**
@@ -378,3 +407,4 @@ function showNotification(title, message, type) {
         setTimeout(() => notification.remove(), 500);
     }, 8000);
 }
+

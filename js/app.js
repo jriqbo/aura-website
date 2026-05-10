@@ -112,3 +112,4 @@ function initNavHighlight() {
 
   sections.forEach(section => observer.observe(section));
 }
+
