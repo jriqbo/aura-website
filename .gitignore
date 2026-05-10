@@ -26,8 +26,9 @@ restore_original.py
 update_css.js
 stitch-ui.html
 
-# Root-level generated PNGs (img/ folder is tracked)
+# Images — managed externally, not tracked in Git
+img/
 /*.png
 
-# Agents (internal ops, not for production)
+# Agents — internal ops only, not for production
 .agents/
