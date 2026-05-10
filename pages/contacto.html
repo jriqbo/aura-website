@@ -185,11 +185,67 @@
         </div>
       </div>
 
+
+      <!-- ======= FORMULARIO DE CONTACTO ======= -->
+      <div class="terminal-frame reveal" id="contact-form-section"
+           style="margin-top:60px;max-width:860px;margin-left:auto;margin-right:auto;">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span style="background:var(--aura-champagne);"></span><span></span><span></span>
+          </div>
+          <div class="terminal-title">FORMULARIO DE CONTACTO // TRANSMISIÓN SEGURA</div>
+          <div class="terminal-id">SCL-GEN-CONTACT</div>
+        </div>
+        <div class="terminal-main" style="padding:3rem;">
+          <div class="terminal-brand-header">
+            <span class="terminal-brand-aura">AURA</span>
+            <span class="terminal-brand-travel">TRAVEL</span>
+          </div>
+          <form id="contact-form" class="terminal-form" novalidate>
+            <div class="form-group">
+              <input type="text" id="c-nombre" name="nombre" placeholder=" " required autocomplete="name">
+              <label for="c-nombre">NOMBRE COMPLETO</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="c-email" name="email" placeholder=" " required autocomplete="email">
+              <label for="c-email">CORREO ELECTRÓNICO</label>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="c-telefono" name="telefono" placeholder=" " autocomplete="tel">
+              <label for="c-telefono">TELÉFONO / WHATSAPP</label>
+            </div>
+            <div class="form-group">
+              <select id="c-division" name="division" required>
+                <option value="" disabled selected></option>
+                <option value="CORPORATIVO">Corporativo</option>
+                <option value="TURISMO">Turismo</option>
+                <option value="SALUD">Salud / Diálisis</option>
+                <option value="AEROPUERTO">Aeropuerto</option>
+                <option value="EVENTOS">Eventos</option>
+                <option value="DELIVERY">Delivery</option>
+                <option value="DIPLOMATICO">Diplomático</option>
+                <option value="GENERAL">Consulta General</option>
+              </select>
+              <label for="c-division">DIVISIÓN DE INTERÉS</label>
+            </div>
+            <div class="form-group" style="grid-column:span 2;">
+              <textarea id="c-mensaje" name="mensaje" placeholder=" " required rows="4"></textarea>
+              <label for="c-mensaje">MENSAJE / DETALLE DE REQUERIMIENTO</label>
+            </div>
+            <div id="contact-feedback" style="grid-column:span 2;display:none;padding:1rem;border-radius:8px;font-size:0.8rem;font-family:var(--font-main);letter-spacing:0.05em;"></div>
+            <button type="submit" id="contact-submit" class="btn-terminal-submit">
+              <i class="fas fa-paper-plane" style="margin-right:8px;"></i>TRANSMITIR SOLICITUD
+            </button>
+          </form>
+        </div>
+      </div>
+
       <!-- Cobertura -->
       <div style="text-align: center; margin-top: 60px;" class="reveal">
         <span class="section-label" style="color: var(--aura-champagne);">Cobertura</span>
         <h2 class="section-title" style="margin-top: 12px; font-size: clamp(1.5rem, 3vw, 2.5rem);">Santiago · Viña del Mar · Valparaíso · Todo Chile</h2>
       </div>
+
     </div>
   </section>
 
@@ -235,5 +291,98 @@
   </footer>
 
   <script src="../js/aura-core.js"></script>
+  <script>
+  (function () {
+    var WEBHOOK = 'https://hook.us2.make.com/t9mp19gn6el6pw33pd5q8gwtetnncdal';
+    var WA_NUM  = '56926151427';
+
+    var form     = document.getElementById('contact-form');
+    var btn      = document.getElementById('contact-submit');
+    var feedback = document.getElementById('contact-feedback');
+
+    if (!form) return;
+
+    function showFeedback(msg, isError) {
+      feedback.textContent = msg;
+      feedback.style.display = 'block';
+      feedback.style.background = isError
+        ? 'rgba(239,68,68,0.08)' : 'rgba(16,185,129,0.08)';
+      feedback.style.border = '1px solid ' + (isError
+        ? 'rgba(239,68,68,0.25)' : 'rgba(16,185,129,0.25)');
+      feedback.style.color = isError ? '#ef4444' : '#10b981';
+    }
+
+    function setBtnState(loading) {
+      btn.disabled = loading;
+      btn.innerHTML = loading
+        ? '<i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i>TRANSMITIENDO...'
+        : '<i class="fas fa-paper-plane" style="margin-right:8px;"></i>TRANSMITIR SOLICITUD';
+    }
+
+    function buildWAMessage(data) {
+      var ts = new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' });
+      return '🚐 *AURA TRAVEL — Contacto Web*\n'
+        + '━━━━━━━━━━━━━━━━━━━━━━\n'
+        + '👤 *Nombre:* '    + (data.nombre   || '-') + '\n'
+        + '📧 *Email:* '     + (data.email    || '-') + '\n'
+        + '📱 *Teléfono:* '  + (data.telefono || '-') + '\n'
+        + '🎯 *División:* '  + (data.division || 'General') + '\n'
+        + '📝 *Mensaje:* '   + (data.mensaje  || '-') + '\n'
+        + '━━━━━━━━━━━━━━━━━━━━━━\n'
+        + '🕐 ' + ts + '\n'
+        + '_Formulario contacto — auratravel.cl_';
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      feedback.style.display = 'none';
+
+      var data = {
+        nombre:   form.nombre.value.trim(),
+        email:    form.email.value.trim(),
+        telefono: form.telefono.value.trim(),
+        division: form.division.value,
+        mensaje:  form.mensaje.value.trim(),
+        _source:  'contacto.html',
+        _division: form.division.value || 'GENERAL',
+        _leadId:  'SCL-GEN-' + Date.now().toString(36).toUpperCase(),
+        _timestamp: new Date().toISOString()
+      };
+
+      // Validación mínima
+      if (!data.nombre || !data.email || !data.mensaje) {
+        showFeedback('⚠ Completa Nombre, Email y Mensaje para continuar.', true);
+        return;
+      }
+
+      setBtnState(true);
+
+      // 1) Enviar al webhook (no-cors → no hay respuesta legible, pero llega)
+      fetch(WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        mode: 'no-cors'
+      })
+      .catch(function () { /* silencioso — no-cors siempre lanza en fetch */ })
+      .finally(function () {
+        // 2) Abrir WhatsApp con el mensaje formateado
+        var msg = buildWAMessage(data);
+        setTimeout(function () {
+          window.open('https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(msg), '_blank');
+        }, 800);
+
+        showFeedback('✅ Solicitud enviada. Se abrirá WhatsApp para confirmar con nuestro equipo. ID: ' + data._leadId, false);
+        form.reset();
+        setBtnState(false);
+
+        // Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submit', { event_category: 'lead', event_label: 'contacto', lead_id: data._leadId });
+        }
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
