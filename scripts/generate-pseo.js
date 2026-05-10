@@ -17,11 +17,11 @@ const r = [
     distancia: '65 km',
     altitud: '3.025',
     icon: '<i class="fas fa-snowflake"></i>',
-    img_1: '../../img/home/aura_hero_portillo_suv_1777816891017.png',
-    img_2: '../../img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
-    img_3: '../../img/home/aura_luxury_van_andes_sunset_1777851568919.png',
-    img_4: '../../img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
-    img_5: '../../img/home/aura_luxury_andes_sunset_gold_1777850731239.png'
+    img_1: '/img/home/aura_hero_portillo_suv_1777816891017.png',
+    img_2: '/img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
+    img_3: '/img/home/aura_luxury_van_andes_sunset_1777851568919.png',
+    img_4: '/img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
+    img_5: '/img/home/aura_luxury_andes_sunset_gold_1777850731239.png'
   },
   { 
     id: 'transfer-santiago-portillo', 
@@ -35,11 +35,11 @@ const r = [
     distancia: '160 km',
     altitud: '2.880',
     icon: '<i class="fas fa-mountain"></i>',
-    img_1: '../../img/home/aura_hero_portillo_suv_1777816891017.png',
-    img_2: '../../img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
-    img_3: '../../img/home/aura_luxury_van_andes_sunset_1777851568919.png',
-    img_4: '../../img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
-    img_5: '../../img/home/aura_luxury_andes_sunset_gold_1777850731239.png'
+    img_1: '/img/home/aura_hero_portillo_suv_1777816891017.png',
+    img_2: '/img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
+    img_3: '/img/home/aura_luxury_van_andes_sunset_1777851568919.png',
+    img_4: '/img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
+    img_5: '/img/home/aura_luxury_andes_sunset_gold_1777850731239.png'
   },
   { 
     id: 'transfer-santiago-farellones', 
@@ -53,11 +53,11 @@ const r = [
     distancia: '50 km',
     altitud: '2.400',
     icon: '<i class="fas fa-snowflake"></i>',
-    img_1: '../../img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
-    img_2: '../../img/home/aura_luxury_van_andes_sunset_1777851568919.png',
-    img_3: '../../img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
-    img_4: '../../img/home/aura_luxury_van_andes_sunset_1777851568919.png',
-    img_5: '../../img/home/aura_luxury_andes_sunset_gold_1777850731239.png'
+    img_1: '/img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
+    img_2: '/img/home/aura_luxury_van_andes_sunset_1777851568919.png',
+    img_3: '/img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png',
+    img_4: '/img/home/aura_luxury_van_andes_sunset_1777851568919.png',
+    img_5: '/img/home/aura_luxury_andes_sunset_gold_1777850731239.png'
   },
   { 
     id: 'transfer-aeropuerto-la-florida', 
@@ -180,11 +180,11 @@ r.forEach(x => {
   x.form_id = `form-${x.id}`;
   
   // Default images if not provided
-  if (!x.img_1) x.img_1 = '../../img/home/aura_supreme_hero_night_motion_8k_gold_1777938401922.png';
-  if (!x.img_2) x.img_2 = '../../img/home/aura_luxury_van_airport_night_1777851584322.png';
-  if (!x.img_3) x.img_3 = '../../img/home/aura_hero_executive_interior_1777815946299.png';
-  if (!x.img_4) x.img_4 = '../../img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png';
-  if (!x.img_5) x.img_5 = '../../img/home/aura_fleet_night_8k_1778058439627.png';
+  if (!x.img_1) x.img_1 = '/img/home/aura_supreme_hero_night_motion_8k_gold_1777938401922.png';
+  if (!x.img_2) x.img_2 = '/img/home/aura_luxury_van_airport_night_1777851584322.png';
+  if (!x.img_3) x.img_3 = '/img/home/aura_hero_executive_interior_1777815946299.png';
+  if (!x.img_4) x.img_4 = '/img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.png';
+  if (!x.img_5) x.img_5 = '/img/home/aura_fleet_night_8k_1778058439627.png';
 
   // Replace placeholders
   Object.keys(x).forEach(k => {
@@ -206,5 +206,6 @@ s += `</urlset>`;
 
 fs.writeFileSync(path.join(__dirname, '..', 'sitemap.xml'), s);
 console.log('✅ pSEO pages generated and Sitemap updated.');
+
 
 
