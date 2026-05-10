@@ -19,6 +19,11 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/pages/dialisis.html", "destination": "/pages/salud.html", "permanent": true },
+    { "source": "/pages/salud-dialisis.html", "destination": "/pages/salud.html", "permanent": true },
+    { "source": "/dialisis", "destination": "/pages/salud.html", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/corporativo", "destination": "/pages/corporativo.html" },
     { "source": "/salud", "destination": "/pages/salud.html" },
@@ -26,7 +31,6 @@
     { "source": "/eventos", "destination": "/pages/eventos.html" },
     { "source": "/aeropuerto", "destination": "/pages/aeropuerto.html" },
     { "source": "/delivery", "destination": "/pages/delivery.html" },
-    { "source": "/dialisis", "destination": "/pages/dialisis.html" },
     { "source": "/transfer-aeropuerto", "destination": "/pages/transfer-aeropuerto.html" },
     { "source": "/transfer-valle-nevado", "destination": "/pages/rutas/transfer-santiago-valle-nevado.html" },
     { "source": "/transfer-portillo", "destination": "/pages/rutas/transfer-santiago-portillo.html" },
