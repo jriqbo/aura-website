@@ -151,6 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
             data._utm_medium = urlParams.get('utm_medium') || '';
             data._utm_campaign = urlParams.get('utm_campaign') || '';
             
+            const email = (data.email || '').toLowerCase();
+            data.lead_type = (!email.includes('@gmail.com') && !email.includes('@yahoo.com') && !email.includes('@hotmail.com')) ? 'CORPORATIVO B2B' : 'PARTICULAR';
+            
             console.log(`[AURA] form_submit | ${division} | ${leadId}`);
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'form_submit', { event_category: 'lead', event_label: division, lead_id: leadId });
@@ -230,18 +233,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updatePrices() {
         const div = detectDivision();
-        const p = pricing[div] || pricing['GENERAL'];
+        let p = [...(pricing[div] || pricing['GENERAL'])];
+        
+        const hour = new Date().getHours();
+        if (hour >= 22 || hour < 6) p = p.map(x => x * 1.3);
+
+        const dest = (document.querySelector('[name="destino"]') || {value:''}).value.toLowerCase();
+        const mountain = ['valle nevado', 'portillo', 'farellones'].some(m => dest.includes(m));
+        if (mountain) p = p.map(x => x + 15000);
+
         const container = document.querySelector('.terminal-pricing-display');
         if (!container) return;
         container.innerHTML = `
-            <div class="price-tier"><span>EJECUTIVO</span><strong>$${p[0].toLocaleString()}</strong></div>
-            <div class="price-tier featured"><span>PREMIUM</span><strong>$${p[1].toLocaleString()}</strong></div>
-            <div class="price-tier"><span>DIPLOMATIC</span><strong>$${p[2].toLocaleString()}</strong></div>
+            <div class="price-tier"><span>EJECUTIVO</span><strong>$${Math.round(p[0]).toLocaleString()}</strong></div>
+            <div class="price-tier featured"><span>PREMIUM</span><strong>$${Math.round(p[1]).toLocaleString()}</strong></div>
+            <div class="price-tier"><span>DIPLOMATIC</span><strong>$${Math.round(p[2]).toLocaleString()}</strong></div>
         `;
     }
 
-    document.querySelectorAll('.t-nav-btn').forEach(btn => {
-        btn.addEventListener('click', () => setTimeout(updatePrices, 50));
+    document.querySelectorAll('.t-nav-btn, input[name="destino"]').forEach(el => {
+        el.addEventListener('change', updatePrices);
+        el.addEventListener('click', () => setTimeout(updatePrices, 50));
     });
     updatePrices();
 });

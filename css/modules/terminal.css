@@ -614,6 +614,7 @@
     font-size: 1.2rem;
     color: #fff;
     font-weight: 300;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .price-tier.featured strong {
