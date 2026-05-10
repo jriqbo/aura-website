@@ -7,7 +7,16 @@
     "dev": "npx http-server . -p 8080 -o",
     "start": "npx http-server . -p 8080"
   },
-  "keywords": ["transporte", "ejecutivo", "chile", "diálisis", "diplomático"],
+  "keywords": [
+    "transporte",
+    "ejecutivo",
+    "chile",
+    "diálisis",
+    "diplomático"
+  ],
   "author": "AURA Travel",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
 }

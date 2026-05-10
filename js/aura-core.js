@@ -511,8 +511,8 @@ function initDestinationImageRotation() {
 
     cardImages.forEach((img, index) => {
         const src = img.getAttribute('src') || '';
-        // Match pattern: .../turismo/<basename>_<suffix>.png
-        const match = src.match(/\/([a-z_]+)_(\w+)\.png$/);
+        // Match pattern: .../turismo/<basename>_<suffix>.webp
+        const match = src.match(/\/([a-z_]+)_(\w+)\.webp$/);
         if (!match) return;
 
         const base = match[1]; // e.g. 'torres_paine'
@@ -526,7 +526,7 @@ function initDestinationImageRotation() {
         setInterval(() => {
             currentIndex = (currentIndex + 1) % variants.length;
             const dir = src.substring(0, src.lastIndexOf('/') + 1);
-            const newSrc = `${dir}${base}${variants[currentIndex]}.png`;
+            const newSrc = `${dir}${base}${variants[currentIndex]}.webp`;
 
             // Smooth crossfade: fade out → swap src → fade in
             img.style.transition = 'opacity 0.8s ease';
