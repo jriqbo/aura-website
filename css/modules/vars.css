@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Ethnocentric';
-    src: url('../../fonts/ethnocentric/Ethnocentric-Regular.otf') format('opentype');
+    src: url('/fonts/ethnocentric/Ethnocentric-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -75,4 +75,5 @@
     --radius-xl: 32px;
     --radius-pill: 100px;
 }
+
 
