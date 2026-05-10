@@ -408,3 +408,4 @@ function showNotification(title, message, type) {
     }, 8000);
 }
 
+
