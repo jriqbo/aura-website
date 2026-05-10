@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transfer Santiago a Valle Colchagua — Tour Vino VIP | AURA TRAVEL</title>
-    <meta name="description" content="Transfer premium Santiago a Valle de Colchagua. Visita bodegas Santa Cruz, Neyen y Montes. Van ejecutiva con sommelier concierge. Reserve su tour de vino 2026.">
-    <link rel="canonical" href="https://auratravel.cl/pages/rutas/transfer-santiago-colchagua.html">
+    <title>Transfer Santiago a Colchagua | AURA TRAVEL</title>
+    <meta name="description" content="Tour de vino VIP al Valle de Colchagua.">
+    <link rel="canonical" href="{{canonical}}">
     <link rel="icon" type="image/png" href="../../favicon.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://auratravel.cl/pages/rutas/transfer-santiago-colchagua.html">
+    <meta property="og:url" content="{{canonical}}">
     <meta property="og:title" content="Transfer Santiago → Valle de Colchagua — AURA TRAVEL">
-    <meta property="og:description" content="Transfer premium Santiago a Valle de Colchagua. Visita bodegas Santa Cruz, Neyen y Montes. Van ejecutiva con sommelier concierge. Reserve su tour de vino 2026.">
+    <meta property="og:description" content="Tour de vino VIP al Valle de Colchagua.">
     <link rel="stylesheet" href="../../css/aura.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="application/ld+json">
     [{
         "@context": "https://schema.org",
-        "@type": "TouristTrip",
+        "@type": "{{schema_type}}",
         "name": "Transfer Santiago a Valle de Colchagua — AURA Travel",
-        "description": "Transfer premium Santiago a Valle de Colchagua. Visita bodegas Santa Cruz, Neyen y Montes. Van ejecutiva con sommelier concierge. Reserve su tour de vino 2026.",
+        "description": "Tour de vino VIP al Valle de Colchagua.",
         "provider": {"@type": "Organization", "name": "AURA Travel", "telephone": "+56926151427"},
         "offers": {
             "@type": "Offer",
-            "price": "95000",
+            "price": "{{precio_num}}",
             "priceCurrency": "CLP",
             "availability": "https://schema.org/InStock"
         }
@@ -71,30 +71,30 @@
 
     <section class="hero-command" id="inicio">
         <div class="hero-slider">
-            <img src="../../img/turismo/colchagua_1.png" alt="Valle de Colchagua Chile Transfer VIP">
-            <img loading="lazy" src="../../img/turismo/colchagua_2.png" alt="Valle de Colchagua panorámica">
-            <img loading="lazy" src="../../img/turismo/colchagua_3.png" alt="Valle de Colchagua paisaje">
-            <img loading="lazy" src="../../img/turismo/colchagua_van.png" alt="AURA Van en Valle de Colchagua">
-            <img loading="lazy" src="../../img/turismo/hero_turismo_4.png" alt="Transfer premium Valle de Colchagua">
+            <img src="{{img_1}}" alt="Valle de Colchagua Chile Transfer VIP">
+            <img loading="lazy" src="{{img_2}}" alt="Valle de Colchagua panorámica">
+            <img loading="lazy" src="{{img_3}}" alt="Valle de Colchagua paisaje">
+            <img loading="lazy" src="{{img_4}}" alt="AURA Van en Valle de Colchagua">
+            <img loading="lazy" src="{{img_5}}" alt="Transfer premium Valle de Colchagua">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-hud-minimal">
             <span class="hud-label">Ruta Activa</span>
-            <span class="hud-value glow-text">SCL → COLCHAGUA</span>
+            <span class="hud-value glow-text">{{hud_ruta}}</span>
         </div>
         <div class="container">
             <div class="hero-content reveal">
-                <span class="bento-2-tag">RUTA SCL → COLCHAGUA // Tour de Vino · Cosecha 2026</span>
+                <span class="bento-2-tag">RUTA {{hud_ruta}} // {{temporada}}</span>
                 <h1 class="hero-display">
                     <span class="brand-main">TRANSFER</span>
-                    <span class="brand-sub">VALLE DE COLCHAGUA</span>
-                    <span class="hero-status-tag">🍷 VAN PREMIUM · Tour de Vino · Cosecha 2026</span>
+                    <span class="brand-sub">{{destino_upper}}</span>
+                    <span class="hero-status-tag">{{icon}} VAN PREMIUM · {{temporada}}</span>
                 </h1>
                 <p class="hero-tagline">Traslado ejecutivo desde Santiago a Valle de Colchagua. Van premium con conductor dedicado, WiFi y calefacción de lujo. Reserva anticipada con tarifa preferencial.</p>
                 <div class="route-hero-stats">
-                    <div class="route-stat"><span class="route-stat-value">150'</span><span class="route-stat-label">Tiempo de Viaje</span></div>
-                    <div class="route-stat"><span class="route-stat-value">180km</span><span class="route-stat-label">Distancia</span></div>
-                    <div class="route-stat"><span class="route-stat-value">350</span><span class="route-stat-label">Altitud msnm</span></div>
+                    <div class="route-stat"><span class="route-stat-value">{{tiempo}}</span><span class="route-stat-label">Tiempo de Viaje</span></div>
+                    <div class="route-stat"><span class="route-stat-value">{{distancia}}</span><span class="route-stat-label">Distancia</span></div>
+                    <div class="route-stat"><span class="route-stat-value">{{altitud}}</span><span class="route-stat-label">Altitud msnm</span></div>
                 </div>
                 <div class="hero-actions">
                     <a href="#reserva" class="btn-luxury-mission"><span>RESERVAR TRANSFER</span><i class="fas fa-arrow-right"></i></a>
@@ -113,7 +113,7 @@
             <div class="route-detail-grid reveal">
                 <div class="route-detail">
                     <h3><i class="fas fa-route"></i> La Ruta</h3>
-                    <p>Traslado directo desde Santiago a Valle de Colchagua. Conductor profesional con experiencia en ruta y conocimiento del destino. 150' de viaje en total.</p>
+                    <p>Traslado directo desde Santiago a Valle de Colchagua. Conductor profesional con experiencia en ruta y conocimiento del destino. {{tiempo}} de viaje en total.</p>
                 </div>
                 <div class="route-detail">
                     <h3><i class="fas fa-clock"></i> Horario Flexible</h3>
@@ -169,8 +169,8 @@
             <div class="terminal-frame reveal">
                 <div class="terminal-header">
                     <div class="terminal-dots"><span></span><span></span><span></span></div>
-                    <div class="terminal-title">AURA // RUTA SCL → COLCHAGUA // RESERVA DIRECTA</div>
-                    <div class="terminal-id">ID: SCL-COL-2026</div>
+                    <div class="terminal-title">AURA // RUTA {{hud_ruta}} // RESERVA DIRECTA</div>
+                    <div class="terminal-id">ID: {{terminal_id}}</div>
                     <div class="terminal-progress-container"><div class="terminal-progress-bar" id="terminalProgress"></div></div>
                 </div>
                 <div class="terminal-body">
@@ -183,7 +183,7 @@
                     </div>
                     <div class="terminal-main">
                         <div class="terminal-brand-header"><span class="terminal-brand-aura">AURA</span><span class="terminal-brand-travel">TRAVEL</span></div>
-                        <form class="terminal-form" id="colchaguaForm">
+                        <form class="terminal-form" id="{{form_id}}">
                             <div class="form-group"><input type="text" name="nombre" placeholder=" " required><label>NOMBRE COMPLETO</label></div>
                             <div class="form-group"><input type="email" name="email" placeholder=" " required><label>EMAIL</label></div>
                             <div class="form-group"><input type="tel" name="telefono" placeholder=" " required><label>WHATSAPP / TELÉFONO</label></div>
@@ -197,7 +197,7 @@
                                 <input type="text" name="ruta_display" value="Santiago → Valle de Colchagua" readonly style="opacity:0.5;cursor:not-allowed;">
                                 <label>RUTA SELECCIONADA</label>
                             </div>
-                            <button type="submit" class="btn-terminal-submit"><span>RESERVAR TRANSFER VALLE DE COLCHAGUA</span></button>
+                            <button type="submit" class="btn-terminal-submit"><span>RESERVAR TRANSFER {{destino_upper}}</span></button>
                         </form>
                     </div>
                 </div>

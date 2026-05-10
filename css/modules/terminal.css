@@ -583,3 +583,40 @@
         width: auto;
     }
 }
+
+.terminal-pricing-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(20px);
+}
+
+.price-tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-tier span {
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--text-titanium);
+    font-weight: 800;
+}
+
+.price-tier strong {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+.price-tier.featured strong {
+    color: var(--aura-gold);
+    text-shadow: 0 0 15px rgba(201, 169, 110, 0.3);
+}

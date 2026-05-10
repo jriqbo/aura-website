@@ -3,32 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transfer Santiago a Valle Nevado — Van VIP con Cadenas | AURA TRAVEL</title>
-    <meta name="description" content="Transfer ejecutivo Santiago a Valle Nevado. Van premium con cadenas, WiFi y conductor todo el día. 90 min desde Santiago. Temporada de Nieve 2026. Reserve ahora.">
+    <title>Transfer Santiago a Valle Nevado | Aura Travel</title>
+    <meta name="description" content="Transporte de lujo y transfer privado a Valle Nevado. Flota ejecutiva.">
+    <link rel="canonical" href="{{canonical}}">
     <link rel="icon" type="image/png" href="../../favicon.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://auratravel.cl/transfer-valle-nevado">
+    <meta property="og:url" content="{{canonical}}">
     <meta property="og:title" content="Transfer Santiago → Valle Nevado — AURA TRAVEL">
-    <meta property="og:description" content="Van VIP con cadenas, WiFi y conductor esperando todo el día. Temporada Nieve 2026.">
+    <meta property="og:description" content="Transporte de lujo y transfer privado a Valle Nevado. Flota ejecutiva.">
     <link rel="stylesheet" href="../../css/aura.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="application/ld+json">
     [{
         "@context": "https://schema.org",
-        "@type": "TouristTrip",
+        "@type": "{{schema_type}}",
         "name": "Transfer Santiago a Valle Nevado — AURA Travel",
-        "description": "Traslado VIP desde Santiago a Valle Nevado. Van premium con cadenas, conductor todo el día.",
-        "touristType": "Ski Tourism",
+        "description": "Transporte de lujo y transfer privado a Valle Nevado. Flota ejecutiva.",
         "provider": {"@type": "Organization", "name": "AURA Travel", "telephone": "+56926151427"},
-        "itinerary": {
-            "@type": "ItemList",
-            "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Recogida en hotel/residencia Santiago"},
-                {"@type": "ListItem", "position": 2, "name": "Traslado por Ruta G-21 (90 min)"},
-                {"@type": "ListItem", "position": 3, "name": "Llegada a Valle Nevado (3.025 msnm)"},
-                {"@type": "ListItem", "position": 4, "name": "Conductor esperando todo el día"},
-                {"@type": "ListItem", "position": 5, "name": "Retorno a Santiago"}
-            ]
+        "offers": {
+            "@type": "Offer",
+            "price": "{{precio_num}}",
+            "priceCurrency": "CLP",
+            "availability": "https://schema.org/InStock"
         }
     }]
     </script>
@@ -75,61 +71,61 @@
 
     <section class="hero-command" id="inicio">
         <div class="hero-slider">
-            <img src="../../img/turismo/valle_nevado_1.png" alt="Valle Nevado Chile Transfer VIP">
-            <img loading="lazy" src="../../img/turismo/valle_nevado_2.png" alt="Valle Nevado Ski Resort">
-            <img loading="lazy" src="../../img/turismo/valle_nevado_3.png" alt="Valle Nevado Panorámica">
-            <img loading="lazy" src="../../img/turismo/valle_nevado_van.png" alt="AURA Van en Valle Nevado">
-            <img loading="lazy" src="../../img/turismo/hero_turismo_1.png" alt="Nieve Andes Chile">
+            <img src="{{img_1}}" alt="Valle Nevado Chile Transfer VIP">
+            <img loading="lazy" src="{{img_2}}" alt="Valle Nevado panorámica">
+            <img loading="lazy" src="{{img_3}}" alt="Valle Nevado paisaje">
+            <img loading="lazy" src="{{img_4}}" alt="AURA Van en Valle Nevado">
+            <img loading="lazy" src="{{img_5}}" alt="Transfer premium Valle Nevado">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-hud-minimal">
             <span class="hud-label">Ruta Activa</span>
-            <span class="hud-value glow-text">SCL → VALLE NEVADO</span>
+            <span class="hud-value glow-text">{{hud_ruta}}</span>
         </div>
         <div class="container">
             <div class="hero-content reveal">
-                <span class="bento-2-tag">RUTA SANTIAGO → VALLE NEVADO // TEMPORADA 2026</span>
+                <span class="bento-2-tag">RUTA {{hud_ruta}} // {{temporada}}</span>
                 <h1 class="hero-display">
                     <span class="brand-main">TRANSFER</span>
-                    <span class="brand-sub">VALLE NEVADO</span>
-                    <span class="hero-status-tag">❄️ VAN PREMIUM CON CADENAS · JUNIO — SEPTIEMBRE</span>
+                    <span class="brand-sub">{{destino_upper}}</span>
+                    <span class="hero-status-tag">{{icon}} VAN PREMIUM · {{temporada}}</span>
                 </h1>
-                <p class="hero-tagline">Traslado ejecutivo desde Santiago a Valle Nevado. Van equipada con cadenas, WiFi y calefacción premium. Conductor esperando todo el día. 90 minutos desde su hotel.</p>
+                <p class="hero-tagline">Traslado ejecutivo desde Santiago a Valle Nevado. Van premium con conductor dedicado, WiFi y calefacción de lujo. Reserva anticipada con tarifa preferencial.</p>
                 <div class="route-hero-stats">
-                    <div class="route-stat"><span class="route-stat-value">90'</span><span class="route-stat-label">Tiempo de Viaje</span></div>
-                    <div class="route-stat"><span class="route-stat-value">3.025</span><span class="route-stat-label">Altitud msnm</span></div>
-                    <div class="route-stat"><span class="route-stat-value">60km</span><span class="route-stat-label">Distancia</span></div>
+                    <div class="route-stat"><span class="route-stat-value">{{tiempo}}</span><span class="route-stat-label">Tiempo de Viaje</span></div>
+                    <div class="route-stat"><span class="route-stat-value">{{distancia}}</span><span class="route-stat-label">Distancia</span></div>
+                    <div class="route-stat"><span class="route-stat-value">{{altitud}}</span><span class="route-stat-label">Altitud msnm</span></div>
                 </div>
                 <div class="hero-actions">
-                    <a href="#reserva" class="btn-luxury-mission"><span>RESERVAR TRANSFER</span><i class="fas fa-snowflake"></i></a>
+                    <a href="#reserva" class="btn-luxury-mission"><span>RESERVAR TRANSFER</span><i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
-        <div class="scroll-protocol"><span class="scroll-text">VER DETALLES</span><div class="scroll-line"><div class="scroll-dot" style="background: var(--aura-gold); box-shadow: 0 0 10px var(--aura-gold);"></div></div></div>
+        <div class="scroll-protocol"><span class="scroll-text">VER DETALLES</span><div class="scroll-line"><div class="scroll-dot" style="background:var(--aura-gold);box-shadow:0 0 10px var(--aura-gold);"></div></div></div>
     </section>
 
     <section class="section">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Detalles de la Ruta</span>
-                <h2 class="section-title">Santiago → <br><span style="color: var(--aura-gold);">Valle Nevado.</span></h2>
+                <h2 class="section-title">Santiago → <br><span style="color:var(--aura-gold);">Valle Nevado.</span></h2>
             </div>
             <div class="route-detail-grid reveal">
                 <div class="route-detail">
-                    <h3><i class="fas fa-route"></i> Ruta G-21</h3>
-                    <p>Subida por la Ruta G-21 desde Lo Barnechea. Camino pavimentado con 40 curvas. En temporada de nieve, cadenas obligatorias (incluidas en nuestro servicio).</p>
+                    <h3><i class="fas fa-route"></i> La Ruta</h3>
+                    <p>Traslado directo desde Santiago a Valle Nevado. Conductor profesional con experiencia en ruta y conocimiento del destino. {{tiempo}} de viaje en total.</p>
                 </div>
                 <div class="route-detail">
-                    <h3><i class="fas fa-clock"></i> Horario Recomendado</h3>
-                    <p>Salida: 7:00 — 8:00 AM para evitar tráfico. Retorno: 16:00 — 17:00. Conductor esperando todo el día en el resort.</p>
+                    <h3><i class="fas fa-clock"></i> Horario Flexible</h3>
+                    <p>Salida a la hora que usted defina. Conductor esperando en destino todo el tiempo necesario. Retorno sin restricciones de horario.</p>
                 </div>
                 <div class="route-detail">
-                    <h3><i class="fas fa-mountain"></i> Valle Nevado Resort</h3>
-                    <p>El centro de ski más grande de Sudamérica. 37 pistas, snowboard, heliskí. 3 hoteles y 10+ restaurantes en altura.</p>
+                    <h3><i class="fas fa-star"></i> Valle Nevado</h3>
+                    <p>Uno de los destinos más exclusivos de Chile. Experiencia premium garantizada con AURA Travel desde 120.000 por servicio completo.</p>
                 </div>
                 <div class="route-detail">
-                    <h3><i class="fas fa-shield-alt"></i> Seguridad</h3>
-                    <p>Cadenas profesionales montadas. Conductor con experiencia en ruta de montaña. Vehículo con tracción y neumáticos de invierno.</p>
+                    <h3><i class="fas fa-shield-alt"></i> Seguridad Total</h3>
+                    <p>Conductor certificado, vehículo equipado para la ruta y asistencia 24/7. Protocolo AURA de seguridad activo en todo momento.</p>
                 </div>
             </div>
         </div>
@@ -139,33 +135,19 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Servicio Incluido</span>
-                <h2 class="section-title">Todo <br><span style="color: var(--aura-gold);">Incluido.</span></h2>
+                <h2 class="section-title">Todo <br><span style="color:var(--aura-gold);">Incluido.</span></h2>
             </div>
             <div class="route-included reveal">
                 <ul>
                     <li>Recogida en hotel o residencia en Santiago</li>
-                    <li>Van premium con cadenas incluidas</li>
+                    <li>Van premium con conductor dedicado</li>
                     <li>WiFi y cargadores USB a bordo</li>
-                    <li>Agua mineral y snacks</li>
-                    <li>Calefacción premium</li>
-                    <li>Conductor esperando todo el día</li>
-                    <li>Parada para almuerzo en ruta (opcional)</li>
+                    <li>Agua mineral y snacks de bienvenida</li>
+                    <li>Calefacción y climatización premium</li>
+                    <li>Conductor esperando en Valle Nevado</li>
+                    <li>Asistencia WhatsApp durante el viaje</li>
                     <li>Retorno a Santiago cuando usted decida</li>
                 </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="social-proof-bar reveal">
-        <div class="container">
-            <div class="proof-stats">
-                <div class="proof-stat"><span class="proof-number" data-count="1200" data-suffix="+">0+</span><span class="proof-label">Traslados a Valle Nevado</span></div>
-                <div class="proof-divider"></div>
-                <div class="proof-stat"><span class="proof-number" data-count="90" data-suffix=" min">0 min</span><span class="proof-label">Tiempo de Viaje</span></div>
-                <div class="proof-divider"></div>
-                <div class="proof-stat"><span class="proof-number" data-count="5" data-suffix="★">0★</span><span class="proof-label">Satisfacción</span></div>
-                <div class="proof-divider"></div>
-                <div class="proof-stat"><span class="proof-number" data-count="37" data-suffix="+">0+</span><span class="proof-label">Pistas Disponibles</span></div>
             </div>
         </div>
     </section>
@@ -174,10 +156,10 @@
         <div class="container">
             <div class="mid-cta-card">
                 <div class="mid-cta-content">
-                    <h3>La temporada 2026 comienza en junio.</h3>
-                    <p>Reserve su transfer VIP a Valle Nevado con tarifa preferencial. Cupos limitados por flota.</p>
+                    <h3>Asegure su traslado a Valle Nevado.</h3>
+                    <p>Cupos limitados por flota. Precio desde <strong style="color:var(--aura-gold);">120.000</strong> por servicio completo.</p>
                 </div>
-                <a href="#reserva" class="btn-luxury-mission magnetic" style="background: var(--aura-gold); border-color: var(--aura-gold); color: #0a0a0f;"><span>RESERVAR AHORA</span><i class="fas fa-snowflake"></i></a>
+                <a href="#reserva" class="btn-luxury-mission magnetic" style="background:var(--aura-gold);border-color:var(--aura-gold);color:#0a0a0f;"><span>RESERVAR AHORA</span><i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -187,34 +169,35 @@
             <div class="terminal-frame reveal">
                 <div class="terminal-header">
                     <div class="terminal-dots"><span></span><span></span><span></span></div>
-                    <div class="terminal-title">AURA // RUTA VALLE NEVADO // RESERVA DIRECTA</div>
-                    <div class="terminal-id">ID: SCL-VN-2026</div>
+                    <div class="terminal-title">AURA // RUTA {{hud_ruta}} // RESERVA DIRECTA</div>
+                    <div class="terminal-id">ID: {{terminal_id}}</div>
                     <div class="terminal-progress-container"><div class="terminal-progress-bar" id="terminalProgress"></div></div>
                 </div>
                 <div class="terminal-body">
                     <div class="terminal-sidebar">
                         <div class="terminal-nav">
-                            <button class="t-nav-btn active" style="border-left-color: var(--aura-gold);">SKI DAY</button>
+                            <button class="t-nav-btn active" style="border-left-color:var(--aura-gold);">INDIVIDUAL</button>
                             <button class="t-nav-btn">GRUPO</button>
                             <button class="t-nav-btn">PAQUETE</button>
                         </div>
                     </div>
                     <div class="terminal-main">
                         <div class="terminal-brand-header"><span class="terminal-brand-aura">AURA</span><span class="terminal-brand-travel">TRAVEL</span></div>
-                        <form class="terminal-form" id="valleNevadoForm">
+                        <form class="terminal-form" id="{{form_id}}">
                             <div class="form-group"><input type="text" name="nombre" placeholder=" " required><label>NOMBRE COMPLETO</label></div>
                             <div class="form-group"><input type="email" name="email" placeholder=" " required><label>EMAIL</label></div>
                             <div class="form-group"><input type="tel" name="telefono" placeholder=" " required><label>WHATSAPP / TELÉFONO</label></div>
-                            <div class="form-group"><input type="date" name="fecha" placeholder=" " required><label>FECHA DE SUBIDA</label></div>
+                            <div class="form-group"><input type="date" name="fecha" placeholder=" " required><label>FECHA DE VIAJE</label></div>
                             <div class="form-group">
                                 <select name="pasajeros" required><option value="" selected disabled hidden></option><option value="1-2">1-2 PASAJEROS</option><option value="3-4">3-4 PASAJEROS</option><option value="5-8">5-8 PASAJEROS (VAN)</option><option value="9+">9+ PASAJEROS (GRUPO)</option></select>
                                 <label>PASAJEROS</label>
                             </div>
                             <div class="form-group">
-                                <select name="destino_turistico"><option value="valle-nevado" selected>VALLE NEVADO</option><option value="portillo">PORTILLO</option><option value="farellones">FARELLONES</option></select>
-                                <label>CENTRO DE SKI</label>
+                                <input type="hidden" name="destino_turistico" value="transfer-santiago-valle-nevado">
+                                <input type="text" name="ruta_display" value="Santiago → Valle Nevado" readonly style="opacity:0.5;cursor:not-allowed;">
+                                <label>RUTA SELECCIONADA</label>
                             </div>
-                            <button type="submit" class="btn-terminal-submit"><span>RESERVAR TRANSFER VALLE NEVADO</span></button>
+                            <button type="submit" class="btn-terminal-submit"><span>RESERVAR TRANSFER {{destino_upper}}</span></button>
                         </form>
                     </div>
                 </div>
@@ -226,7 +209,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand"><div class="logo"><span class="logo-aura">AURA</span><span class="logo-travel">TRAVEL</span></div><p class="footer-tagline">Liderando la vanguardia en movilidad ejecutiva e institucional en Chile.</p></div>
-                <div class="footer-col"><h4>Nieve 2026</h4><ul class="footer-links"><li><a href="../turismo.html">Valle Nevado</a></li><li><a href="../turismo.html">Portillo</a></li><li><a href="../turismo.html">Farellones</a></li></ul></div>
+                <div class="footer-col"><h4>Rutas</h4><ul class="footer-links"><li><a href="transfer-santiago-valle-nevado.html">Valle Nevado</a></li><li><a href="transfer-santiago-portillo.html">Portillo</a></li><li><a href="transfer-santiago-farellones.html">Farellones</a></li></ul></div>
                 <div class="footer-col"><h4>Divisiones</h4><ul class="footer-links"><li><a href="../corporativo.html">Corporativo</a></li><li><a href="../turismo.html">Turismo</a></li><li><a href="../aeropuerto.html">Aeropuerto</a></li></ul></div>
                 <div class="footer-col"><h4>Contacto</h4><ul class="footer-links"><li><a href="mailto:turismo@auratravel.cl">turismo@auratravel.cl</a></li><li><a href="https://wa.me/56926151427" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>+56 9 2615 1427</a></li></ul></div>
             </div>

@@ -216,6 +216,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    const pricing = {
+        'CORPORATIVO': [50000, 80000, 150000],
+        'TURISMO': [70000, 110000, 200000],
+        'SALUD': [40000, 60000, 120000],
+        'EVENTOS': [80000, 130000, 250000],
+        'AEROPUERTO': [35000, 55000, 100000],
+        'DELIVERY': [15000, 25000, 50000],
+        'DIPLOMATICO': [100000, 180000, 350000],
+        'GENERAL': [40000, 60000, 110000]
+    };
+
+    function updatePrices() {
+        const div = detectDivision();
+        const p = pricing[div] || pricing['GENERAL'];
+        const container = document.querySelector('.terminal-pricing-display');
+        if (!container) return;
+        container.innerHTML = `
+            <div class="price-tier"><span>EJECUTIVO</span><strong>$${p[0].toLocaleString()}</strong></div>
+            <div class="price-tier featured"><span>PREMIUM</span><strong>$${p[1].toLocaleString()}</strong></div>
+            <div class="price-tier"><span>DIPLOMATIC</span><strong>$${p[2].toLocaleString()}</strong></div>
+        `;
+    }
+
+    document.querySelectorAll('.t-nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => setTimeout(updatePrices, 50));
+    });
+    updatePrices();
 });
 
 /**

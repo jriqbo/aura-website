@@ -1,18 +1,4 @@
-# AURA TRAVEL — robots.txt
-# https://auratravel.cl
-
 User-agent: *
 Allow: /
-
-# Bloquear URLs con parámetros de búsqueda o filtros
 Disallow: /*?*
-
-# Archivos internos / desarrollo
-Disallow: /scratch/
-Disallow: /.agents/
-Disallow: /temp_restore/
-Disallow: /server.js
-
-Crawl-delay: 1
-
-Sitemap: https://auratravel.cl/sitemap.xml
+Sitemap: [https://auratravel.cl/sitemap.xml](https://auratravel.cl/sitemap.xml)
