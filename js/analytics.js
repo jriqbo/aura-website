@@ -17,8 +17,9 @@
     // CONFIGURACIÓN — REEMPLAZAR CON TU ID REAL
     // ═══════════════════════════════════════════
     const GA_MEASUREMENT_ID = 'G-9WMGVTMDMT'; // AURA Travel — Propiedad GA4 activa
+    const GOOGLE_ADS_ID = 'AW-11504938678'; // AURA Travel — ID de Google Ads Extraído
 
-    // Cargar script de GA4
+    // Cargar script de GA4 y Google Ads
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
@@ -29,10 +30,15 @@
     window.gtag = gtag;
 
     gtag('js', new Date());
+    
+    // Configuración Base GA4
     gtag('config', GA_MEASUREMENT_ID, {
         send_page_view: true,
         cookie_flags: 'SameSite=None;Secure'
     });
+
+    // Configuración Base Google Ads
+    gtag('config', GOOGLE_ADS_ID);
 
     // ═══════════════════════════════════════════
     // EVENTO: form_submit
@@ -44,11 +50,17 @@
         const division = detectDivisionGA();
         const servicio = form.querySelector('[name="servicio"]');
 
+        // GA4 Event
         gtag('event', 'form_submit', {
             event_category: 'lead',
             event_label: division,
             service_type: servicio ? servicio.value : 'general',
             page_path: window.location.pathname
+        });
+
+        // Google Ads Conversion Event
+        gtag('event', 'conversion', {
+            'send_to': `${GOOGLE_ADS_ID}/lead_form_submit`
         });
     });
 
@@ -58,10 +70,16 @@
     document.addEventListener('click', function(e) {
         const link = e.target.closest('a[href*="wa.me"], a[href*="whatsapp"]');
         if (link) {
+            // GA4 Event
             gtag('event', 'whatsapp_click', {
                 event_category: 'contact',
                 event_label: detectDivisionGA(),
                 page_path: window.location.pathname
+            });
+
+            // Google Ads Conversion Event
+            gtag('event', 'conversion', {
+                'send_to': `${GOOGLE_ADS_ID}/whatsapp_contact`
             });
         }
     });

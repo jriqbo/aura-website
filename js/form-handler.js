@@ -65,20 +65,34 @@ const DIVISION_CONFIG = {
  * Initialize Google Places Autocomplete for specific fields
  */
 function initAutocomplete() {
+    if (typeof google === 'undefined' || !google.maps || !google.maps.places) return;
+
+    const options = {
+        componentRestrictions: { country: "cl" },
+        fields: ["address_components", "geometry", "icon", "name", "formatted_address"],
+        types: ["address", "establishment"] // Permitir direcciones y lugares conocidos (hoteles, aeropuertos)
+    };
+
     const originInput = document.getElementById('direccion-origen');
-    if (originInput && typeof google !== 'undefined') {
-        const autocomplete = new google.maps.places.Autocomplete(originInput, {
-            componentRestrictions: { country: "cl" },
-            fields: ["address_components", "geometry", "icon", "name"],
-            types: ["address"]
+    if (originInput) {
+        const autoOrigin = new google.maps.places.Autocomplete(originInput, options);
+        autoOrigin.addListener("place_changed", () => {
+            const place = autoOrigin.getPlace();
+            if (place.geometry) console.log('[AURA MAPS] Origen validado:', place.formatted_address || place.name);
         });
-        
-        autocomplete.addListener("place_changed", () => {
-            const place = autocomplete.getPlace();
-            if (place.geometry) {
-                console.log('[AURA MAPS] Origen validado:', place.formatted_address);
-            }
+        // Prevenir "Enter" submit form
+        originInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') e.preventDefault(); });
+    }
+
+    const destInput = document.getElementById('direccion-destino');
+    if (destInput) {
+        const autoDest = new google.maps.places.Autocomplete(destInput, options);
+        autoDest.addListener("place_changed", () => {
+            const place = autoDest.getPlace();
+            if (place.geometry) console.log('[AURA MAPS] Destino validado:', place.formatted_address || place.name);
         });
+        // Prevenir "Enter" submit form
+        destInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') e.preventDefault(); });
     }
 }
 
