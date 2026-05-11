@@ -69,8 +69,7 @@ function initAutocomplete() {
 
     const options = {
         componentRestrictions: { country: "cl" },
-        fields: ["address_components", "geometry", "icon", "name", "formatted_address"],
-        types: ["address", "establishment"] // Permitir direcciones y lugares conocidos (hoteles, aeropuertos)
+        fields: ["address_components", "geometry", "icon", "name", "formatted_address"]
     };
 
     const originInput = document.getElementById('direccion-origen');
