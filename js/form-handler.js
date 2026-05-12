@@ -421,4 +421,92 @@ function showNotification(title, message, type) {
     }, 8000);
 }
 
+/**
+ * AURA B2B - PDF Dossier Generator
+ */
+function generateAuraDossier() {
+    if (typeof html2pdf === 'undefined') {
+        showNotification('Error del Sistema', 'Motor de PDF no disponible. Por favor, recargue la página o contáctenos directamente.', 'error');
+        return;
+    }
+
+    const btn = document.querySelector('.btn-luxury-mission');
+    if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span>GENERANDO DOSSIER...</span> <i class="fas fa-spinner fa-spin"></i>';
+        btn.disabled = true;
+
+        const element = document.getElementById('dossier-b2b');
+        
+        // Setup PDF Options for High Quality
+        const opt = {
+            margin:       10,
+            filename:     'AURA_Dossier_Movilidad_B2B.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true, logging: false },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Add a temporary branded header for the PDF
+        const pdfHeader = document.createElement('div');
+        pdfHeader.innerHTML = `
+            <div style="text-align: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #C9A96E;">
+                <h1 style="color: #1E293B; margin: 0; font-family: 'Inter', sans-serif;">AURA TRAVEL</h1>
+                <p style="color: #64748B; margin: 5px 0 0 0; font-family: 'Inter', sans-serif;">División de Movilidad Corporativa | Confidencial</p>
+            </div>
+        `;
+        element.insertBefore(pdfHeader, element.firstChild);
+
+        // Temporarily adjust styles for PDF generation (white background for print)
+        const originalBg = element.style.background;
+        const originalColor = element.style.color;
+        element.style.background = '#ffffff';
+        element.style.color = '#1E293B';
+        
+        const darkElements = element.querySelectorAll('.dc, .norm-card, h2, h3, h4, p');
+        const originalStyles = [];
+        darkElements.forEach(el => {
+            originalStyles.push({ el: el, color: el.style.color, background: el.style.background });
+            if(el.tagName === 'P') el.style.color = '#475569';
+            if(el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'H4') el.style.color = '#0F172A';
+            if(el.classList.contains('dc') || el.classList.contains('norm-card')) {
+                el.style.background = '#F8FAFC';
+                el.style.borderColor = '#E2E8F0';
+            }
+        });
+
+        // Track Event
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'download_b2b_dossier', {
+                'event_category': 'B2B',
+                'event_label': 'Corporate Dossier PDF Download'
+            });
+            console.log('[AURA Analytics] Evento download_b2b_dossier registrado.');
+        }
+
+        // Generate PDF
+        html2pdf().set(opt).from(element).save().then(() => {
+            showNotification('Operación Exitosa', 'El Dossier Institucional ha sido descargado correctamente.', 'success');
+        }).catch(err => {
+            console.error('[AURA PDF Error]', err);
+            showNotification('Error', 'No se pudo generar el documento. Intente nuevamente.', 'error');
+        }).finally(() => {
+            // Restore UI
+            element.removeChild(pdfHeader);
+            element.style.background = originalBg;
+            element.style.color = originalColor;
+            originalStyles.forEach(style => {
+                style.el.style.color = style.color;
+                style.el.style.background = style.background;
+                if(style.el.classList.contains('dc') || style.el.classList.contains('norm-card')) {
+                    style.el.style.borderColor = '';
+                }
+            });
+            
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+    }
+}
+
 

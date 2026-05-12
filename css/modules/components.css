@@ -37,6 +37,38 @@
     border-color: var(--aura-glass-border-hover); 
 }
 
+.btn-luxury-mission {
+    padding: 1.2rem 2.5rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-main);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    color: #fff;
+    background: var(--aura-gold);
+    border: 1px solid var(--aura-gold);
+    cursor: pointer;
+    transition: var(--transition-sovereign);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(201, 169, 110, 0.15);
+}
+
+.btn-luxury-mission:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(201, 169, 110, 0.25);
+}
+
+.btn-luxury-mission i {
+    font-size: 1.1rem;
+}
+
 /* ============================================
    BENTO GRID SYSTEM — ELEVATED
    ============================================ */

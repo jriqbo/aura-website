@@ -4,6 +4,33 @@
  * Fixed: hero slider handled by CSS (5 images), added destination image rotation.
  */
 
+// ====================================================
+// 0. NAVIGATION PATCH (Local & Production Consistency)
+// ====================================================
+(function() {
+    const isLocalFile = window.location.protocol === 'file:';
+    if (isLocalFile) {
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href^="/"]');
+            const isSubpage = window.location.pathname.includes('/pages/');
+            const prefix = isSubpage ? '../' : '';
+            const pagePrefix = isSubpage ? '' : 'pages/';
+
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === '/salud') link.href = pagePrefix + 'salud.html';
+                else if (href === '/corporativo') link.href = pagePrefix + 'corporativo.html';
+                else if (href === '/turismo') link.href = pagePrefix + 'turismo.html';
+                else if (href === '/eventos') link.href = pagePrefix + 'eventos.html';
+                else if (href === '/aeropuerto') link.href = pagePrefix + 'aeropuerto.html';
+                else if (href === '/delivery') link.href = pagePrefix + 'delivery.html';
+                else if (href === '/') link.href = prefix + 'index.html';
+            });
+            console.warn('[AURA NAV] Patched root-relative links for local file execution.');
+        });
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // ========================
@@ -202,7 +229,7 @@ function injectMobileMenu() {
         <div class="mobile-nav-content">
             <a href="${prefix}index.html">INICIO</a>
             <a href="${pagePrefix}corporativo.html">CORPORATIVO</a>
-            <a href="${pagePrefix}salud.html">SALUD</a>
+            <a href="/salud">SALUD</a>
             <a href="${pagePrefix}turismo.html">TURISMO</a>
             <a href="${pagePrefix}eventos.html">EVENTOS</a>
             <a href="${pagePrefix}aeropuerto.html">AEROPUERTO</a>

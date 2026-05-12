@@ -90,11 +90,28 @@
     document.addEventListener('click', function(e) {
         const btn = e.target.closest('.btn-luxury-mission, .btn-terminal-submit, .btn-outline, [class*="btn-cta"]');
         if (btn) {
+            const btnText = btn.textContent.trim().toUpperCase();
+            
+            // Evento General
             gtag('event', 'cta_click', {
                 event_category: 'engagement',
-                event_label: btn.textContent.trim().substring(0, 50),
+                event_label: btnText.substring(0, 50),
                 page_path: window.location.pathname
             });
+
+            // Evento Específico: Análisis ROI Salud
+            if (btnText.includes('ANÁLISIS DE IMPACTO FINANCIERO')) {
+                gtag('event', 'health_roi_analysis_click', {
+                    event_category: 'b2b_conversion',
+                    event_label: 'Health ROI Analysis',
+                    division: 'salud'
+                });
+                
+                // Google Ads Conversion para B2B Interés Alto
+                gtag('event', 'conversion', {
+                    'send_to': `${GOOGLE_ADS_ID}/health_b2b_roi_interest`
+                });
+            }
         }
     });
 

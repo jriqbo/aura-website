@@ -15,6 +15,7 @@
     <meta property="og:image" content="https://auratravel.cl/aura_corporate_8k.webp">
     <link rel="stylesheet" href="../css/aura.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script type="application/ld+json">
     {
@@ -42,6 +43,25 @@
         }
     }
     </script>
+    <style>
+        .dc{background:rgba(255,255,255,.02);border:1px solid rgba(29,78,216,.1);border-radius:18px;padding:30px;transition:all .4s ease}
+        .dc:hover{border-color:var(--aura-corporate);background:rgba(29,78,216,.04);transform:translateY(-4px)}
+        .dc h3{color:#e2e8f0;font-size:1.1rem;margin-bottom:8px}
+        .dc p{color:#94a3b8;font-size:.92rem;line-height:1.7}
+        .big-num{font-size:2.5rem;font-weight:800;color:var(--aura-corporate);display:block;margin:8px 0}
+        .pain-num{width:44px;height:44px;border-radius:50%;background:var(--aura-corporate);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;flex-shrink:0}
+        .pain-row{display:flex;gap:20px;align-items:flex-start;margin-bottom:28px}
+        .pain-row h4{color:#e2e8f0;margin-bottom:4px}
+        .pain-row p{color:#94a3b8;font-size:.9rem;line-height:1.6}
+        .vs-g{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
+        .vs-bad{background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.15);border-radius:16px;padding:28px}
+        .vs-good{background:rgba(29,78,216,.04);border:1px solid rgba(29,78,216,.25);border-radius:16px;padding:28px}
+        .vs-bad h3{color:#f87171}.vs-good h3{color:var(--aura-corporate)}
+        .norm-card{background:rgba(255,255,255,.02);border:1px solid rgba(29,78,216,.08);border-radius:14px;padding:24px;border-left:3px solid var(--aura-corporate)}
+        .norm-card h4{color:var(--aura-corporate);margin-bottom:6px}
+        .norm-card p{color:#94a3b8;font-size:.88rem;line-height:1.6}
+        @media(max-width:768px){.vs-g{grid-template-columns:1fr}.dg{grid-template-columns:1fr}}
+    </style>
 </head>
 <body class="aura-elite service-empresa">
     <div class="noise-overlay"></div>
@@ -124,117 +144,116 @@
         </div>
     </section>
 
-    <!-- DASHBOARD DE SERVICIO -->
-    <section class="section">
+    <!-- DOSSIER INSTITUCIONAL B2B -->
+    <section class="section" id="dossier-b2b">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">Inteligencia Corporativa</span>
-                <h2 class="section-title">Movilidad <br>de <span style="color: var(--aura-corporate);">Alta Dirección.</span></h2>
+                <span class="section-label">Inteligencia Operacional</span>
+                <h2 class="section-title">El Costo Oculto <br>de la <span style="color: var(--aura-corporate);">Impuntualidad.</span></h2>
+                <p style="color: #94a3b8; max-width: 800px; margin: 20px auto; line-height: 1.8; font-size: 1.05rem;">
+                    La congestión vial en la Región Metropolitana cuesta a las empresas millones en productividad perdida. Un turno retrasado 20 minutos detiene líneas críticas y eleva el gasto en horas extras.
+                </p>
             </div>
 
-            <div class="command-dashboard reveal">
-                <!-- Card 1: SLA -->
-                <div class="dashboard-card featured">
-                    <div>
-                        <span class="card-hud-label">Protocolo // Ejecutivo</span>
-                        <h3 class="card-title">SLA de <br>Precisión Soberana</h3>
-                        <p class="card-body">
-                            Garantizamos puntualidad con penalidad por incumplimiento. Conductor fijo asignado, 
-                            NDA corporativo y reportes mensuales de servicio para su directorio.
-                        </p>
-                    </div>
-                    <div class="card-stat-group">
-                        <span class="card-stat">99.7%</span>
-                        <span class="card-stat-label">SLA Puntualidad</span>
-                    </div>
+            <!-- PAIN POINTS B2B -->
+            <div class="dg reveal">
+                <div class="dc">
+                    <span class="s-tag s-tag-blue">OPERACIONES</span>
+                    <h3>Productividad y Trazabilidad</h3>
+                    <span class="big-num">150K</span>
+                    <p style="color: var(--aura-corporate); font-weight: 700; margin-bottom: 10px;">USD/Hora en Downtime Industrial</p>
+                    <p>El transporte masivo opera como "caja negra". AURA elimina la incertidumbre operacional mediante geolocalización, rutas optimizadas por IA y llegada predecible, protegiendo el encadenamiento de turnos.</p>
                 </div>
-
-                <!-- Card 2: Imagen -->
-                <div class="dashboard-card image-card">
-                    <img src="../img/divisions/aura_empresa_night_sanhattan_8k_gold_lighting_1777937616960.webp" alt="Aura Corporativo Santiago" loading="lazy">
+                
+                <div class="dc">
+                    <span class="s-tag s-tag-blue">RECURSOS HUMANOS</span>
+                    <h3>Retención y Salario Emocional</h3>
+                    <span class="big-num">30%</span>
+                    <p style="color: var(--aura-corporate); font-weight: 700; margin-bottom: 10px;">Rotación Promedio en Logística</p>
+                    <p>El hacinamiento y trayectos de 90+ minutos en buses estándar generan burnout crónico. Nuestra Van Ejecutiva Premium reduce el estrés de traslado, convirtiéndose en el principal beneficio para retener talento crítico.</p>
                 </div>
-
-                <!-- Card 3: Flota -->
-                <div class="dashboard-card">
-                    <div>
-                        <span class="card-hud-label">Flota // Premium</span>
-                        <h3 class="card-title">Vehículos <br>de Representación</h3>
-                        <p class="card-body">
-                            Flota de menos de 3 años, limpieza diaria, WiFi, agua y cargadores. Vehículos preparados para proyectar la imagen de su organización.
-                        </p>
-                    </div>
-                    <i class="fas fa-car" style="font-size: 2rem; color: var(--aura-corporate); opacity: 0.5;"></i>
+                
+                <div class="dc">
+                    <span class="s-tag s-tag-blue">FINANZAS (CFO)</span>
+                    <h3>Mitigación de Pasivos</h3>
+                    <span class="big-num">50%</span>
+                    <p style="color: var(--aura-corporate); font-weight: 700; margin-bottom: 10px;">Recargo por Horas Extras</p>
+                    <p>Contratar transporte "barato" genera costos ocultos millonarios. AURA minimiza las horas extras por relevo tardío y reduce el costo de reclutamiento al mejorar drásticamente el clima laboral y la seguridad.</p>
                 </div>
+            </div>
 
-                <!-- Card 4: Conductor Dedicado -->
-                <div class="dashboard-card featured">
-                    <div>
-                        <span class="card-hud-label">Capital // Humano</span>
-                        <h3 class="card-title">Conductor <br>Dedicado Bilingüe</h3>
-                        <p class="card-body">
-                            Mismo conductor asignado a su cuenta. Certificado en protocolo corporativo, 
-                            bilingüe (español-inglés) y con verificación de antecedentes exhaustiva.
-                        </p>
+            <!-- COMPARATIVA B2B -->
+            <div class="vs-g reveal">
+                <div class="vs-bad">
+                    <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
+                        <i class="fas fa-bus" style="font-size:2rem; color:#f87171;"></i>
+                        <h3 style="margin:0;">Bus Industrial Tradicional</h3>
                     </div>
-                    <div class="card-stat-group" style="display: flex; gap: 2rem;">
+                    <div class="pain-row">
+                        <div class="pain-num" style="background:rgba(239,68,68,0.2);color:#f87171">1</div>
                         <div>
-                            <span class="card-stat" style="font-size: 2rem;">NDA</span>
-                            <span class="card-stat-label">Confidencial</span>
+                            <h4>Inflexibilidad Operativa</h4>
+                            <p>Rutas rígidas y prolongadas. El trabajador pierde hasta 3 horas diarias en trayectos ineficientes y paraderos inseguros.</p>
                         </div>
+                    </div>
+                    <div class="pain-row">
+                        <div class="pain-num" style="background:rgba(239,68,68,0.2);color:#f87171">2</div>
                         <div>
-                            <span class="card-stat" style="font-size: 2rem;">24/7</span>
-                            <span class="card-stat-label">Operación</span>
+                            <h4>Déficit de Dignidad</h4>
+                            <p>Ausencia frecuente de climatización eficiente, falta de conectividad y hacinamiento que deterioran la marca empleadora.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- GALERÍA ESCENARIOS CORPORATIVOS -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Escenarios de Servicio</span>
-                <h2 class="section-title">Movilidad <br><span style="color: var(--aura-corporate);">En Acción.</span></h2>
+                <div class="vs-good">
+                    <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
+                        <i class="fas fa-van-shuttle" style="font-size:2rem; color:var(--aura-corporate);"></i>
+                        <h3 style="margin:0;">Modelo Ejecutivo AURA</h3>
+                    </div>
+                    <div class="pain-row">
+                        <div class="pain-num">1</div>
+                        <div>
+                            <h4>Agilidad Puerta a Planta</h4>
+                            <p>Grupos reducidos (10-15 pax) permiten rutas directas, acortando tiempos de traslado en un 30% y garantizando llegada segura.</p>
+                        </div>
+                    </div>
+                    <div class="pain-row">
+                        <div class="pain-num">2</div>
+                        <div>
+                            <h4>Estándar Directivo</h4>
+                            <p>Climatización bi-zona, butacas ergonómicas, WiFi de alta velocidad y entorno diseñado para el descanso o preparación del turno.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="snow-destination-grid reveal">
-                <div class="snow-card">
-                    <div class="snow-card-bg"><img src="../img/divisions/aura_hero_executive_interior_1777815946299.webp" alt="Interior Ejecutivo AURA"></div>
-                    <div class="snow-card-content">
-                        <span class="snow-card-tag" style="background: rgba(29,78,216,0.3);">TRASLADO EJECUTIVO</span>
-                        <h3>Directivos & C-Level</h3>
-                        <p>Traslados de alta dirección con conductor dedicado, NDA firmado y vehículo de representación. La imagen de su empresa en cada trayecto.</p>
-                        <div class="snow-card-meta">
-                            <span><i class="fas fa-user-tie"></i> Conductor fijo</span>
-                            <span><i class="fas fa-shield-alt"></i> NDA activo</span>
-                        </div>
-                    </div>
+
+            <!-- ESCUDO LEGAL Y NORMATIVO -->
+            <div style="margin-top: 60px;" class="reveal">
+                <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 30px; text-align: center;">El "Escudo Protector" Legal de AURA</h3>
+                
+                <div class="norm-card" style="margin-bottom: 20px;">
+                    <h4><i class="fas fa-gavel"></i> Cumplimiento D.S. N°80 y Futura Normativa</h4>
+                    <p>Nuestra flota cumple anticipadamente con las exigencias del nuevo reglamento 2026: vehículos de representación con antigüedad garantizada, cinturones en todas las butacas y sistemas de climatización certificados. Evitamos multas e inmovilización de flotas.</p>
                 </div>
-                <div class="snow-card">
-                    <div class="snow-card-bg"><img src="../img/divisions/aura_empresa_night_sanhattan_8k_gold_lighting_1777937616960.webp" alt="Flota Corporativa AURA" loading="lazy"></div>
-                    <div class="snow-card-content">
-                        <span class="snow-card-tag" style="background: rgba(29,78,216,0.3);">FLOTA ON-DEMAND</span>
-                        <h3>Eventos & Operativos</h3>
-                        <p>Flota coordinada para mover equipos completos. Reuniones de directorio, visitas de inversionistas y jornadas de planificación estratégica.</p>
-                        <div class="snow-card-meta">
-                            <span><i class="fas fa-users"></i> Grupos hasta 30+</span>
-                            <span><i class="fas fa-clock"></i> Coordinación 24/7</span>
-                        </div>
-                    </div>
+                
+                <div class="norm-card" style="margin-bottom: 20px;">
+                    <h4><i class="fas fa-shield-alt"></i> Art. 184 del Código del Trabajo & Ley 16.744</h4>
+                    <p>Al tercerizar el traslado con AURA, su empresa demuestra "diligencia debida" en el deber de protección, mitigando el riesgo legal ante accidentes de trayecto y evitando alzas en la cotización adicional de mutualidad.</p>
                 </div>
-                <div class="snow-card">
-                    <div class="snow-card-bg"><img src="../img/home/aura_van_empresa_night_branded_8k_gold_1777937950795.webp" alt="Van Corporativa AURA" loading="lazy"></div>
-                    <div class="snow-card-content">
-                        <span class="snow-card-tag" style="background: rgba(29,78,216,0.3);">SHUTTLE CORPORATIVO</span>
-                        <h3>Rutas Dedicadas</h3>
-                        <p>Shuttle entre oficinas, aeropuerto y hoteles. Rutas fijas con horarios programados para equipos y visitas recurrentes.</p>
-                        <div class="snow-card-meta">
-                            <span><i class="fas fa-route"></i> Rutas fijas</span>
-                            <span><i class="fas fa-calendar-check"></i> Programado</span>
-                        </div>
-                    </div>
+                
+                <div class="norm-card">
+                    <h4><i class="fas fa-leaf"></i> Integración Sostenible (Criterios ESG)</h4>
+                    <p>Proveemos trazabilidad exacta para el reporte de huella de carbono (Alcance 3). AURA permite que su empresa postule al sello "Generador de Carga Eficiente" del programa estatal Giro Limpio, mejorando sus métricas ESG.</p>
                 </div>
+            </div>
+
+            <!-- CALL TO ACTION PDF -->
+            <div style="text-align: center; margin-top: 50px;" class="reveal">
+                <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 1.1rem;">Descargue el informe detallado para presentar en Directorio.</p>
+                <button onclick="generateAuraDossier()" class="btn-luxury-mission" style="background:var(--aura-corporate); border-color:var(--aura-corporate); margin: 0 auto; display: inline-flex;">
+                    <span>GENERAR DOSSIER TÉCNICO B2B (PDF)</span>
+                    <i class="fas fa-file-pdf"></i>
+                </button>
             </div>
         </div>
     </section>
