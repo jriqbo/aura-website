@@ -69,9 +69,9 @@
     <span class="brand-sub" style="color:var(--clinical)">SALUD</span>
 </h1>
 <p class="hero-tagline" style="max-width:700px">Logística de continuidad para centros de diálisis. Transformamos el transporte de pacientes de un gasto operativo a una inversión en la rentabilidad y acreditación de su centro.</p>
-<div class="hero-actions">
-<a href="#roi" class="btn-luxury-mission" style="background:var(--clinical);border-color:var(--clinical)"><span>ANÁLISIS DE IMPACTO FINANCIERO</span><i class="fas fa-chart-line"></i></a>
-<a href="#contacto" class="btn-luxury-mission" style="background:transparent;border-color:var(--clinical);color:var(--clinical)"><span>SOLICITAR CONVENIO</span><i class="fas fa-file-contract"></i></a>
+<div class="hero-actions" style="margin-top: 30px;">
+    <a href="#roi" class="btn-luxury-mission" style="background:var(--clinical);border-color:var(--clinical)"><span>ANÁLISIS DE IMPACTO</span><i class="fas fa-chart-line"></i></a>
+    <button onclick="generateAuraDossier()" class="btn-luxury-mission" style="background:#fff;color:#000;border-color:#fff"><span>DESCARGAR DOSSIER PDF</span><i class="fas fa-file-pdf"></i></button>
 </div>
 </div></div></section>
 
@@ -226,6 +226,8 @@
 <p class="footer-legal">&copy; 2026 AURA TRAVEL | DOSSIER TÉCNICO INSTITUCIONAL. SANTIAGO, CHILE. ESTÁNDARES MINSAL · FONASA 2025.</p>
 </div></div></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="../js/aura-core.js"></script>
+<script src="../js/form-handler.js"></script>
 </body>
 </html>
