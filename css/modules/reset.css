@@ -8,23 +8,43 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-margin-top: 120px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
+section, [id] {
+    scroll-margin-top: 120px;
+}
+
 body {
     font-family: var(--font-main);
-    background: #06060E;
-    background-image: 
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(15, 18, 50, 0.5) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 50% at 90% 30%, rgba(201, 169, 110, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 50% at 10% 60%, rgba(30, 20, 60, 0.3) 0%, transparent 50%),
-        radial-gradient(ellipse 45% 40% at 75% 85%, rgba(201, 169, 110, 0.03) 0%, transparent 45%);
+    background-color: var(--aura-black);
     color: var(--text-titanium);
     overflow-x: hidden;
     min-height: 100vh;
     font-feature-settings: 'kern' 1, 'liga' 1;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--bg-atmosphere);
+    z-index: -2;
+    pointer-events: none;
+    transition: var(--transition-sovereign);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(var(--aura-black-rgb), 0.25) 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* Premium Noise Texture Overlay */

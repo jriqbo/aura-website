@@ -646,6 +646,237 @@ img {
     }
 }
 
+/* ============================================
+   STICKY PROMO BAR — SNOW 2026
+   ============================================ */
 
 
 
+.snow-sticky-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000 !important; /* Higher than capsule header (1000) */
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.4);
+    padding: 12px 0;
+    transform: translateY(-100%);
+    animation: slideDownBar 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.5s;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+/* Push header down when sticky bar is active */
+.service-turismo .capsule-header {
+    top: 4.5rem !important; /* Push down to clear the sticky bar */
+    transition: top 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes slideDownBar {
+    to { transform: translateY(0); }
+}
+
+
+
+.snow-sticky-bar .bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.snow-sticky-bar .bar-tag {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--snow-glacier);
+    font-family: var(--font-main);
+    font-size: 0.55rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    flex-shrink: 0;
+}
+
+.snow-sticky-bar .bar-text {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: #fff;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.snow-sticky-bar .bar-text strong {
+    color: var(--snow-glacier);
+}
+
+.slots-indicator {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px 10px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #ef4444;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.slots-indicator strong {
+    color: #ef4444 !important;
+}
+
+@keyframes pulse-urgency {
+    0% { transform: scale(1); background: rgba(239, 68, 68, 0.1); }
+    50% { transform: scale(1.05); background: rgba(239, 68, 68, 0.3); }
+    100% { transform: scale(1); background: rgba(239, 68, 68, 0.1); }
+}
+
+.pulse-urgency {
+    animation: pulse-urgency 0.6s ease-in-out;
+}
+
+.snow-sticky-bar .bar-btn {
+    background: var(--snow-glacier);
+    color: #0A0A0F;
+    font-family: var(--font-main);
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 8px 20px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: var(--transition-micro);
+    flex-shrink: 0;
+    border: none;
+}
+
+.snow-sticky-bar .bar-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .snow-sticky-bar { padding: 10px 0; }
+    .snow-sticky-bar .bar-tag, .snow-sticky-bar .bar-btn { display: none; }
+    .snow-sticky-bar .bar-text { font-size: 0.75rem; text-align: center; }
+}
+
+
+
+
+/* ============================================
+   TRANSPARENCIA RADICAL SECTION (EXCELENCIA PARA TODOS)
+   ============================================ */
+
+.transparency-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.transparency-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+}
+
+.transparency-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem;
+    transition: var(--transition-micro);
+    backdrop-filter: blur(20px);
+}
+
+.transparency-card.highlight {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), transparent);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.transparency-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.t-icon {
+    font-size: 2.5rem;
+    color: var(--snow-glacier);
+    margin-bottom: 2rem;
+}
+
+.transparency-card h3 {
+    font-family: var(--font-main);
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+.transparency-card p {
+    font-family: var(--font-main);
+    color: var(--text-silver);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+}
+
+.t-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.t-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-titanium);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+.t-list i {
+    color: var(--snow-glacier);
+    font-size: 0.8rem;
+}
+
+.t-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    color: var(--snow-glacier);
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: var(--transition-micro);
+}
+
+.t-link:hover {
+    gap: 1.2rem;
+    text-shadow: 0 0 10px var(--snow-glacier);
+}
+
+@media (max-width: 1024px) {
+    .transparency-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .transparency-card {
+        padding: 2.5rem;
+    }
+    .transparency-card h3 {
+        font-size: 1.5rem;
+    }
+}

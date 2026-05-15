@@ -15,49 +15,65 @@ const DIVISION_CONFIG = {
         email: 'corporativo@auratravel.cl',
         emoji: '🏢',
         greeting: 'Solicitud de Servicio Corporativo',
-        prefix: 'SCL-CORP'
+        prefix: 'SCL-CORP',
+        agent: 'AURA GOOGLE ADS EXPERT',
+        specialization: 'High-Intent Corporate Search'
     },
     'SALUD': {
         email: 'salud@auratravel.cl',
         emoji: '🏥',
-        greeting: 'Solicitud de Protocolo Clínico',
-        prefix: 'SCL-SALUD'
+        greeting: 'Solicitud de Inteligencia Clínica',
+        prefix: 'SCL-SALUD-INTEL',
+        agent: 'AURA CLINICAL STRATEGIST',
+        specialization: 'B2B Healthcare Logistics & Reporting'
     },
     'TURISMO': {
         email: 'turismo@auratravel.cl',
         emoji: '🏔️',
         greeting: 'Solicitud de Expedición Turística',
-        prefix: 'SCL-TUR'
+        prefix: 'SCL-TUR',
+        agent: 'AURA BRAND SENIOR',
+        specialization: 'Premium Experience Curated'
     },
     'EVENTOS': {
         email: 'eventos@auratravel.cl',
         emoji: '🎭',
         greeting: 'Solicitud de Coordinación de Evento',
-        prefix: 'SCL-EVT'
+        prefix: 'SCL-EVT',
+        agent: 'AURA CRO MASTER',
+        specialization: 'Large Scale Logistics'
     },
     'AEROPUERTO': {
         email: 'aeropuerto@auratravel.cl',
         emoji: '✈️',
         greeting: 'Solicitud de Transfer Aeroportuario',
-        prefix: 'SCL-AIR'
+        prefix: 'SCL-AIR',
+        agent: 'AURA PERFORMANCE LEAD',
+        specialization: 'AirProtocol Logistics'
     },
     'DELIVERY': {
         email: 'logistica@auratravel.cl',
         emoji: '📦',
         greeting: 'Solicitud de Custodia y Entrega',
-        prefix: 'SCL-DLV'
+        prefix: 'SCL-DLV',
+        agent: 'AURA GROWTH OPS',
+        specialization: 'Secure Last-Mile Delivery'
     },
     'DIPLOMATICO': {
         email: 'diplomatico@auratravel.cl',
         emoji: '🏛️',
         greeting: 'Solicitud de Protocolo Diplomático',
-        prefix: 'SCL-DIPL'
+        prefix: 'SCL-DIPL',
+        agent: 'AURA LINKEDIN ABM LEAD',
+        specialization: 'Account-Based Diplomatic Protocol'
     },
     'GENERAL': {
         email: 'contacto@auratravel.cl',
         emoji: '🚐',
         greeting: 'Solicitud de Servicio AURA',
-        prefix: 'SCL-GEN'
+        prefix: 'SCL-GEN',
+        agent: 'AURA ZENITH SYSTEM',
+        specialization: 'Global Institucional Mobility'
     }
 };
 
@@ -98,6 +114,19 @@ function initAutocomplete() {
 // Global exposure for Google Maps callback
 window.initAutocomplete = initAutocomplete;
 
+/**
+ * AURA // AGENTIC BRIDGE
+ * Connects UI events to MCP Orchestrator Zenith
+ */
+async function triggerAgenticHandshake(data) {
+    if (window.AgentOrchestrator) {
+        const division = detectDivision().toLowerCase();
+        console.log(`[AURA HANDSHAKE] Delegando a Orchestrator para división: ${division}`);
+        return await window.AgentOrchestrator.triggerAgenticHandshake(data, division);
+    }
+    return Promise.resolve();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const quoteForms = document.querySelectorAll('form');
     
@@ -123,6 +152,78 @@ document.addEventListener('DOMContentLoaded', () => {
             hp.innerHTML = '<input type="text" name="_aura_website_url" tabindex="-1" autocomplete="off" aria-hidden="true">';
             form.appendChild(hp);
         }
+
+        // === AGENT LIVE INSIGHT: Inject dynamic expert panel ===
+        if (!form.querySelector('.agent-live-insight')) {
+            const insightPanel = document.createElement('div');
+            insightPanel.className = 'agent-live-insight';
+            insightPanel.id = 'agentLiveInsight';
+            insightPanel.innerHTML = `
+                <div class="insight-icon"><i class="fas fa-brain"></i></div>
+                <div class="insight-text-wrapper">
+                    <div class="insight-header">
+                        <span class="insight-agent-name">AURA INTEL</span>
+                        <span class="insight-status">RESONANDO...</span>
+                    </div>
+                    <p class="insight-message">Analizando requerimientos en tiempo real...</p>
+                </div>
+            `;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) form.insertBefore(insightPanel, submitBtn);
+        }
+
+        // Listen for live changes to trigger agent advice
+        const liveFields = form.querySelectorAll('input, select, textarea');
+        liveFields.forEach(field => {
+            field.addEventListener('input', debounce(async () => {
+                // === B2B TEST MODE TRIGGER ===
+                if (field.value === 'DEBUG_B2B') {
+                    console.log('[AURA DEBUG] 🛠️ Modo Test B2B activado para webhook.');
+                    showNotification('DEBUG MODE', 'Enviando payload de prueba al webhook de Make.com...', 'info');
+                    const testPayload = {
+                        _leadId: 'DEBUG-TEST-' + Date.now().toString(36).toUpperCase(),
+                        _division: detectDivision(),
+                        nombre: 'TEST AGENTE AURA',
+                        email: 'test@auratravel.cl',
+                        empresa: 'AURA TESTING CORP',
+                        lead_type: 'CORPORATIVO B2B',
+                        _is_debug: true,
+                        _timestamp: new Date().toISOString()
+                    };
+                    try {
+                        await fetch(WEBHOOK_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(testPayload),
+                            mode: 'no-cors'
+                        });
+                        showNotification('DEBUG SUCCESS', 'Payload enviado correctamente. Verifique su CRM/Make.com', 'success');
+                    } catch (e) {
+                        showNotification('DEBUG ERROR', 'Fallo al conectar con el webhook.', 'error');
+                    }
+                    field.value = ''; // Clear the trigger
+                    return;
+                }
+
+                if (!window.AuraAgents) return;
+                
+                const formData = new FormData(form);
+                const allData = Object.fromEntries(formData.entries());
+                const advice = await window.AuraAgents.getLiveAdvice(field.name, field.value, allData);
+                
+                const panel = form.querySelector('.agent-live-insight');
+                if (advice && panel) {
+                    panel.querySelector('.insight-agent-name').textContent = advice.agent;
+                    panel.querySelector('.insight-message').innerHTML = advice.message;
+                    panel.querySelector('.insight-icon i').className = `fas ${advice.icon}`;
+                    panel.classList.add('active');
+                } else if (panel) {
+                    // Only hide if it wasn't already active with important info
+                    // or if value is cleared
+                    if (!field.value) panel.classList.remove('active');
+                }
+            }, 800));
+        });
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -162,10 +263,30 @@ document.addEventListener('DOMContentLoaded', () => {
             // UI Feedback: Start Submission
             submitBtn.disabled = true;
             submitBtn.classList.add('submitting');
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> TRANSMITIENDO...';
+            submitBtn.innerHTML = '<span>CONSULTANDO AURA AGENTS...</span> <i class="fas fa-microchip fa-spin"></i>';
             
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            let enrichedData = {};
+            
+            try {
+                if (window.AuraAgents) {
+                    const agentResult = await window.AuraAgents.processLead(formData);
+                    enrichedData = agentResult.final_payload;
+                    console.log('[AURA AGENTS] Handshake completo:', agentResult.agents_report);
+                    
+                    // Show transparency reasoning in UI if available
+                    if (agentResult.agents_report.transparency_audit.explanation) {
+                        showNotification('AURA REASONING', agentResult.agents_report.transparency_audit.explanation, 'info');
+                    }
+                } else {
+                    enrichedData = Object.fromEntries(formData.entries());
+                }
+            } catch (agentError) {
+                console.error('[AURA AGENTS] Error en handshake:', agentError);
+                enrichedData = Object.fromEntries(formData.entries());
+            }
+
+            const data = enrichedData;
             
             // Remove honeypot field from data
             delete data._aura_website_url;
@@ -191,31 +312,52 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = (data.email || '').toLowerCase();
             data.lead_type = (!email.includes('@gmail.com') && !email.includes('@yahoo.com') && !email.includes('@hotmail.com')) ? 'CORPORATIVO B2B' : 'PARTICULAR';
             
+            // Detect snow season for early booking flag (CRM Metadata)
+            const destValue = (data.destino || '').toLowerCase();
+            const isMountain = ['valle-nevado', 'portillo', 'farellones'].some(m => destValue.includes(m));
+            if (isMountain) {
+                data._early_booking_2026 = true;
+                data._discount_applied = '15%';
+                data._campaign_tag = 'WINTER_2026_EB';
+            }
+
             console.log(`[AURA] form_submit | ${division} | ${leadId}`);
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'form_submit', { event_category: 'lead', event_label: division, lead_id: leadId });
             }
             
             try {
-                // STEP 1: Send to webhook (if configured)
+                // STEP 1: Institutional Handshake (HubSpot + WhatsApp MCP)
+                await triggerAgenticHandshake(data);
+
+                // STEP 2: Send to webhook (if configured)
                 if (WEBHOOK_URL) {
                     try {
+                        // Normalize data for Email Templates ({{nombre}}, etc)
+                        data.nombre = data.nombre || data.name || data.clinica || data.empresa || 'Cliente';
+                        
+                        // Add extra info for the Agent reasoning display in email
+                        data._agents_status = 'VERIFIED';
+                        data._automation_heartbeat = new Date().toISOString();
+
+                        console.log(`[AURA AUTOMATION] 🧠 Payload optimizado para ${division}:`, data);
+
                         await fetch(WEBHOOK_URL, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(data),
                             mode: 'no-cors'
                         });
-                        console.log(`[AURA WEBHOOK] ✅ ${leadId} enviado a CRM`);
+                        console.log(`[AURA WEBHOOK] ✅ ${leadId} enviado a CRM + Email Queue`);
                     } catch (wErr) {
                         console.warn(`[AURA WEBHOOK] ⚠️ Falló, continuando con WhatsApp`);
                     }
                 }
                 
-                // STEP 2: Build and open WhatsApp
+                // STEP 3: Build and open WhatsApp
                 const waMessage = buildWhatsAppMessage(data, config, division);
                 const waURL = `https://wa.me/${AURA_WHATSAPP}?text=${encodeURIComponent(waMessage)}`;
-                await new Promise(resolve => setTimeout(resolve, 1200));
+                await new Promise(resolve => setTimeout(resolve, 800));
                 window.open(waURL, '_blank');
                 
                 // Success State
@@ -272,12 +414,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const div = detectDivision();
         let p = [...(pricing[div] || pricing['GENERAL'])];
         
+        // Night surcharge (22:00 - 06:00)
         const hour = new Date().getHours();
         if (hour >= 22 || hour < 6) p = p.map(x => x * 1.3);
 
+        // Destination specific logic
         const dest = (document.querySelector('[name="destino"]') || {value:''}).value.toLowerCase();
-        const mountain = ['valle nevado', 'portillo', 'farellones'].some(m => dest.includes(m));
-        if (mountain) p = p.map(x => x + 15000);
+        const mountain = ['valle-nevado', 'portillo', 'farellones'].some(m => dest.includes(m));
+        
+        // EARLY BOOKING SNOW 2026 (15% Discount for early snow reservations)
+        const isSnowSeason = mountain;
+        if (isSnowSeason) {
+            p = p.map(x => x * 0.85); // 15% Early Booking Discount
+            console.log('[AURA PRICING] Early Booking Snow 2026 Applied');
+            
+            // Show discount in UI if possible
+            const insightPanel = document.querySelector('.agent-live-insight');
+            if (insightPanel && !insightPanel.classList.contains('active')) {
+                insightPanel.querySelector('.insight-agent-name').textContent = 'AURA SALES';
+                insightPanel.querySelector('.insight-message').innerHTML = '<strong>❄️ BENEFICIO ACTIVADO:</strong> Early Booking Snow 2026 (15% OFF) aplicado por reserva anticipada.';
+                insightPanel.querySelector('.insight-icon i').className = 'fas fa-percentage';
+                insightPanel.classList.add('active');
+            }
+        }
 
         const container = document.querySelector('.terminal-pricing-display');
         if (!container) return;
@@ -285,10 +444,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="price-tier"><span>EJECUTIVO</span><strong>$${Math.round(p[0]).toLocaleString()}</strong></div>
             <div class="price-tier featured"><span>PREMIUM</span><strong>$${Math.round(p[1]).toLocaleString()}</strong></div>
             <div class="price-tier"><span>DIPLOMATIC</span><strong>$${Math.round(p[2]).toLocaleString()}</strong></div>
+            ${isSnowSeason ? '<div class="price-badge-discount">EARLY BOOKING -15%</div>' : ''}
         `;
     }
 
-    document.querySelectorAll('.t-nav-btn, input[name="destino"]').forEach(el => {
+    document.querySelectorAll('.t-nav-btn, input[name="destino"], select[name="destino"]').forEach(el => {
         el.addEventListener('change', updatePrices);
         el.addEventListener('click', () => setTimeout(updatePrices, 50));
     });
@@ -298,6 +458,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof google !== 'undefined' && google.maps && google.maps.places) {
         initAutocomplete();
     }
+    // === PREDICTIVE FLOW: MUERTE AL FORMULARIO ===
+    // (Consolidado al final del archivo para máxima limpieza arquitectónica)
+
+    // === B2B DOSSIER TRACKING ===
+    document.querySelectorAll('.btn-aura-mission, .btn-dossier, [href*="pdf"]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const label = btn.innerText.trim() || 'Dossier General';
+            console.log(`[AURA ANALYTICS] dossier_click | ${label}`);
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'dossier_interaction', {
+                    'event_category': 'B2B_Conversion',
+                    'event_label': label,
+                    'page_path': window.location.pathname
+                });
+            }
+            
+            // If it's the PDF generator button
+            if (btn.classList.contains('generate-pdf-trigger')) {
+                e.preventDefault();
+                generateAuraDossier();
+            }
+        });
+    });
 });
 
 /**
@@ -327,10 +510,15 @@ function buildWhatsAppMessage(data, config, division) {
         hour: '2-digit', minute: '2-digit'
     });
     
+    const isInstitutional = data.lead_type === 'CORPORATIVO B2B';
+    const isEarlyBooking = ['valle-nevado', 'portillo', 'farellones'].some(m => (data.destino || '').includes(m));
+    
     let message = `${config.emoji} *AURA TRAVEL — ${config.greeting}*\n`;
     message += `━━━━━━━━━━━━━━━━━━━━━━\n`;
     message += `📋 *División:* ${division}\n`;
     message += `🕐 *Fecha:* ${timestamp}\n`;
+    message += `🛡️ *Estatus:* ${isInstitutional ? 'INSTITUCIONAL VERIFICADO ✅' : 'PARTICULAR'}\n`;
+    if (isEarlyBooking) message += `❄️ *Promo:* EARLY BOOKING SNOW 2026 (-15%) 🏷️\n`;
     message += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
     
     // Map common field names to readable labels
@@ -343,30 +531,26 @@ function buildWhatsAppMessage(data, config, division) {
         'email': '📧 Email',
         'telefono': '📱 Teléfono',
         'phone': '📱 Teléfono',
-        'tipo_servicio': '🎯 Tipo de Servicio',
-        'service_type': '🎯 Tipo de Servicio',
+        'tipo_servicio': '🎯 Servicio',
+        'service_type': '🎯 Servicio',
         'fecha': '📅 Fecha',
         'date': '📅 Fecha',
         'hora': '⏰ Hora',
         'time': '⏰ Hora',
         'origen': '📍 Origen',
         'destino': '📍 Destino',
-        'pasajeros': '👥 Pasajeros',
-        'passengers': '👥 Pasajeros',
-        'detalle': '📝 Detalle',
-        'mensaje': '📝 Mensaje',
-        'message': '📝 Mensaje',
-        'idioma': '🌐 Idioma',
-        'vuelo': '✈️ N° Vuelo',
-        'aerolinea': '✈️ Aerolínea',
-        'destino_turistico': '🏔️ Destino',
-        'tipo_paquete': '📦 Tipo de Paquete',
-        'prioridad': '⚡ Prioridad'
+        'pasajeros': '👥 Pax',
+        'passengers': '👥 Pax',
+        'motivo': '🎯 Objetivo B2B',
+        'clinica': '🏛️ Centro/Clínica',
+        'cargo': '💼 Cargo',
+        'mensaje': '📝 Requerimientos',
+        'detalle': '📝 Detalles Operativos',
+        'message': '📝 Requerimientos'
     };
     
     // Build data section
     for (const [key, value] of Object.entries(data)) {
-        // Skip internal fields
         if (key.startsWith('_')) continue;
         if (!value || value.trim() === '') continue;
         
@@ -375,9 +559,11 @@ function buildWhatsAppMessage(data, config, division) {
     }
     
     message += `\n━━━━━━━━━━━━━━━━━━━━━━\n`;
+    message += `👤 *Especialista:* ${config.agent}\n`;
+    message += `🎯 *Foco:* ${config.specialization}\n`;
     message += `📩 *Responder a:* ${config.email}\n`;
-    message += `🔖 *ID:* ${config.prefix}-${Date.now().toString(36).toUpperCase()}\n`;
-    message += `\n_Mensaje generado por AURA Command Terminal_`;
+    message += `🔖 *ID:* ${data._leadId || 'SCL-' + Date.now().toString(36).toUpperCase()}\n`;
+    message += `\n_AURA Zenith System: Senior Protocol Verified_`;
     
     return message;
 }
@@ -397,7 +583,9 @@ function showNotification(title, message, type) {
                 ? '<i class="fas fa-check-circle"></i>' 
                 : type === 'warning'
                     ? '<i class="fas fa-exclamation-circle"></i>'
-                    : '<i class="fas fa-exclamation-triangle"></i>'}
+                    : type === 'info'
+                        ? '<i class="fas fa-brain"></i>'
+                        : '<i class="fas fa-exclamation-triangle"></i>'}
         </div>
         <div class="notif-content">
             <div class="notif-title">${title.toUpperCase()}</div>
@@ -430,7 +618,7 @@ function generateAuraDossier() {
         return;
     }
 
-    const btn = document.querySelector('.btn-luxury-mission');
+    const btn = document.querySelector('.btn-aura-mission');
     if (btn) {
         const originalText = btn.innerHTML;
         btn.innerHTML = '<span>GENERANDO DOSSIER...</span> <i class="fas fa-spinner fa-spin"></i>';
@@ -447,12 +635,16 @@ function generateAuraDossier() {
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
-        // Add a temporary branded header for the PDF
+        const division = detectDivision();
+        const config = DIVISION_CONFIG[division] || DIVISION_CONFIG['GENERAL'];
+        const pdfId = `DOSS-${division.substring(0,3)}-${Date.now().toString(36).toUpperCase()}`;
+        
         const pdfHeader = document.createElement('div');
         pdfHeader.innerHTML = `
-            <div style="text-align: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #C9A96E;">
-                <h1 style="color: #1E293B; margin: 0; font-family: 'Inter', sans-serif;">AURA TRAVEL</h1>
-                <p style="color: #64748B; margin: 5px 0 0 0; font-family: 'Inter', sans-serif;">División de Movilidad Corporativa | Confidencial</p>
+            <div style="text-align: center; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 2px solid #C9A96E;">
+                <h1 style="color: #0A0A0F; margin: 0; font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: 2px;">AURA TRAVEL</h1>
+                <p style="color: #C9A96E; margin: 5px 0 0 0; font-family: 'Inter', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">División ${division} | Dossier Técnico Institucional</p>
+                <p style="color: #64748B; margin: 2px 0 0 0; font-family: 'Inter', sans-serif; font-size: 10px;">ID: ${pdfId} | DOCUMENTO CONFIDENCIAL</p>
             </div>
         `;
         element.insertBefore(pdfHeader, element.firstChild);
@@ -508,5 +700,137 @@ function generateAuraDossier() {
         });
     }
 }
+
+/**
+ * Utility: Debounce function to prevent agent spam
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+/**
+ * AURA // ORQUESTADOR PREDICTIVO — "Muerte al Formulario"
+ * Automatiza el pre-llenado de datos basados en la interacción previa del usuario.
+ */
+/**
+ * AURA // ORQUESTADOR PREDICTIVO — "Muerte al Formulario"
+ * Automatiza el pre-llenado de datos basados en la interacción previa del usuario.
+ */
+function initPredictiveFlow() {
+    console.log('[AURA // ORQUESTADOR] Inicializando sistema de pre-llenado...');
+    
+    const prefillButtons = document.querySelectorAll('[data-aura-action="prefill"]');
+    const terminalForm = document.getElementById('contact-form') || document.querySelector('form.terminal-form');
+
+    if (!terminalForm) {
+        console.warn('[AURA // ORQUESTADOR] Error: Terminal de mando no encontrado.');
+        return;
+    }
+
+    prefillButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const service = btn.getAttribute('data-aura-service') || btn.dataset.auraService;
+            const destination = btn.getAttribute('data-aura-destination') || btn.dataset.auraDestination;
+            
+            console.log(`[AURA // ORQUESTADOR] Interacción detectada. Servicio: ${service}, Destino: ${destination}`);
+            
+            // Orquestación Predictiva en el Terminal
+            const serviceField = terminalForm.querySelector('[name="servicio"]');
+            const destinationField = terminalForm.querySelector('[name="direccion-destino"]') || terminalForm.querySelector('[name="destino"]');
+            const detailField = terminalForm.querySelector('[name="mensaje"]') || terminalForm.querySelector('[name="detalle"]');
+
+            // 1. Highlight the transition
+            btn.classList.add('btn-clicked');
+            
+            setTimeout(() => {
+                // 2. Pre-fill with animation
+                if (service && serviceField) {
+                    serviceField.value = service;
+                    serviceField.setAttribute('value', service);
+                    serviceField.classList.add('predicted-value', 'has-value');
+                    serviceField.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+
+                if (destination && destinationField) {
+                    destinationField.value = destination;
+                    destinationField.setAttribute('value', destination);
+                    destinationField.classList.add('predicted-value', 'has-value');
+                    destinationField.dispatchEvent(new Event('input', { bubbles: true }));
+                    destinationField.dispatchEvent(new Event('change', { bubbles: true }));
+
+                    // AURA AGENTIC: Trigger route calculation via Maps MCP
+                    if (window.AgentOrchestrator) {
+                        window.AgentOrchestrator.calculateAuraRoute('Santiago (SCL)', destination);
+                    }
+                }
+
+                if (detailField) {
+                    const divisionName = service ? service.charAt(0).toUpperCase() + service.slice(1) : 'General';
+                    detailField.value = `Consulta Prioritaria: División ${divisionName}. Destino solicitado: ${destination || 'Por definir'}.`;
+                    detailField.classList.add('predicted-value', 'has-value');
+                }
+
+                // 3. Update Insight Panel
+                const insightPanel = document.getElementById('agentLiveInsight');
+                if (insightPanel) {
+                    const division = service ? service.toUpperCase() : 'GENERAL';
+                    const config = DIVISION_CONFIG[division] || DIVISION_CONFIG['GENERAL'];
+                    
+                    insightPanel.innerHTML = `
+                        <div class="insight-icon"><i class="fas fa-brain"></i></div>
+                        <div class="insight-text-wrapper">
+                            <span class="insight-agent">${config.agent}</span>
+                            <p class="insight-msg">He pre-llenado el terminal con el protocolo de <strong>${division}</strong> para ahorrarle tiempo. ¿Desea proceder?</p>
+                        </div>
+                    `;
+                    insightPanel.classList.add('insight-active');
+                }
+
+                // 4. Scroll suave al terminal de mando (Sección #contacto)
+                const terminalSection = document.getElementById('contacto') || terminalForm;
+                terminalSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // 5. Visual confirmation
+                if (typeof showNotification === 'function') {
+                    showNotification('ZENITH ACTIVO', 'Protocolo de pre-llenado ejecutado con éxito.', 'info');
+                }
+            }, 300);
+        });
+    });
+
+    // Gestión dinámica de estados visuales
+    terminalForm.querySelectorAll('input, select, textarea').forEach(field => {
+        field.addEventListener('focus', () => {
+            field.classList.remove('predicted-value');
+        });
+
+        field.addEventListener('blur', () => {
+            if (field.value) field.classList.add('has-value');
+            else field.classList.remove('has-value');
+        });
+
+        if (field.value) field.classList.add('has-value');
+    });
+}
+
+// Inicialización Global AURA 2026
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPredictiveFlow);
+} else {
+    initPredictiveFlow();
+}
+
+console.log('[AURA // SYSTEM] Zenith Monolith Script Loaded.');
+
 
 

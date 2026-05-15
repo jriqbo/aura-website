@@ -4,8 +4,8 @@
   "description": "AURA Travel — Transporte Ejecutivo Premium en Chile",
   "private": true,
   "scripts": {
-    "dev": "npx http-server . -p 8080 -o",
-    "start": "npx http-server . -p 8080"
+    "dev": "node server.js",
+    "start": "node server.js"
   },
   "keywords": [
     "transporte",
@@ -17,6 +17,10 @@
   "author": "AURA Travel",
   "license": "UNLICENSED",
   "dependencies": {
+    "composio-core": "^0.5.39",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "sharp": "^0.34.5"
   }
 }

@@ -176,6 +176,48 @@
     padding: 3.5rem;
 }
 
+/* 🌡️ WEATHER TELEMETRY STYLES */
+.weather-telemetry-card .m-value {
+    font-family: 'Inter', monospace;
+    font-size: 0.8rem;
+}
+
+/* 🎯 FREQUENT DESTINATION TAGS */
+.frequent-dest-list {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition-sovereign);
+    pointer-events: none;
+}
+
+.form-group:focus-within .frequent-dest-list {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.f-dest-tag {
+    font-size: 0.65rem;
+    background: rgba(201, 169, 110, 0.1);
+    color: var(--aura-gold);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: var(--transition-micro);
+    white-space: nowrap;
+}
+
+.f-dest-tag:hover {
+    background: var(--aura-gold);
+    color: #000;
+    transform: scale(1.05);
+}
+
 /* --- TERMINAL BRAND IDENTITY --- */
 .terminal-brand-header {
     display: flex;
@@ -270,15 +312,37 @@
     -webkit-backdrop-filter: blur(8px);
 }
 
+.terminal-form input:focus, 
+.terminal-form textarea:focus, 
+.terminal-form select:focus {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* predicted value shimmer */
+.terminal-form .predicted-value {
+    animation: fieldShimmer 3s infinite;
+    border-color: rgba(var(--aura-gold-rgb), 0.4) !important;
+}
+
+@keyframes fieldShimmer {
+    0% { background: rgba(var(--aura-gold-rgb), 0.02); }
+    50% { background: rgba(var(--aura-gold-rgb), 0.06); }
+    100% { background: rgba(var(--aura-gold-rgb), 0.02); }
+}
+
 /* Floating Label Logic */
 .terminal-form input:focus ~ label,
 .terminal-form input:not(:placeholder-shown) ~ label,
+.terminal-form input.has-value ~ label,
 .terminal-form textarea:focus ~ label,
 .terminal-form textarea:not(:placeholder-shown) ~ label,
+.terminal-form textarea.has-value ~ label,
 .terminal-form select:focus ~ label,
-.terminal-form select:not([value=""]) ~ label {
+.terminal-form select.has-value ~ label {
     transform: translateY(-0.8rem) scale(0.7);
-    color: var(--aura-champagne);
+    color: var(--aura-gold);
     opacity: 0.8;
 }
 
@@ -479,12 +543,13 @@
     transform: translateX(40px);
 }
 
-.aura-notification.success {
-    border-left: 3px solid #10b981;
+.aura-notification.info {
+    border-left: 3px solid var(--aura-champagne);
+    background: rgba(14, 16, 30, 0.98);
 }
 
-.aura-notification.error {
-    border-left: 3px solid #ef4444;
+.aura-notification.warning {
+    border-left: 3px solid #f59e0b;
 }
 
 .notif-icon {
@@ -495,6 +560,8 @@
 
 .aura-notification.success .notif-icon { color: #10b981; }
 .aura-notification.error .notif-icon { color: #ef4444; }
+.aura-notification.info .notif-icon { color: var(--aura-champagne); }
+.aura-notification.warning .notif-icon { color: #f59e0b; }
 
 .notif-content {
     flex: 1;
@@ -559,6 +626,14 @@
     animation: notifCountdown 6s linear forwards;
 }
 
+.aura-notification.info .notif-progress {
+    background: linear-gradient(90deg, var(--aura-champagne), transparent);
+}
+
+.aura-notification.warning .notif-progress {
+    background: linear-gradient(90deg, #f59e0b, transparent);
+}
+
 .aura-notification.success .notif-progress {
     background: linear-gradient(90deg, #10b981, transparent);
 }
@@ -572,15 +647,33 @@
     to { width: 0%; }
 }
 
-/* Mobile notification */
+/* Mobile notification — Optimized for AURA High-End Mobile */
 @media (max-width: 768px) {
     .aura-notification {
-        top: auto;
-        bottom: 5rem;
-        right: 1rem;
-        left: 1rem;
+        top: 1rem;
+        bottom: auto;
+        right: 0.8rem;
+        left: 0.8rem;
         max-width: none;
         width: auto;
+        padding: 1.2rem;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+        transform: translateY(-120%);
+    }
+    
+    .aura-notification.visible {
+        transform: translateY(0);
+    }
+    
+    .aura-notification.fade-out {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    .notif-msg {
+        font-size: 0.7rem;
+        line-height: 1.4;
     }
 }
 
@@ -620,6 +713,140 @@
 .price-tier.featured strong {
     color: var(--aura-gold);
     text-shadow: 0 0 15px rgba(201, 169, 110, 0.3);
+}
+
+.price-badge-discount {
+    grid-column: 1 / -1;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    font-family: var(--font-main);
+    font-size: 0.55rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-align: center;
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    margin-top: 0.5rem;
+    animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; transform: scale(1.02); }
+    100% { opacity: 0.8; }
+}
+
+/* Sidebar Specific Pricing */
+.terminal-sidebar .terminal-pricing-display {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 1.5rem 1.8rem;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+    backdrop-filter: none;
+    margin-bottom: 0;
+}
+
+.terminal-sidebar .price-tier {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 0.5rem;
+}
+
+.terminal-sidebar .price-tier:last-of-type {
+    border-bottom: none;
+}
+
+.terminal-sidebar .price-tier span {
+    font-size: 0.45rem;
+}
+
+.terminal-sidebar .price-tier strong {
+    font-size: 0.95rem;
+}
+
+/* --- AGENT LIVE INSIGHT PANEL --- */
+.agent-live-insight {
+    grid-column: span 2;
+    background: rgba(201, 169, 110, 0.04);
+    border: 1px solid rgba(201, 169, 110, 0.12);
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+    display: none; /* Hidden by default, shown via JS */
+    align-items: center;
+    gap: 1.2rem;
+    margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    animation: insightFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes insightFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.agent-live-insight.active {
+    display: flex;
+}
+
+.insight-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(201, 169, 110, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--aura-gold);
+    font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 20px rgba(201, 169, 110, 0.15);
+}
+
+.insight-text-wrapper {
+    flex: 1;
+}
+
+.insight-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+}
+
+.insight-agent-name {
+    font-family: var(--font-main);
+    font-size: 0.5rem;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    color: var(--aura-gold);
+    text-transform: uppercase;
+}
+
+.insight-status {
+    font-family: var(--font-main);
+    font-size: 0.45rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+}
+
+.insight-message {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.insight-message strong {
+    color: #fff;
+    font-weight: 600;
 }
 
 

@@ -10,3 +10,8 @@
 5. MODO CIRUJANO (DIFF-ONLY): Cuando debas modificar un archivo existente, NUNCA imprimas ni reescribas el archivo completo. Entréga ÚNICAMENTE el bloque de código exacto que cambió, indicando la línea o la función específica donde debo pegarlo o reemplazarlo.
 6. CERO BOILERPLATE: No escribas código 'por si acaso'. No agregues comentarios explicativos dentro del código generado (ej. '// Aquí inicia la función'). Escribe código extremadamente conciso.
 7. RECICLAJE ESTRICTO: Antes de crear una nueva regla CSS o una función JS, verifica si puedes reutilizar variables de css/modules/vars.css o funciones existentes en js/aura-core.js. No dupliques lógica.
+
+# IDENTIDAD CENTRAL (OBLIGATORIO)
+- Núcleo Lógico: "Excelencia para Todos" (Democratizar el estándar premium).
+- Referencia: brand_identity.md.
+- Tono: Resolutivo, Honesto, Profesional, Cercano (Vecino experto).

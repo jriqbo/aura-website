@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA TRAVEL — SOVEREIGN INTERFACE SYSTEM (v2.0 Modular)
+   AURA TRAVEL — SOVEREIGN INTERFACE SYSTEM (v3.1 Zenith Monolith)
    ========================================================================== */
 
 @import url('modules/vars.css');
@@ -8,11 +8,18 @@
 @import url('modules/hero.css');
 @import url('modules/hero-sovereign.css');
 @import url('modules/components.css');
+@import url('modules/dashboard.css');
 @import url('modules/terminal.css');
 @import url('modules/footer.css');
 @import url('modules/mobile-menu.css');
 @import url('modules/turismo.css');
+@import url('modules/bento-zenith.css');
 @import url('modules/responsive.css');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Evita que el header tape los títulos al navegar */
+}
 
 /* ==========================================================================
    HOME HERO — RETINA-BURN BRAND MONUMENT
@@ -24,6 +31,7 @@
 }
 
 .hero-home-display .brand-main {
+    font-family: var(--font-monolith) !important;
     font-weight: 900;
     font-size: clamp(6rem, 18vw, 16rem) !important;
     letter-spacing: -0.05em;
@@ -50,41 +58,35 @@
     animation: auroraGlow 4s ease-in-out infinite alternate;
 }
 
-/* --- TITANIUM WHITE EFFECT — "AURA" --- */
-.aura-titanium-white {
+/* --- TITANIUM PURE EFFECT — Minimalist Supreme --- */
+.aura-titanium-pure {
     color: #FFFFFF !important;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 
-                 0 0 60px rgba(255, 255, 255, 0.2) !important;
-    background: none !important;
     -webkit-text-fill-color: #FFFFFF !important;
-    -webkit-background-clip: unset !important;
-    background-clip: unset !important;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: -0.02em;
+    position: relative;
 }
 
-/* --- LIQUID CHROME EFFECT (Legacy) --- */
-.aura-liquid-chrome {
-    background: linear-gradient(
-        100deg,
-        #FFFFFF 0%,
-        #FFFFFF 10%,
-        var(--aura-champagne) 22%,
-        #FFFFFF 35%,
-        #FFFFFF 48%,
-        var(--aura-champagne) 60%,
-        #FFFFFF 73%,
-        #FFFFFF 85%,
-        var(--aura-champagne) 95%,
-        #FFFFFF 100%
-    ) !important;
-    background-size: 300% auto !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    animation: liquidChromeFlow 6s linear infinite !important;
-    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.15))
-           drop-shadow(0 0 100px rgba(201, 169, 110, 0.35)) !important;
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
-    position: relative;
+.aura-titanium-pure::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: skewX(-20deg);
+    animation: lightSweep 8s infinite ease-in-out;
+}
+
+@keyframes lightSweep {
+    0%   { left: -100%; }
+    20%  { left: 200%; }
+    100% { left: 200%; }
 }
 
 /* Chrome gradient sweep */
@@ -598,7 +600,7 @@ section {
     max-width: 500px;
 }
 
-.mid-cta-card .btn-luxury-mission {
+.mid-cta-card .btn-aura-mission {
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -653,78 +655,78 @@ section {
    Hero CTA, Terminal Submit, and Mid-CTA buttons
    ========================================================================== */
 /* Corporativo (Blue) */
-.service-empresa .btn-luxury-mission,
+.service-empresa .btn-aura-mission,
 .service-empresa .btn-terminal-submit,
 .service-empresa .btn-primary {
     background: var(--aura-corporate);
     color: var(--aura-white);
 }
-.service-empresa .btn-luxury-mission:hover,
+.service-empresa .btn-aura-mission:hover,
 .service-empresa .btn-terminal-submit:hover,
 .service-empresa .btn-primary:hover {
     box-shadow: 0 15px 50px rgba(var(--aura-corporate-rgb), 0.3), 0 0 60px rgba(var(--aura-corporate-rgb), 0.1);
 }
 
 /* Salud (Green) */
-.service-salud .btn-luxury-mission,
+.service-salud .btn-aura-mission,
 .service-salud .btn-terminal-submit,
 .service-salud .btn-primary {
     background: var(--aura-clinical);
     color: var(--aura-white);
 }
-.service-salud .btn-luxury-mission:hover,
+.service-salud .btn-aura-mission:hover,
 .service-salud .btn-terminal-submit:hover,
 .service-salud .btn-primary:hover {
     box-shadow: 0 15px 50px rgba(var(--aura-clinical-rgb), 0.3), 0 0 60px rgba(var(--aura-clinical-rgb), 0.1);
 }
 
 /* Turismo (Gold) */
-.service-turismo .btn-luxury-mission,
+.service-turismo .btn-aura-mission,
 .service-turismo .btn-terminal-submit,
 .service-turismo .btn-primary {
     background: var(--aura-gold);
     color: var(--aura-black);
 }
-.service-turismo .btn-luxury-mission:hover,
+.service-turismo .btn-aura-mission:hover,
 .service-turismo .btn-terminal-submit:hover,
 .service-turismo .btn-primary:hover {
     box-shadow: 0 15px 50px rgba(var(--aura-gold-rgb), 0.3), 0 0 60px rgba(var(--aura-gold-rgb), 0.1);
 }
 
 /* Eventos (Purple) */
-.service-eventos .btn-luxury-mission,
+.service-eventos .btn-aura-mission,
 .service-eventos .btn-terminal-submit,
 .service-eventos .btn-primary {
     background: var(--aura-purple);
     color: var(--aura-white);
 }
-.service-eventos .btn-luxury-mission:hover,
+.service-eventos .btn-aura-mission:hover,
 .service-eventos .btn-terminal-submit:hover,
 .service-eventos .btn-primary:hover {
     box-shadow: 0 15px 50px rgba(var(--aura-purple-rgb), 0.3), 0 0 60px rgba(var(--aura-purple-rgb), 0.1);
 }
 
 /* Delivery (Ruby) */
-.service-delivery .btn-luxury-mission,
+.service-delivery .btn-aura-mission,
 .service-delivery .btn-terminal-submit,
 .service-delivery .btn-primary {
     background: var(--aura-ruby);
     color: var(--aura-white);
 }
-.service-delivery .btn-luxury-mission:hover,
+.service-delivery .btn-aura-mission:hover,
 .service-delivery .btn-terminal-submit:hover,
 .service-delivery .btn-primary:hover {
     box-shadow: 0 15px 50px rgba(var(--aura-ruby-rgb), 0.3), 0 0 60px rgba(var(--aura-ruby-rgb), 0.1);
 }
 
 /* Aeropuerto (Sky) */
-.service-aeropuerto .btn-luxury-mission,
+.service-aeropuerto .btn-aura-mission,
 .service-aeropuerto .btn-terminal-submit,
 .service-aeropuerto .btn-primary {
     background: var(--aura-sky);
     color: var(--aura-black);
 }
-.service-aeropuerto .btn-luxury-mission:hover,
+.service-aeropuerto .btn-aura-mission:hover,
 .service-aeropuerto .btn-terminal-submit:hover,
 .service-aeropuerto .btn-primary:hover {
     box-shadow: 0 15px 50px rgba(var(--aura-sky-rgb), 0.3), 0 0 60px rgba(var(--aura-sky-rgb), 0.1);
@@ -735,13 +737,13 @@ section {
 .service-diplomatico .testimonial-quote i,
 .service-diplomatico .testimonial-author strong { color: var(--aura-diplomatic); }
 
-.service-diplomatico .btn-luxury-mission,
+.service-diplomatico .btn-aura-mission,
 .service-diplomatico .btn-terminal-submit,
 .service-diplomatico .btn-primary {
     background: var(--aura-diplomatic);
     color: var(--aura-black);
 }
-.service-diplomatico .btn-luxury-mission:hover,
+.service-diplomatico .btn-aura-mission:hover,
 .service-diplomatico .btn-terminal-submit:hover,
 .service-diplomatico .btn-primary:hover {
     box-shadow: 0 15px 50px rgba(var(--aura-diplomatic-rgb), 0.3), 0 0 60px rgba(var(--aura-diplomatic-rgb), 0.1);

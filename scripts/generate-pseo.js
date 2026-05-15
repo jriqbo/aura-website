@@ -12,7 +12,7 @@ const r = [
     precio: '120.000', 
     precio_num: '120000',
     meta_title: 'Transfer Santiago a Valle Nevado | Aura Travel', 
-    meta_desc: 'Transporte de lujo y transfer privado a Valle Nevado. Flota ejecutiva.',
+    meta_desc: 'Transporte institucional y transfer privado a Valle Nevado. Flota ejecutiva.',
     tiempo: '1h 30m',
     distancia: '65 km',
     altitud: '3.025',
@@ -92,7 +92,7 @@ const r = [
     precio: '35.000', 
     precio_num: '35000',
     meta_title: 'Transfer Aeropuerto SCL a La Granja | Aura Travel', 
-    meta_desc: 'Conecta el Aeropuerto de Santiago con La Granja en transporte VIP.',
+    meta_desc: 'Conecta el Aeropuerto de Santiago con La Granja en transporte institucional.',
     tiempo: '40m',
     distancia: '32 km',
     altitud: '540',
@@ -117,7 +117,7 @@ const r = [
     destino: 'Sanhattan', 
     precio: '45.000', 
     precio_num: '45000',
-    meta_title: 'Transporte Corporativo VIP en Santiago | Aura Travel', 
+    meta_title: 'Transporte Corporativo de Excelencia en Santiago | Aura Travel', 
     meta_desc: 'Soluciones de transporte B2B para empresas y ejecutivos en Santiago.',
     tiempo: '30m',
     distancia: '15 km',
@@ -144,7 +144,7 @@ const r = [
     precio: '180.000', 
     precio_num: '180000',
     meta_title: 'Tour Privado Valle de Colchagua | Aura Travel', 
-    meta_desc: 'Expedición de lujo a las mejores viñas de Colchagua.',
+    meta_desc: 'Expedición institucional a las mejores viñas de Colchagua.',
     tiempo: '2h 45m',
     distancia: '185 km',
     altitud: '200',
@@ -157,7 +157,7 @@ const r = [
     precio: '450.000', 
     precio_num: '450000',
     meta_title: 'Expedición Torres del Paine | Aura Travel', 
-    meta_desc: 'Logística de lujo para el Parque Nacional Torres del Paine.',
+    meta_desc: 'Logística institucional para el Parque Nacional Torres del Paine.',
     tiempo: '4h+',
     distancia: '3.000 km+',
     altitud: '100',
@@ -197,7 +197,7 @@ r.forEach(x => {
 
 // SITEMAP GENERATION
 const b = 'https://auratravel.cl';
-const d = ['aeropuerto.html', 'contacto.html', 'corporativo.html', 'delivery.html', 'embajadas.html', 'eventos.html', 'salud.html', 'turismo.html'];
+const d = ['aeropuerto.html', 'contacto.html', 'corporativo.html', 'embajadas.html', 'eventos.html', 'salud.html', 'turismo.html'];
 let s = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 s += `  <url><loc>${b}/</loc><priority>1.0</priority></url>\n`;
 d.forEach(x => s += `  <url><loc>${b}/pages/${x}</loc><priority>0.9</priority></url>\n`);

@@ -5,7 +5,7 @@
 }
 
 @media (max-width: 1200px) {
-    .hero-display { font-size: 7rem; }
+    .hero-display { font-size: 5rem; }
     .brand-main { font-size: 10vw; }
     .services-bento-2 { gap: 1.2rem; }
 }
@@ -19,7 +19,7 @@
         grid-template-columns: 1fr;
     }
     
-    .hero-display { font-size: 5.5rem; }
+    .hero-display { font-size: 4rem; }
     .brand-main { font-size: 12vw; }
     .brand-sub { font-size: 2vw; letter-spacing: 0.4em; }
     
@@ -91,15 +91,15 @@
     }
     
     .hero-display { 
-        font-size: 3rem; 
+        font-size: 2.2rem; 
     }
     
     .brand-main {
-        font-size: 18vw;
+        font-size: 15vw;
     }
     
     .brand-sub {
-        font-size: 3.5vw;
+        font-size: 4vw;
         letter-spacing: 0.35em;
     }
 
@@ -168,7 +168,7 @@
         min-height: 380px;
     }
 
-    .btn-luxury-mission {
+    .btn-aura-mission {
         padding: 1rem 2.5rem;
         font-size: 0.6rem;
     }
@@ -207,7 +207,7 @@
 
 @media (max-width: 480px) {
     .hero-display { font-size: 2.5rem; }
-    .brand-main { font-size: 22vw; }
+    .brand-main { font-size: 16vw; }
     .brand-sub { font-size: 4vw; }
     .logo { font-size: 1rem !important; }
     
@@ -254,7 +254,7 @@
         transform: translateY(-0.7rem) scale(0.65);
     }
 
-    .btn, .btn-luxury-mission, .btn-terminal-submit {
+    .btn, .btn-aura-mission, .btn-terminal-submit {
         min-height: 48px; /* Touch target */
         display: flex;
         justify-content: center;

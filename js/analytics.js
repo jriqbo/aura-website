@@ -88,7 +88,7 @@
     // EVENTO: cta_click (botones principales)
     // ═══════════════════════════════════════════
     document.addEventListener('click', function(e) {
-        const btn = e.target.closest('.btn-luxury-mission, .btn-terminal-submit, .btn-outline, [class*="btn-cta"]');
+        const btn = e.target.closest('.btn-aura-mission, .btn-terminal-submit, .btn-outline, [class*="btn-cta"]');
         if (btn) {
             const btnText = btn.textContent.trim().toUpperCase();
             

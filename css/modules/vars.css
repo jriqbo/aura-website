@@ -12,7 +12,8 @@
 
 :root {
     /* --- Unified Institutional Palette --- */
-    --aura-black: #0A0A0F;
+    --aura-black: #111420;
+    --aura-black-rgb: 17, 20, 32;
     --aura-white: #FFFFFF;
     --aura-platinum: #E2E8F0;
     --aura-gold: #C9A96E;
@@ -39,9 +40,17 @@
     --aura-diplomatic-rgb: 184, 134, 11;
     
     /* Background & Glass — ELEVATED */
-    --bg-obsidian: #0A0A0F;
+    --bg-obsidian: #0F111A;
     --bg-carbon: #1E293B;
-    --bg-onyx: #0c0c14;
+    --bg-onyx: #121421;
+    
+    /* Dynamic Atmosphere System */
+    --service-accent-rgb: var(--aura-gold-rgb);
+    --atmosphere-intensity: 0.18;
+    --bg-atmosphere: radial-gradient(circle at 0% 0%, rgba(var(--service-accent-rgb), var(--atmosphere-intensity)) 0%, transparent 50%),
+                     radial-gradient(circle at 100% 100%, rgba(var(--aura-corporate-rgb), 0.08) 0%, transparent 50%),
+                     radial-gradient(circle at 50% 50%, rgba(var(--aura-black-rgb), 0.95) 0%, var(--aura-black) 100%);
+    
     --text-titanium: #CBD5E1;
     --text-silver: #94a3b8;
     --text-ash: #64748b;
@@ -75,6 +84,19 @@
     --radius-xl: 32px;
     --radius-pill: 100px;
 }
+
+/* --- Division Accent Overrides --- */
+.service-turismo { --service-accent-rgb: var(--aura-gold-rgb); --atmosphere-intensity: 0.20; }
+.service-corporativo { --service-accent-rgb: var(--aura-corporate-rgb); --atmosphere-intensity: 0.15; }
+.service-salud { 
+    --service-accent-rgb: var(--aura-clinical-rgb); 
+    --aura-black: #151a2e; /* Fondo ligeramente más azulado/claro para salud */
+    --atmosphere-intensity: 0.25; /* Más luminosidad para salud */
+}
+.service-eventos { --service-accent-rgb: var(--aura-purple-rgb); }
+.service-aeropuerto { --service-accent-rgb: var(--aura-sky-rgb); }
+.service-delivery { --service-accent-rgb: var(--aura-ruby-rgb); }
+
 
 
 

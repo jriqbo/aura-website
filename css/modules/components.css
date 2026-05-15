@@ -1,18 +1,49 @@
 /* --- AURA Interactive Elements & Components — ELEVATED --- */
 
-.btn-primary, .btn-outline {
-    padding: 1.2rem 3rem;
-    border-radius: var(--radius-pill);
-    font-family: var(--font-main);
+.logo-aura-monolith {
+    font-size: 1.8rem;
     font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
+    color: var(--aura-gold);
+    text-shadow: 0 0 20px rgba(201, 169, 110, 0.3);
+    transition: var(--transition-micro);
+}
+
+.logo-travel-monolith {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    color: var(--text-silver);
+    margin-left: 5px;
+    opacity: 0.8;
+}
+
+.logo:hover .logo-aura-monolith {
+    color: #fff;
+    text-shadow: 0 0 30px var(--aura-gold);
+}
+
+.btn-primary, .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 3rem;
+    border: 1.5px solid var(--aura-glass-border);
+    background: transparent;
+    color: var(--aura-white);
+    font-family: var(--font-main);
     font-size: 0.7rem;
-    text-decoration: none !important;
-    display: inline-block;
-    transition: var(--transition-sovereign);
-    border: none;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius-pill);
     cursor: pointer;
+    transition: var(--transition-sovereign);
+    position: relative;
+    overflow: hidden;
+    height: 3.5rem; /* Altura fija para alineación absoluta */
+    box-sizing: border-box;
 }
 
 .btn-primary { 
@@ -29,35 +60,52 @@
 .btn-outline { 
     background: transparent; 
     color: #fff !important; 
-    border: 1px solid var(--aura-glass-border); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 .btn-outline:hover { 
-    background: rgba(255, 255, 255, 0.04); 
-    border-color: var(--aura-glass-border-hover); 
+    background: rgba(255, 255, 255, 0.08); 
+    border-color: rgba(255, 255, 255, 0.4); 
 }
 
-.btn-luxury-mission {
-    padding: 1.2rem 2.5rem;
-    border-radius: var(--radius-pill);
-    font-family: var(--font-main);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.8rem;
-    color: #fff;
-    background: var(--aura-gold);
-    border: 1px solid var(--aura-gold);
-    cursor: pointer;
-    transition: var(--transition-sovereign);
+.btn-outline-white {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline-white:hover {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border-color: #FFFFFF !important;
+}
+
+.btn-aura-mission {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
+    background: var(--aura-gold);
+    color: var(--aura-black);
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     text-decoration: none;
-    box-shadow: 0 10px 30px rgba(201, 169, 110, 0.15);
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: var(--transition-sovereign);
+    position: relative;
+    overflow: hidden;
+    height: 3.5rem; /* Match btn-outline height */
+    box-sizing: border-box;
 }
 
-.btn-luxury-mission:hover {
+.btn-aura-mission:hover {
     background: #fff;
     color: #000;
     border-color: #fff;
@@ -65,7 +113,7 @@
     box-shadow: 0 15px 40px rgba(201, 169, 110, 0.25);
 }
 
-.btn-luxury-mission i {
+.btn-aura-mission i {
     font-size: 1.1rem;
 }
 
@@ -75,9 +123,14 @@
 
 .services-bento-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "corp salud"
+        "turismo turismo"
+        "eventos aeropuerto"
+        "delivery delivery";
+    gap: 2rem;
+    margin-top: 5rem;
 }
 
 .bento-column {
@@ -400,6 +453,64 @@
     100% { transform: translateY(1200%); }
 }
 
+/* --- Data Intelligence Dashboard --- */
+.data-intelligence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.data-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    backdrop-filter: blur(20px);
+    transition: var(--transition-sovereign);
+    position: relative;
+    overflow: hidden;
+}
+
+.data-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(var(--aura-champagne-rgb), 0.05), transparent 70%);
+    pointer-events: none;
+}
+
+.data-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(var(--aura-champagne-rgb), 0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(var(--aura-champagne-rgb), 0.05);
+}
+
+.data-value {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    font-family: var(--font-main);
+    line-height: 1;
+}
+
+.data-label {
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.data-desc {
+    color: var(--text-ash);
+    font-size: 0.75rem;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
 .hud-coordinate {
     position: absolute;
     font-family: var(--font-main);
@@ -515,6 +626,548 @@
     }
 }
 
+/* ============================================
+   LANGUAGE SWITCHER — ELITE UI
+   ============================================ */
+
+.language-switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-silver);
+    font-family: var(--font-main);
+    font-size: 0.65rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: var(--transition-micro);
+    letter-spacing: 0.05em;
+}
+
+.lang-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-btn.active {
+    color: var(--aura-gold);
+    background: rgba(201, 169, 110, 0.1);
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
 
 
+
+
+
+/* ============================================
+   ZENITH MANIFESTO SECTION
+   ============================================ */
+.manifesto-zenith {
+    padding: 10rem 0;
+    background: linear-gradient(180deg, var(--aura-black) 0%, rgba(6, 6, 16, 1) 50%, var(--aura-black) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.zenith-monolith-panel {
+    background: rgba(14, 16, 30, 0.4);
+    backdrop-filter: blur(40px) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 40px;
+    padding: 6rem 5rem;
+    position: relative;
+    box-shadow: 
+        0 40px 100px rgba(0,0,0,0.8),
+        inset 0 1px 0 rgba(255,255,255,0.1),
+        inset 0 0 60px rgba(201, 169, 110, 0.03);
+}
+
+.monolith-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.monolith-label {
+    font-family: var(--font-main);
+    font-size: 0.65rem;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: var(--aura-gold);
+    margin-bottom: 1.5rem;
+    display: block;
+    font-weight: 800;
+}
+
+.monolith-title {
+    font-family: var(--font-main);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+}
+
+.monolith-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--aura-gold);
+    margin: 3rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 15px var(--aura-gold);
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.manifesto-pillar {
+    text-align: center;
+    position: relative;
+}
+
+.pillar-icon {
+    font-size: 2.5rem;
+    color: var(--aura-gold);
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 15px rgba(201, 169, 110, 0.3));
+}
+
+.manifesto-pillar h3 {
+    font-family: var(--font-main);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--aura-white);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.manifesto-pillar p {
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    color: var(--text-silver);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.monolith-footer {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-note {
+    font-family: var(--font-main);
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    color: var(--text-ash);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Responsive Manifesto */
+@media (max-width: 1024px) {
+    .manifesto-grid { gap: 2rem; }
+    .zenith-monolith-panel { padding: 4rem 3rem; }
+}
+
+@media (max-width: 768px) {
+    .manifesto-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .monolith-title { font-size: 3rem; }
+    .zenith-monolith-panel { padding: 4rem 2rem; }
+}
+
+/* ============================================
+   BENTO MISSION IDs & ENHANCEMENTS
+   ============================================ */
+.mission-id {
+    font-family: var(--font-main);
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.bento-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    z-index: 5;
+}
+
+.bento-card-header i {
+    font-size: 1.2rem;
+    opacity: 0.5;
+    color: #fff;
+    transition: var(--transition-micro);
+}
+
+.bento-2-card:hover .bento-card-header i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.bento-card-content {
+    position: relative;
+/* ============================================
+   LIVE OPS PULSE — HOME PRINCIPAL
+   ============================================ */
+.live-ops-pulse {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+    animation: pulseBreathe 4s ease-in-out infinite;
+}
+
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--aura-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--aura-gold);
+    position: relative;
+}
+
+.pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--aura-gold);
+    animation: dotRipple 2s linear infinite;
+}
+
+.pulse-text {
+    font-family: var(--font-main);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.4em;
+    color: var(--text-silver);
+}
+
+@keyframes dotRipple {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes pulseBreathe {
+    0%, 100% { transform: scale(1); background: rgba(255, 255, 255, 0.05); }
+    50% { transform: scale(1.02); background: rgba(255, 255, 255, 0.08); }
+}
+
+/* ============================================
+   AIRPROTOCOL TACTICAL MONITOR
+   ============================================ */
+.airprotocol-monitor {
+    background: rgba(14, 16, 30, 0.4);
+    backdrop-filter: blur(30px) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    margin-top: 4rem;
+}
+
+.monitor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 3rem;
+}
+
+.monitor-id {
+    font-family: var(--font-main);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.5em;
+    color: var(--aura-sky);
+}
+
+.monitor-clock {
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.monitor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.flight-tactical-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 20px;
+    position: relative;
+    transition: var(--transition-sovereign);
+    overflow: hidden;
+}
+
+.flight-tactical-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--aura-sky);
+    transform: translateY(-5px);
+}
+
+.card-status {
+    font-family: var(--font-main);
+    font-size: 0.5rem;
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    color: var(--aura-sky);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.status-blink {
+    animation: statusBlink 2s infinite;
+}
+
+.status-ready {
+    color: #10B981;
+}
+
+@keyframes statusBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.f-code {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.f-path {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-silver);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-item span {
+    font-size: 0.45rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.2em;
+}
+
+.meta-item strong {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #fff;
+}
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.bento-card-content p {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--text-silver);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+}
+
+.bento-action {
+    font-family: var(--font-main);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--aura-gold);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-micro);
+}
+
+.bento-2-card:hover .bento-action {
+    gap: 12px;
+    color: #fff;
+}
+/* ============================================
+   SOVEREIGN REVEAL SYSTEM — CSS DRIVEN
+   ============================================ */
+.reveal, .reveal-up, .fade-in-slow, .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active, .reveal-up.active, .fade-in-slow.active, .fade-up.active,
+.reveal.visible, .reveal-up.visible, .fade-in-slow.visible, .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-slow {
+    transform: translateY(0);
+    transition: opacity 2s ease;
+}
+
+.reveal-up {
+    transform: translateY(60px);
+}
+
+/* Delay staggered reveal for sibling cards if needed */
+.reveal:nth-child(2) { transition-delay: 0.15s; }
+.reveal:nth-child(3) { transition-delay: 0.3s; }
+.reveal:nth-child(4) { transition-delay: 0.45s; }
+
+/* ============================================
+   AGENTIC UI — INTELLIGENCE INDICATORS
+   ============================================ */
+.predicted-value {
+    color: var(--aura-gold) !important;
+    font-style: italic;
+    border-bottom: 1px dashed var(--aura-gold) !important;
+}
+
+.incentive-badge {
+    background: rgba(201, 169, 110, 0.15);
+    border: 1px solid var(--aura-gold);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+    0% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(201, 169, 110, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0); }
+}
+
+.aura-log-entry {
+    font-family: 'Inter', monospace;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+    color: var(--text-silver);
+    border-left: 2px solid var(--aura-gold);
+    padding-left: 8px;
+    animation: slideInRight 0.4s ease-out;
+}
+
+.log-time { color: var(--aura-gold); font-weight: bold; }
+.log-agent { color: #fff; text-transform: uppercase; }
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* --- AURA QUICK ACTIONS --- */
+.zenith-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.btn-quick-reserve {
+    background: var(--aura-gold);
+    color: #000;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-main);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-sovereign);
+    box-shadow: 0 4px 15px rgba(201, 169, 110, 0.2);
+    text-transform: uppercase;
+}
+
+.btn-quick-reserve:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.predicted-value {
+    color: var(--aura-gold) !important;
+    border-bottom-color: var(--aura-gold) !important;
+    animation: field-pulse 2s infinite;
+}
+
+@keyframes field-pulse {
+    0% { border-bottom-color: var(--aura-gold); }
+    50% { border-bottom-color: rgba(201, 169, 110, 0.3); }
+    100% { border-bottom-color: var(--aura-gold); }
+}
 

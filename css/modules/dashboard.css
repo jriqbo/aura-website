@@ -1,0 +1,184 @@
+/* 📊 AURA DATA HUD - Dashboard de Orquestación Autónoma */
+
+.aura-dashboard-hud {
+    padding: 6rem 5%;
+    background: linear-gradient(to bottom, #0A0A0F, #0E101E);
+    position: relative;
+    overflow: hidden;
+}
+
+.hud-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hud-header {
+    margin-bottom: 2rem;
+}
+
+.hud-label {
+    font-family: 'Inter', sans-serif;
+    color: var(--aura-gold);
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.hud-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hud-description {
+    color: var(--text-silver);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.hud-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.hud-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: var(--transition-sovereign);
+    position: relative;
+    overflow: hidden;
+}
+
+.hud-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--aura-gold);
+    opacity: 0.5;
+}
+
+.hud-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.hud-card-icon {
+    font-size: 1.5rem;
+    color: var(--aura-gold);
+    margin-bottom: 1.5rem;
+}
+
+.hud-card-value {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.hud-card-label {
+    font-size: 0.8rem;
+    color: var(--text-silver);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hud-status-bar {
+    margin-top: 1.5rem;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    position: relative;
+}
+
+.hud-status-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--aura-gold);
+    box-shadow: 0 0 15px var(--aura-gold);
+}
+
+/* 🛰️ CITYFLOW MONITOR STYLES */
+.city-flow-card {
+    grid-column: span 1;
+}
+
+.monitor-display {
+    margin-bottom: 1.5rem;
+}
+
+.monitor-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.monitor-row:last-child {
+    border-bottom: none;
+}
+
+.m-label {
+    font-size: 0.65rem;
+    color: var(--text-silver);
+    letter-spacing: 1px;
+}
+
+.m-value {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+.status-fluid {
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.status-moderate {
+    color: #F59E0B;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.status-congested {
+    color: #EF4444;
+    background: rgba(239, 68, 68, 0.1);
+    animation: status-pulse 2s infinite;
+}
+
+@keyframes status-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+    .hud-container {
+        grid-template-columns: 1fr;
+    }
+    .hud-grid {
+        grid-template-columns: 1fr;
+    }
+}

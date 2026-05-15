@@ -1,558 +1,205 @@
 /* ============================================================
-   AURA HOME HERO — SOVEREIGN SUPREMACY MODULE
-   Exclusive to index.html — 3-Layer Hierarchy System
-   ============================================================
-   Layer 1: MONOLITH REVEAL (Cinematic entrance ceremony)
-   Layer 2: ATMOSPHERIC SOVEREIGNTY (Fog, light scan, aberration)
-   Layer 3: LIVE COMMAND HUD (Telemetry dashboard)
+   AURA HOME HERO — ZEN MINIMALISM MODULE
    ============================================================ */
-
-/* ===========================================
-   SCOPING — All styles under .hero-sovereign
-   Subpages use .hero-command WITHOUT .hero-sovereign
-   =========================================== */
 
 .hero-sovereign {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center; /* Center content for cleaner look */
     background: var(--aura-black);
     overflow: hidden;
-    padding: 6rem 0 6rem 0 !important;
+    padding: 6rem 0 !important;
 }
 
 /* ============================================================
-   LAYER 1: MONOLITH REVEAL — CINEMATIC ENTRANCE (4s ceremony)
-   ============================================================
-   T+0.0s: Blackout curtain covers everything
-   T+0.5s: Gold line extends from center
-   T+1.5s: Line fragments into AURA text (blur → sharp)
-   T+2.5s: TRAVEL appears (letter-spacing expands)
-   T+3.0s: Background image fades in
-   T+3.5s: CTA + HUD materialize
-   T+4.0s: Particles begin, ceremony complete
-   ============================================================ */
-
-/* Blackout curtain — covers everything initially */
-.sovereign-curtain {
-    position: fixed;
-    inset: 0;
-    background: var(--aura-black);
-    z-index: 9999;
-    pointer-events: none;
-    animation: curtainLift 1.2s cubic-bezier(0.16, 1, 0.3, 1) 3.0s forwards;
-}
-
-@keyframes curtainLift {
-    0%   { opacity: 1; }
-    100% { opacity: 0; visibility: hidden; }
-}
-
-/* Gold genesis line — horizontal reveal */
-.sovereign-genesis-line {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--aura-champagne), transparent);
-    transform: translate(-50%, -50%);
-    z-index: 10000;
-    animation: genesisExpand 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
-    box-shadow: 
-        0 0 30px rgba(201, 169, 110, 0.6),
-        0 0 80px rgba(201, 169, 110, 0.3);
-}
-
-@keyframes genesisExpand {
-    0%   { width: 0; opacity: 0; }
-    30%  { opacity: 1; }
-    100% { width: min(80vw, 600px); opacity: 0; }
-}
-
-/* ============================================================
-   ENTRANCE ORCHESTRATION
-   CSS handles: slider, overlay, status tag, tagline, buttons, HUD
-   JS handles: .hero-display (AURA/TRAVEL text) — because
-   .aura-liquid-chrome has animation:!important that blocks CSS anims
+   ENTRANCE ORCHESTRATION — Zen Fade
    ============================================================ */
 
 /* Background slider reveal */
 .hero-sovereign .hero-slider {
     opacity: 0;
-    animation: sovereignBgReveal 2s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
-}
-
-@keyframes sovereignBgReveal {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
+    animation: sovereignFadeIn 2.5s ease-out forwards;
 }
 
 /* Overlay reveal */
 .hero-sovereign .hero-overlay {
     opacity: 0;
-    animation: sovereignFadeIn 1.5s ease 1.8s forwards;
+    animation: sovereignFadeIn 2s ease 0.5s forwards;
 }
 
-/* Status tag entrance */
-.hero-sovereign .hero-status-tag {
+/* Main Content entrance */
+.hero-content-monolith {
     opacity: 0;
-    transform: translateY(15px);
-    animation: sovereignFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+    transform: translateY(20px);
+    animation: sovereignFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+    text-align: center;
+    z-index: 10;
+    width: 100%;
 }
 
-/* Bento tag entrance */
-.hero-sovereign .bento-2-tag {
-    opacity: 0;
-    animation: sovereignFadeUp 1s ease 1.8s forwards;
-}
-
-/* Tagline entrance */
-.hero-sovereign .hero-tagline {
-    opacity: 0;
-    animation: sovereignFadeUp 1s ease 2.6s forwards;
-}
-
-/* CTA buttons entrance */
-.hero-sovereign .hero-actions {
-    opacity: 0;
-    animation: sovereignFadeUp 1s ease 2.8s forwards;
-}
-
-/* Scroll protocol */
-.hero-sovereign .scroll-protocol {
-    opacity: 0;
-    animation: sovereignFadeUp 1s ease 3.2s forwards;
-}
-
-/* HUD minimal */
-.hero-sovereign .hero-hud-minimal {
-    opacity: 0;
-    animation: sovereignFadeUp 0.8s ease 3.0s forwards;
-}
-
-/* Sovereign HUD telemetry dashboard */
-.hero-sovereign .sovereign-hud {
-    opacity: 0;
-    animation: sovereignFadeUp 1s ease 3.0s forwards;
-}
-
-/* Shared keyframes */
 @keyframes sovereignFadeIn {
     0%   { opacity: 0; }
     100% { opacity: 1; }
 }
 
 @keyframes sovereignFadeUp {
-    0%   { opacity: 0; transform: translateY(20px); }
+    0%   { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-
 /* ============================================================
-   LAYER 2: ATMOSPHERIC SOVEREIGNTY
-   4 Sub-layers that only exist on the Home hero
+   BRAND MONUMENTAL — Zen Version
    ============================================================ */
 
-/* --- Sub-layer 1: Volumetric Fog --- */
+.hero-monolith-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.brand-monolith-primary {
+    font-family: 'Ethnocentric', var(--font-main);
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.brand-monolith-secondary {
+    font-family: var(--font-main);
+    font-size: clamp(0.7rem, 2vw, 1.1rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.8em;
+    text-transform: uppercase;
+    margin-left: 0.8em; /* Offset for center alignment due to spacing */
+    animation: letterExpand 2s ease 1s forwards;
+    opacity: 0;
+}
+
+@keyframes letterExpand {
+    0%   { letter-spacing: 0.2em; opacity: 0; }
+    100% { letter-spacing: 0.8em; opacity: 1; }
+}
+
+/* --- Zen Tagline --- */
+.hero-tagline-zenith {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+/* --- Action Panel --- */
+.monolith-glass-panel {
+    background: rgba(14, 16, 30, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Atmospheric Layers (Minimalist) --- */
 .sovereign-fog {
     position: absolute;
     inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 15, 0.4) 100%);
     z-index: 2;
     pointer-events: none;
-    overflow: hidden;
 }
 
-.sovereign-fog::before {
-    content: '';
+.cinematic-flare {
     position: absolute;
-    bottom: -10%;
-    left: -20%;
-    width: 140%;
-    height: 50%;
-    background: radial-gradient(ellipse at 30% 100%, 
-        rgba(10, 10, 15, 0.8) 0%, 
-        rgba(10, 10, 15, 0.4) 40%, 
-        transparent 70%
-    );
-    animation: fogDrift 20s ease-in-out infinite alternate;
-    filter: blur(40px);
-}
-
-.sovereign-fog::after {
-    content: '';
-    position: absolute;
-    bottom: -5%;
-    right: -15%;
-    width: 120%;
-    height: 45%;
-    background: radial-gradient(ellipse at 70% 100%, 
-        rgba(201, 169, 110, 0.06) 0%, 
-        rgba(10, 10, 15, 0.5) 30%, 
-        transparent 65%
-    );
-    animation: fogDrift 25s ease-in-out infinite alternate-reverse;
-    filter: blur(50px);
-}
-
-@keyframes fogDrift {
-    0%   { transform: translateX(-3%) translateY(0); }
-    50%  { transform: translateX(3%) translateY(-5%); }
-    100% { transform: translateX(-3%) translateY(0); }
-}
-
-/* --- Sub-layer 2: Enhanced Particle System (via JS, canvas already exists) --- */
-/* Extra glow halo for the existing canvas */
-.hero-sovereign .hero-particles-canvas {
-    position: absolute;
-    inset: 0;
+    top: -10%;
+    left: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
+    filter: blur(60px);
     z-index: 3;
     pointer-events: none;
-    opacity: 0;
-    animation: sovereignFadeUp 1.5s ease 3.5s forwards;
 }
 
-/* --- Sub-layer 3: Horizontal Light Scan --- */
-.sovereign-light-scan {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    pointer-events: none;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(201, 169, 110, 0.03) 40%, 
-        rgba(201, 169, 110, 0.08) 50%, 
-        rgba(201, 169, 110, 0.03) 60%, 
-        transparent 100%
-    );
-    animation: lightScan 12s ease-in-out infinite;
-    animation-delay: 4s; /* Start after entrance ceremony */
-}
-
-@keyframes lightScan {
-    0%   { left: -100%; }
-    40%  { left: 100%; }
-    100% { left: 100%; } /* Pause before repeating */
-}
-
-/* --- Sub-layer 4: Chromatic Aberration Borders --- */
-.sovereign-aberration {
+.hero-particles-canvas {
     position: absolute;
     inset: 0;
     z-index: 4;
     pointer-events: none;
-    opacity: 0;
-    animation: aberrationFadeIn 2s ease 3.5s forwards;
 }
 
-.sovereign-aberration::before {
-    content: '';
+/* --- Scroll Protocol (Zen) --- */
+.scroll-protocol {
     position: absolute;
-    inset: 0;
-    background: 
-        linear-gradient(to right, rgba(201, 169, 110, 0.08) 0%, transparent 8%),
-        linear-gradient(to left, rgba(100, 140, 200, 0.06) 0%, transparent 8%);
-}
-
-.sovereign-aberration::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-        linear-gradient(to bottom, rgba(201, 169, 110, 0.04) 0%, transparent 6%),
-        linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, transparent 15%);
-}
-
-@keyframes aberrationFadeIn {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-
-/* ============================================================
-   LAYER 3: LIVE COMMAND HUD — Telemetry Dashboard
-   ============================================================ */
-
-/* Container for all HUD elements */
-.sovereign-hud {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-    pointer-events: none;
-    opacity: 0;
-    animation: sovereignFadeUp 1s ease 3.2s forwards;
-}
-
-/* --- Top-Left: Clock + Location --- */
-.hud-clock {
-    position: absolute;
-    top: 7rem;
-    left: 3%;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-}
-
-.hud-clock-time {
-    font-family: var(--font-main);
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.25);
-    letter-spacing: 0.3em;
-    font-variant-numeric: tabular-nums;
-}
-
-.hud-clock-label {
-    font-family: var(--font-main);
-    font-size: 0.4rem;
-    font-weight: 600;
-    color: rgba(201, 169, 110, 0.4);
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-}
-
-/* --- Top-Right: Fleet Status --- */
-.hud-fleet-status {
-    position: absolute;
-    top: 7rem;
-    right: 3%;
-    display: flex;
     align-items: center;
-    gap: 0.6rem;
-    text-align: right;
-}
-
-.hud-fleet-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--aura-champagne);
-    box-shadow: 0 0 10px var(--aura-champagne), 0 0 20px rgba(201, 169, 110, 0.3);
-    animation: hudPulse 2s ease-in-out infinite;
-}
-
-@keyframes hudPulse {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50%      { opacity: 1; transform: scale(1.3); }
-}
-
-.hud-fleet-text {
-    font-family: var(--font-main);
-    font-size: 0.5rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.2);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-}
-
-.hud-fleet-count {
-    color: rgba(201, 169, 110, 0.5);
-    font-size: 0.55rem;
-}
-
-/* --- Left Edge: Telemetry Line --- */
-.hud-telemetry-line {
-    position: absolute;
-    top: 35%;
-    left: 2%;
-    width: 1px;
-    height: 30%;
-    background: linear-gradient(to bottom, transparent, rgba(201, 169, 110, 0.15), transparent);
-    overflow: visible;
-}
-
-.hud-telemetry-pulse {
-    position: absolute;
-    left: -3px;
-    top: 0;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: rgba(201, 169, 110, 0.6);
-    box-shadow: 0 0 15px rgba(201, 169, 110, 0.4);
-    animation: telemetryPulseTravel 4s ease-in-out infinite;
-}
-
-@keyframes telemetryPulseTravel {
-    0%   { top: 0%; opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
-}
-
-.hud-telemetry-nodes {
-    position: absolute;
-    left: 8px;
-    top: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.hud-telemetry-node {
-    font-family: var(--font-main);
-    font-size: 0.35rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.12);
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    position: relative;
-    padding-left: 12px;
-}
-
-.hud-telemetry-node::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 6px;
-    height: 1px;
-    background: rgba(201, 169, 110, 0.2);
-}
-
-/* --- Bottom: Service Ticker --- */
-.hud-ticker {
-    position: absolute;
-    bottom: 6rem;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    height: 1.2rem;
-    opacity: 0.25;
-}
-
-.hud-ticker-track {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    animation: tickerScroll 40s linear infinite;
-    white-space: nowrap;
-    width: max-content;
-}
-
-.hud-ticker-item {
-    font-family: var(--font-main);
-    font-size: 0.45rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.hud-ticker-item .ticker-dot {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: var(--aura-champagne);
+    gap: 1rem;
+    z-index: 10;
     opacity: 0.5;
 }
 
-@keyframes tickerScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.scroll-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
 }
 
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background: var(--aura-gold);
+    transform: translateX(-50%);
+    animation: scrollAnim 2.5s infinite;
+}
+
+@keyframes scrollAnim {
+    0%   { top: -20%; opacity: 0; }
+    30%  { opacity: 1; }
+    100% { top: 120%; opacity: 0; }
+}
 
 /* ============================================================
-   RESPONSIVE — Graceful degradation
+   RESPONSIVE
    ============================================================ */
 
 @media (max-width: 768px) {
-    /* Simplify entrance on mobile */
-    .sovereign-curtain {
-        animation-duration: 0.8s;
-        animation-delay: 2.0s;
+    .brand-monolith-secondary {
+        letter-spacing: 0.4em;
     }
-
-    .sovereign-genesis-line {
-        animation-delay: 0.2s;
+    
+    .hero-tagline-zenith {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
-
-    .hero-sovereign .brand-main {
-        animation-delay: 0.6s;
-        animation-duration: 1.2s;
-    }
-
-    .hero-sovereign .brand-sub {
-        animation-delay: 1.2s;
-        animation-duration: 1s;
-    }
-
-    .hero-sovereign .hero-status-tag {
-        animation-delay: 1.6s;
-    }
-
-    .hero-sovereign .bento-2-tag {
-        animation-delay: 1.2s;
-    }
-
-    .hero-sovereign .hero-tagline {
-        animation-delay: 1.8s;
-    }
-
-    .hero-sovereign .hero-actions {
-        animation-delay: 2.0s;
-    }
-
-    .hero-sovereign .scroll-protocol {
-        animation-delay: 2.2s;
-    }
-
-    .hero-sovereign .hero-hud-minimal {
-        animation-delay: 2.0s;
-    }
-
-    .sovereign-hud {
-        animation-delay: 2.2s;
-    }
-
-    .hero-sovereign .hero-slider {
-        animation-delay: 1.2s;
-        animation-duration: 1.5s;
-    }
-
-    .hero-sovereign .hero-overlay {
-        animation-delay: 1.4s;
-    }
-
-    /* Hide complex HUD elements on mobile */
-    .hud-telemetry-line,
-    .hud-clock,
-    .hud-fleet-status {
-        display: none;
-    }
-
-    .hud-ticker {
-        bottom: 4rem;
-    }
-
-    /* Simplify fog */
-    .sovereign-fog::before,
-    .sovereign-fog::after {
-        filter: blur(30px);
-    }
-
-    /* Hide chromatic aberration */
-    .sovereign-aberration {
-        display: none;
+    
+    .monolith-glass-panel {
+        background: transparent;
+        backdrop-filter: none;
+        border: none;
+        padding: 1rem;
     }
 }
-
-@media (max-width: 480px) {
-    .hud-ticker {
-        display: none;
-    }
-}
-
-
-
-

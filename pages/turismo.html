@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA TRAVEL | Turismo Premium Chile — Temporada de Nieve 2026</title>
-    <meta name="description" content="Traslados VIP a Valle Nevado, Portillo y Farellones. Turismo de lujo por Patagonia, Atacama, viñedos y playas. City Tour Santiago. Reserva tu temporada de nieve 2026.">
+    <meta name="description" content="Traslados institucionales a Valle Nevado, Portillo y Farellones. Turismo de excelencia por Patagonia, Atacama, viñedos y playas. City Tour Santiago. Reserva tu temporada de nieve 2026.">
     <link rel="icon" type="image/png" href="../favicon.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://auratravel.cl/turismo">
     <meta property="og:title" content="AURA TRAVEL | Turismo Premium Chile — Temporada de Nieve 2026">
-    <meta property="og:description" content="Traslados VIP y experiencias premium en Chile. Nieve, Patagonia, viñedos, playas y City Tour.">
+    <meta property="og:description" content="Traslados institucionales y experiencias premium en Chile. Nieve, Patagonia, viñedos, playas y City Tour.">
     <meta property="og:image" content="https://auratravel.cl/aura_turismo_8k.webp">
     <link rel="stylesheet" href="../css/aura.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="application/ld+json">
-    [{"@context":"https://schema.org","@type":"Service","name":"AURA Travel — División Turismo","provider":{"@type":"Organization","name":"AURA Travel"},"description":"Traslados VIP a centros de ski, Patagonia, viñedos, playas y City Tour Santiago.","areaServed":{"@type":"Country","name":"Chile"},"serviceType":"Turismo Premium","offers":{"@type":"Offer","priceCurrency":"CLP","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TouristTrip","name":"Temporada de Nieve 2026 — Valle Nevado, Portillo, Farellones","description":"Traslados VIP desde Santiago a los mejores centros de ski de Chile. Junio a Septiembre 2026.","touristType":"Ski Tourism","provider":{"@type":"Organization","name":"AURA Travel"}}]
+    [{"@context":"https://schema.org","@type":"Service","name":"AURA Travel — División Turismo","provider":{"@type":"Organization","name":"AURA Travel"},"description":"Traslados institucionales a centros de ski, Patagonia, viñedos, playas y City Tour Santiago.","areaServed":{"@type":"Country","name":"Chile"},"serviceType":"Turismo Premium","offers":{"@type":"Offer","priceCurrency":"CLP","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"TouristTrip","name":"Temporada de Nieve 2026 — Valle Nevado, Portillo, Farellones","description":"Traslados institucionales desde Santiago a los mejores centros de ski de Chile. Junio a Septiembre 2026.","touristType":"Ski Tourism","provider":{"@type":"Organization","name":"AURA Travel"}}]
     </script>
 </head>
 <body class="aura-elite service-turismo">
     <div class="noise-overlay"></div>
+
+    <!-- STICKY PROMO NIEVE 2026 -->
+    <div class="snow-sticky-bar">
+        <div class="container bar-content">
+            <span class="bar-tag">❄️ BENEFICIO NIEVE</span>
+            <p class="bar-text"><strong>EARLY BOOKING 2026:</strong> Asegura tu cupo hoy y obtén un <strong>15% OFF</strong> automático en destinos de montaña. <span class="slots-indicator">Solo quedan <strong id="snow-slots">14</strong> cupos con este descuento.</span></p>
+            <a href="#contacto" class="bar-btn" id="promo-reserve-btn" 
+               data-aura-action="prefill" 
+               data-aura-service="Turismo" 
+               data-aura-destination="Valle Nevado (Snow Early Booking)">RESERVAR CON -15%</a>
+        </div>
+    </div>
 
     <header class="capsule-header">
         <nav class="container">
@@ -34,8 +46,11 @@
                     <a href="turismo.html" class="active">TURISMO</a>
                     <a href="eventos.html">EVENTOS</a>
                     <a href="aeropuerto.html">AEROPUERTO</a>
-                    <a href="delivery.html">DELIVERY</a>
                     <a href="../index.html">CONTACTO</a>
+                    <div class="language-switcher">
+                        <button class="lang-btn active">ES</button>
+                        <button class="lang-btn">EN</button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -44,33 +59,37 @@
     <!-- ======= HERO ======= -->
     <section class="hero-command" id="inicio">
         <div class="hero-slider">
-            <img src="../img/turismo/hero_turismo_1.webp" alt="Valle Nevado Nieve Andes Chile">
-            <img loading="lazy" decoding="async" src="../img/turismo/hero_turismo_2.webp" alt="Torres del Paine Patagonia Chile">
-            <img loading="lazy" decoding="async" src="../img/turismo/hero_turismo_3.webp" alt="Bahía Inglesa Costa Turquesa Chile">
-            <img loading="lazy" decoding="async" src="../img/turismo/hero_turismo_4.webp" alt="Viñedos Colchagua Golden Hour Chile">
-            <img loading="lazy" decoding="async" src="../img/turismo/hero_turismo_5.webp" alt="Atacama Cielo Estrellado Chile">
+            <img src="../img/turismo/hero_turismo_1.webp" alt="Experiencia en la Nieve — Familia disfrutando del arribo seguro a Valle Nevado con AURA" loading="eager">
+            <img src="../img/turismo/hero_turismo_2.webp" alt="Aventura Patagónica — Viajeros explorando las Torres del Paine bajo escolta profesional" loading="lazy">
+            <img src="../img/turismo/hero_turismo_3.webp" alt="Relajo en la Costa — Turistas disfrutando de la exclusividad de Bahía Inglesa" loading="lazy">
+            <img src="../img/turismo/hero_turismo_4.webp" alt="Cultura Vitivinícola — Grupo de amigos en cata de vinos en el Valle de Colchagua" loading="lazy">
+            <img src="../img/turismo/hero_turismo_5.webp" alt="Asistencia en Ruta — Conductor AURA brindando información experta sobre el destino" loading="lazy">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-hud-minimal">
-            <span class="hud-label">Enlace Soberano</span>
-            <span class="hud-value glow-text">SCL // TEMPORADA_NIEVE_2026</span>
+            <span class="hud-label">Disponibilidad Nieve</span>
+            <span class="hud-value glow-text">92% CUPOS RESERVADOS</span>
+            <span class="hud-label" style="margin-top: 1rem;">Estado Camino</span>
+            <span class="hud-value">ABIERTO // TRANSITO CON CADENAS</span>
         </div>
         <div class="container">
             <div class="hero-content reveal">
-                <span class="bento-2-tag">DIVISIÓN TURISMO // TEMPORADA DE NIEVE 2026</span>
-                <h1 class="hero-display">
-                    <span class="brand-main">AURA</span>
-                    <span class="brand-sub">TURISMO</span>
-                    <span class="hero-status-tag">❄️ RESERVAS ABIERTAS · JUNIO — SEPTIEMBRE</span>
-                </h1>
-                <p class="hero-tagline">
-                    La temporada de nieve 2026 comienza en junio. Asegura tu traslado VIP a Valle Nevado, Portillo y Farellones. City Tour, viñedos, Patagonia y más.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contacto" class="btn-luxury-mission">
-                        <span>RESERVAR TEMPORADA DE NIEVE</span>
-                        <i class="fas fa-snowflake"></i>
-                    </a>
+                <div class="hero-glass-capsule">
+                    <span class="bento-2-tag">DIVISIÓN TURISMO // TEMPORADA DE NIEVE 2026</span>
+                    <h1 class="hero-display">
+                        <span class="brand-main">AURA</span>
+                        <span class="brand-sub">EXCELENCIA EN CADA DESTINO</span>
+                        <span class="hero-status-tag">❄️ NIEVE 2026: ÚLTIMOS CUPOS CON DESCUENTO</span>
+                    </h1>
+                    <p class="hero-tagline">
+                        Disfrute de la montaña con la seguridad de quien conoce cada curva. Traslados expertos a Valle Nevado, Portillo y Farellones con equipamiento de invierno completo y conductores certificados.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contacto" class="btn-aura-mission magnetic">
+                            <span>RESERVAR TEMPORADA DE NIEVE</span>
+                            <i class="fas fa-snowflake"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,11 +104,11 @@
     <!-- ======= BANNER TEMPORADA DE NIEVE ======= -->
     <section class="snow-season-banner reveal">
         <div class="container">
-            <div class="snow-badge">❄️ TEMPORADA INVERNAL 2026</div>
-            <h2>La Nieve <br>Te Espera.</h2>
-            <p>Traslados VIP desde Santiago a los mejores centros de ski de Sudamérica. Vehículos equipados con cadenas, WiFi y calefacción premium. Reserva anticipada con tarifa preferencial.</p>
+            <div class="snow-badge">❄️ EXCELENCIA EN LA MONTAÑA</div>
+            <h2>Seguridad <br>Sin Excusas.</h2>
+            <p>Subir a la nieve no debe ser un estrés. Nuestras vans están equipadas con cadenas de alta tracción, WiFi para que no pierdas conexión y conductores que dominan el camino a Valle Nevado. Excelencia institucional para el paseo de tu vida.</p>
             <a href="#contacto" class="btn-snow-cta">
-                RESERVAR NIEVE <i class="fas fa-snowflake" style="margin-left:8px;"></i>
+                ASEGURAR MI TRASLADO <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
             </a>
         </div>
     </section>
@@ -153,7 +172,7 @@
                 <div class="dashboard-card featured">
                     <div>
                         <span class="card-hud-label">Paquete // Nieve Premium</span>
-                        <h3 class="card-title">Ski Day <br>VIP</h3>
+                        <h3 class="card-title">Ski Day <br>Institucional</h3>
                         <p class="card-body">
                             Traslado ida y vuelta desde tu hotel en Santiago al centro de ski de tu elección.
                             Vehículo con cadenas, WiFi, agua y snacks premium. Conductor esperando todo el día.
@@ -161,7 +180,7 @@
                         </p>
                     </div>
                     <div class="card-stat-group" style="display: flex; gap: 2rem;">
-                        <div><span class="card-stat" style="font-size:2rem;">VIP</span><span class="card-stat-label">Servicio Full Day</span></div>
+                        <div><span class="card-stat" style="font-size:2rem;">EXE</span><span class="card-stat-label">Servicio Full Day</span></div>
                         <div><span class="card-stat" style="font-size:2rem;">24/7</span><span class="card-stat-label">Disponibilidad</span></div>
                     </div>
                 </div>
@@ -171,7 +190,7 @@
                         <h3 class="card-title">Combo <br>Santiago + Ski</h3>
                         <p class="card-body">
                             Día 1: City Tour por los barrios icónicos de Santiago — Lastarria, Bellavista, Cerro San Cristóbal, Sanhattan.
-                            Día 2: Traslado VIP a la nieve. El paquete perfecto para quienes visitan Chile.
+                            Día 2: Traslado institucional a la nieve. El paquete perfecto para quienes visitan Chile.
                         </p>
                     </div>
                     <i class="fas fa-city" style="font-size: 2rem; color: var(--aura-gold); opacity: 0.5;"></i>
@@ -231,11 +250,17 @@
     </section>
 
     <!-- ======= GALERÍA DESTINOS CHILE ======= -->
-    <section class="section">
+    <section class="section" id="dossier-b2b">
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Catálogo de Destinos</span>
                 <h2 class="section-title">Chile en <br><span style="color: var(--aura-gold);">Estado Puro.</span></h2>
+                <div style="margin-top: 1.5rem;">
+                    <button onclick="generateAuraDossier()" class="btn-aura-mission generate-pdf-trigger" style="background:transparent; border-color:var(--aura-gold); color:var(--aura-gold); font-size: 0.8rem; padding: 0.8rem 1.5rem;">
+                        <span>DESCARGAR CATÁLOGO 2026 (PDF)</span>
+                        <i class="fas fa-file-pdf"></i>
+                    </button>
+                </div>
             </div>
             <div class="destination-bento reveal">
                 <!-- Row 1: Patagonia grande + Atacama -->
@@ -335,7 +360,7 @@
                     </div>
                     <div class="van-card-overlay"></div>
                     <div class="van-card-content">
-                        <span class="van-card-label">❄️ SKI DAY VIP</span>
+                        <span class="van-card-label">❄️ SKI DAY INSTITUCIONAL</span>
                         <h3>Valle Nevado</h3>
                         <span class="van-card-dist"><i class="fas fa-route"></i> 90 min desde SCL</span>
                     </div>
@@ -413,12 +438,39 @@
             <div class="mid-cta-card">
                 <div class="mid-cta-content">
                     <h3>La nieve no espera.</h3>
-                    <p>Reserva tu traslado VIP a Valle Nevado, Portillo o Farellones antes de que se agoten las fechas. Paquetes Nieve + City Tour disponibles.</p>
+                    <p>Reserva tu traslado institucional a Valle Nevado, Portillo o Farellones antes de que se agoten las fechas. Paquetes Nieve + City Tour disponibles.</p>
                 </div>
-                <a href="#contacto" class="btn-luxury-mission magnetic" style="background: var(--aura-gold); border-color: var(--aura-gold); color: #0a0a0f;">
+                <a href="#contacto" class="btn-aura-mission magnetic" style="background: var(--aura-gold); border-color: var(--aura-gold); color: #0a0a0f;">
                     <span>RESERVAR AHORA</span>
                     <i class="fas fa-snowflake"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= MÉTRICAS TURISMO ======= -->
+    <section class="social-proof-bar reveal">
+        <div class="container">
+            <div class="proof-stats">
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="3500" data-suffix="+">0+</span>
+                    <span class="proof-label">Pax Transportados</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="98.5" data-suffix="%">0%</span>
+                    <span class="proof-label">Satisfacción Institucional</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="15" data-suffix="+">0+</span>
+                    <span class="proof-label">Destinos Exclusivos</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-count="100" data-suffix="%">0%</span>
+                    <span class="proof-label">Seguridad de Flota</span>
+                </div>
             </div>
         </div>
     </section>
@@ -442,8 +494,18 @@
                             <button class="t-nav-btn">CITY TOUR</button>
                             <button class="t-nav-btn">DESTINOS</button>
                         </div>
+                        <div class="terminal-pricing-display">
+                            <!-- Inyectado dinámicamente por form-handler.js -->
+                            <div class="price-tier"><span>EJECUTIVO</span><strong>---</strong></div>
+                            <div class="price-tier featured"><span>PREMIUM</span><strong>---</strong></div>
+                            <div class="price-tier"><span>DIPLOMATIC</span><strong>---</strong></div>
+                        </div>
                     </div>
                     <div class="terminal-main">
+                        <div class="terminal-brand-header">
+                            <span class="terminal-brand-aura">AURA</span>
+                            <span class="terminal-brand-travel">TRAVEL</span>
+                        </div>
                         <form id="reservaForm" class="terminal-form">
                             <div class="form-group">
                                 <input type="text" name="nombre" placeholder=" " required>
@@ -481,6 +543,19 @@
                                 <textarea name="mensaje" placeholder=" "></textarea>
                                 <label>REQUERIMIENTOS ESPECIALES (OPCIONAL)</label>
                             </div>
+                            
+                            <!-- AGENT LIVE INSIGHT PANEL -->
+                            <div class="agent-live-insight">
+                                <div class="insight-icon"><i class="fas fa-brain"></i></div>
+                                <div class="insight-text-wrapper">
+                                    <div class="insight-header">
+                                        <span class="insight-agent-name">AURA INTEL</span>
+                                        <span class="insight-status">RESONANDO...</span>
+                                    </div>
+                                    <p class="insight-message">Analizando ruta turística...</p>
+                                </div>
+                            </div>
+
                             <button type="submit" class="btn-terminal-submit">
                                 <span>ENVIAR SOLICITUD DE RESERVA</span>
                             </button>
@@ -490,6 +565,33 @@
             </div>
         </div>
     </section>
+
+    <!-- ======= TRANSPARENCIA RADICAL (EXCELENCIA PARA TODOS) ======= -->
+    <section class="transparency-section reveal">
+        <div class="container">
+            <div class="transparency-grid">
+                <div class="transparency-card">
+                    <div class="t-icon"><i class="fas fa-snowflake"></i></div>
+                    <h3>Excelencia en la Montaña</h3>
+                    <p>Subir a la nieve no debe ser un privilegio de pocos, sino una experiencia segura para todos. Nuestra tarifa incluye todo lo necesario para que tu única preocupación sea disfrutar del paisaje.</p>
+                    <ul class="t-list">
+                        <li><i class="fas fa-check"></i> Cadenas de alta tracción y seguridad</li>
+                        <li><i class="fas fa-check"></i> Conductores certificados en alta montaña</li>
+                        <li><i class="fas fa-check"></i> Calefacción y WiFi garantizados</li>
+                    </ul>
+                </div>
+                <div class="transparency-card highlight">
+                    <div class="t-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Valor Real, Sin Sorpresas</h3>
+                    <p>Democratizamos el estándar premium: pagas por precisión, seguridad y una unidad impecable. Transparencia total en rutas y tiempos.</p>
+                    <a href="#contacto" class="t-link">RESERVAR MI LUGAR →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= TERMINAL DE RESERVA TURISMO (FIXED) ======= -->
+    <!-- Removed duplicate section to ensure single point of conversion -->
 
     <footer class="footer-command">
         <div class="container">
@@ -506,7 +608,6 @@
                         <li><a href="turismo.html">Turismo</a></li>
                         <li><a href="eventos.html">Eventos</a></li>
                         <li><a href="aeropuerto.html">Aeropuerto</a></li>
-                        <li><a href="delivery.html">Delivery</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -538,6 +639,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../js/analytics.js"></script>
+    <script src="../js/aura-agents-2026.js"></script>
     <script src="../js/form-handler.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwA6ivQGe80VUgHFnbCiACDEwyQF1eaNI&libraries=places&callback=initAutocomplete" async defer></script>
     <script src="../js/aura-core.js"></script>

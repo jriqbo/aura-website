@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA TRAVEL | Movilidad Ejecutiva e Institucional en Chile</title>
-    <meta name="description" content="AURA TRAVEL | Movilidad institucional de ultra-lujo en Chile. Especialistas en transporte ejecutivo, protocolos de salud, expediciones premium y logística crítica con SLA 99.7%.">
+    <title>AURA TRAVEL | El Estándar de Excelencia que Chile Merece</title>
+    <meta name="description" content="AURA TRAVEL | Democratizando la excelencia en transporte institucional. No es lujo por ostentación, es dignidad, precisión y honestidad radical para todos.">
 
     <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://auratravel.cl">
     <meta property="og:title" content="AURA TRAVEL | Liderando la Movilidad Institucional en Chile">
-    <meta property="og:description" content="Centro de operaciones de movilidad premium con estándar diplomático. Divisiones: Corporativo, Salud, Turismo, Eventos, Aeropuerto y Delivery.">
+    <meta property="og:description" content="Centro de operaciones de movilidad premium con estándar diplomático. Divisiones: Corporativo, Salud, Turismo, Eventos y Aeropuerto.">
     <meta property="og:image" content="https://auratravel.cl/aura_home_8k.webp">
-    <link rel="stylesheet" href="./css/aura.css">
+    <!-- PRELOAD CRITICAL ASSETS -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" as="style">
+    <link rel="preload" href="/fonts/ethnocentric/Ethnocentric-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="stylesheet" href="css/modules/dashboard.css">
+    <link rel="stylesheet" href="css/modules/responsive.css">
+    <link rel="stylesheet" href="./css/aura.css?v=2026.zenith">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="./js/aura-heartbeat.js" defer></script>
+    <script src="./js/aura-marketing.js" defer></script>
     <meta name="google-site-verification" content="phItmKLcG7eCb2aKMHUCZv65nc_w2JTfPVj5G60VgmI" />
     <script type="application/ld+json">
     {
@@ -58,7 +65,8 @@
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transporte Corporativo" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logística de Salud" } },
                 { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Turismo Premium" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Traslados Aeropuerto VIP" } }
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Traslados Aeropuerto Institucional" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Logística de Eventos" } }
             ]
         }
     }
@@ -66,13 +74,24 @@
 </head>
 <body class="aura-elite">
     <div class="noise-overlay"></div>
+    <script>
+        // FAIL-SAFE: Force lift curtain if it hangs
+        setTimeout(function() {
+            var c = document.querySelector('.sovereign-curtain');
+            if (c) {
+                c.style.opacity = '0';
+                c.style.visibility = 'hidden';
+                c.style.transition = 'opacity 1s ease';
+            }
+        }, 4000);
+    </script>
 
     <header class="capsule-header">
         <nav class="container">
             <div class="nav-content">
                 <a href="/" class="logo">
-                    <span class="logo-aura">AURA</span>
-                    <span class="logo-travel">TRAVEL</span>
+                    <span class="logo-aura-monolith">AURA</span>
+                    <span class="logo-travel-monolith">TRAVEL</span>
                 </a>
                 <div class="nav-links">
                     <a href="/" class="active">INICIO</a>
@@ -81,130 +100,57 @@
                     <a href="pages/turismo.html">TURISMO</a>
                     <a href="pages/eventos.html">EVENTOS</a>
                     <a href="pages/aeropuerto.html">AEROPUERTO</a>
-                    <a href="pages/delivery.html">DELIVERY</a>
                     <a href="#contacto" class="btn-header-contact">CONTACTO</a>
+
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- ======= SOVEREIGN HERO — HOME EXCLUSIVE ======= -->
-    <!-- Layer 1: Monolith Reveal — Cinematic Entrance Ceremony -->
-    <div class="sovereign-curtain"></div>
-    <div class="sovereign-genesis-line"></div>
-
     <section class="hero-sovereign" id="inicio">
-        <!-- Background Slider (same 5 images, entrance-controlled opacity) -->
+        <!-- Background Slider -->
         <div class="hero-slider" data-parallax="0.3">
-            <img src="./img/home/aura_supreme_hero_night_motion_8k_gold_1777938401922.webp" alt="AURA Travel Hero - Movilidad Ejecutiva Premium">
+            <img src="./img/home/aura_supreme_hero_night_motion_8k_gold_1777938401922.webp" alt="AURA Travel Hero" loading="eager">
             <img src="./img/home/aura_hero_santiago_above_1777815917969.webp" alt="AURA Santiago Command">
-            <img src="./img/home/aura_luxury_van_airport_night_1777851584322.webp" alt="AURA Luxury Airport Transfer" loading="lazy">
+            <img src="./img/home/aura_luxury_van_airport_night_1777851584322.webp" alt="AURA Traslado Aeropuerto Institucional" loading="lazy">
             <img src="./img/home/aura_hero_patagonia_drive_1777815932285.webp" alt="AURA Patagonia Expedition Drive">
-            <img src="./img/home/aura_luxury_van_andes_sunset_1777851568919.webp" alt="AURA Andes Golden Hour" loading="lazy">
+            <img src="./img/home/aura_luxury_van_andes_sunset_1777851568919.webp" alt="AURA Van Ejecutiva Andes" loading="lazy">
         </div>
         <div class="hero-overlay"></div>
 
-        <!-- Layer 2: Atmospheric Sovereignty — 4 Sub-layers -->
-        <div class="sovereign-fog"></div>
-        <div class="sovereign-light-scan"></div>
-        <div class="sovereign-aberration"></div>
-        <canvas id="hero-particles" class="hero-particles-canvas"></canvas>
-
-        <!-- Layer 3: Live Command HUD — Telemetry Dashboard -->
-        <div class="sovereign-hud">
-            <!-- Top-Left: Clock + Location -->
-            <div class="hud-clock">
-                <span class="hud-clock-time" id="sovereign-clock">--:--:--</span>
-                <span class="hud-clock-label">SANTIAGO · SCL · UTC-4</span>
-            </div>
-
-            <!-- Top-Right: Fleet Status -->
-            <div class="hud-fleet-status">
-                <div class="hud-fleet-dot"></div>
-                <div>
-                    <span class="hud-fleet-text">FLOTA EN RUTA: <span class="hud-fleet-count" id="sovereign-fleet">--</span></span>
-                </div>
-            </div>
-
-            <!-- Left Edge: Telemetry Line -->
-            <div class="hud-telemetry-line">
-                <div class="hud-telemetry-pulse"></div>
-                <div class="hud-telemetry-nodes">
-                    <span class="hud-telemetry-node">CORP</span>
-                    <span class="hud-telemetry-node">SALUD</span>
-                    <span class="hud-telemetry-node">TURISMO</span>
-                    <span class="hud-telemetry-node">EVENTOS</span>
-                    <span class="hud-telemetry-node">AEROP</span>
-                </div>
-            </div>
-
-            <!-- Bottom: Service Ticker -->
-            <div class="hud-ticker">
-                <div class="hud-ticker-track">
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>CORPORATIVO · SLA 99.7%</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>SALUD · DIÁLISIS PROGRAMADA</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>TURISMO · TEMPORADA NIEVE 2026</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>EVENTOS · COORDINACIÓN DE GALA</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>AEROPUERTO · MONITOREO DE VUELOS</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>DELIVERY · CUSTODIA CRÍTICA 24/7</span>
-                    <!-- Duplicate for seamless loop -->
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>CORPORATIVO · SLA 99.7%</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>SALUD · DIÁLISIS PROGRAMADA</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>TURISMO · TEMPORADA NIEVE 2026</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>EVENTOS · COORDINACIÓN DE GALA</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>AEROPUERTO · MONITOREO DE VUELOS</span>
-                    <span class="hud-ticker-item"><span class="ticker-dot"></span>DELIVERY · CUSTODIA CRÍTICA 24/7</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- HUD GLOBAL MINIMALISTA -->
-        <div class="hero-hud-minimal">
-            <span class="hud-label">Enlace Soberano</span>
-            <span class="hud-value glow-text">SCL // SISTEMA_ACTIVO</span>
-        </div>
-
         <div class="container">
-            <div class="hero-content">
-                <!-- Cinematic light sweep effect -->
-                <div class="cinematic-flare"></div>
-                <h1 class="hero-display hero-home-display">
-                    <span class="brand-main aura-titanium-white">AURA</span>
-                    <span class="brand-sub aura-travel-glow">TRAVEL</span>
-                </h1>
-                <script>
-                    // INLINE ENTRANCE CEREMONY — Runs immediately, no dependencies
-                    // This guarantees AURA/TRAVEL are visible even if aura-core.js crashes
-                    (function(){
-                        var h = document.querySelector('.hero-display');
-                        if(!h) return;
-                        h.style.opacity = '0';
-                        h.style.transform = 'translateY(30px)';
-                        h.style.transition = 'none';
-                        setTimeout(function(){
-                            h.style.transition = 'opacity 2s cubic-bezier(0.16,1,0.3,1), transform 2s cubic-bezier(0.16,1,0.3,1)';
-                            h.style.opacity = '1';
-                            h.style.transform = 'translateY(0)';
-                        }, 1200);
-                    })();
-                </script>
-                <div class="hero-actions" style="display: flex; gap: 1rem; align-items: center; margin-top: 2rem;">
-                    <a href="#centro-operaciones" class="btn-luxury-mission magnetic">
-                        <span>INICIAR PROTOCOLO</span>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <a href="#contacto" class="btn-outline magnetic" style="padding: 1.2rem 2.5rem;">
-                        <span>SOLICITAR COTIZACIÓN</span>
-                    </a>
+            <div class="hero-content-monolith">
+                <div class="brand-monumental-wrapper">
+                    <div class="hero-monolith-display">
+                        <span class="brand-monolith-primary aura-titanium-pure">AURA</span>
+                        <span class="brand-monolith-secondary">EXCELENCIA PARA TODOS</span>
+                    </div>
+                    
+                    <div class="monolith-glass-panel reveal">
+                        <!-- Live Operations Pulse Component -->
+                        <div class="live-ops-pulse">
+                            <span class="pulse-dot"></span>
+                            <span class="pulse-text">CENTRO DE MANDO SCL // ORQUESTACIÓN AUTÓNOMA ACTIVA</span>
+                        </div>
+                        <div class="hero-actions" style="display: flex; gap: 1.5rem; justify-content: center; width: 100%;">
+                            <a href="#centro-operaciones" class="btn-aura-mission magnetic">
+                                <span>SOLICITAR EXCELENCIA</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                            <a href="#manifiesto" class="btn-outline magnetic" style="border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 1rem 2rem;">
+                                <span>NUESTRO MANIFIESTO</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Scroll Protocol -->
         <div class="scroll-protocol">
-            <span class="scroll-text">CENTRO DE MANDO</span>
+            <span class="scroll-text">EXPLORAR ECOSISTEMA</span>
             <div class="scroll-line">
-                <div class="scroll-dot" style="background: var(--aura-champagne); box-shadow: 0 0 10px var(--aura-champagne);"></div>
+                <div class="scroll-dot" style="background: var(--aura-gold); box-shadow: 0 0 15px var(--aura-gold);"></div>
             </div>
         </div>
     </section>
@@ -223,92 +169,249 @@
         </div>
     </div>
 
-    <!-- ======= CENTRO DE OPERACIONES BENTO ======= -->
-    <section class="services-bento-section" id="centro-operaciones">
+    <!-- 📊 AURA DATA HUD - Dashboard de Orquestación Autónoma -->
+    <section class="aura-dashboard-hud" id="dashboard">
+        <div class="hud-container">
+            <div class="hud-content" data-reveal="left">
+                <span class="hud-label">SISTEMA COGNITIVO // OPERACIONES VIVAS</span>
+                <h2 class="hud-title">Orquestación<br>Sin Fricción</h2>
+                <p class="hud-description">
+                    Nuestros agentes autónomos procesan terabytes de datos en tiempo real para anticipar cada variable. No solo te llevamos; optimizamos tu tiempo y bienestar antes de que lo pidas.
+                </p>
+                <div class="live-ops-pulse" style="margin-top: 2rem;">
+                    <span class="pulse-dot"></span>
+                    <span class="pulse-text">CENTRO DE MANDO ACTIVO // 99.8% DISPONIBILIDAD</span>
+                </div>
+            </div>
+
+            <div class="hud-grid" data-reveal="right">
+                <!-- CityFlow Monitor -->
+                <div class="hud-card city-flow-card">
+                    <div class="hud-card-icon"><i class="fas fa-traffic-light"></i></div>
+                    <div class="monitor-display">
+                        <div class="monitor-row">
+                            <span class="m-label">COSTANERA NORTE</span>
+                            <span class="m-value status-fluid" id="flow-costanera">FLUIDO</span>
+                        </div>
+                        <div class="monitor-row">
+                            <span class="m-label">VESPUCIO ORIENTE</span>
+                            <span class="m-value status-moderate" id="flow-vespucio">MODERADO</span>
+                        </div>
+                        <div class="monitor-row">
+                            <span class="m-label">AV. KENNEDY</span>
+                            <span class="m-value status-congested" id="flow-kennedy">DENSO</span>
+                        </div>
+                    </div>
+                    <div class="hud-card-label">Estado de Red CityFlow</div>
+                </div>
+
+                <!-- Friction Card -->
+                <div class="hud-card">
+                    <div class="hud-card-icon"><i class="fas fa-wind"></i></div>
+                    <div class="hud-card-value" data-count="0.12" data-suffix="">0.00</div>
+                    <div class="hud-card-label">Coeficiente de Fricción</div>
+                    <div class="hud-status-bar">
+                        <div class="hud-status-progress" style="width: 12%;"></div>
+                    </div>
+                </div>
+
+                <!-- Biometric Card -->
+                <div class="hud-card">
+                    <div class="hud-card-icon"><i class="fas fa-heartbeat"></i></div>
+                    <div class="hud-card-value" data-count="98.4" data-suffix="%">0%</div>
+                    <div class="hud-card-label">Armonía Biométrica</div>
+                    <div class="hud-status-bar">
+                        <div class="hud-status-progress" style="width: 98%;"></div>
+                    </div>
+                </div>
+
+                <!-- Market Card -->
+                <div class="hud-card">
+                    <div class="hud-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="hud-card-value" data-count="12" data-suffix="%" data-prefix="+">+0%</div>
+                    <div class="hud-card-label">Penetración B2B</div>
+                    <div class="hud-status-bar">
+                        <div class="hud-status-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <!-- Weather Card (NEW) -->
+                <div class="hud-card weather-telemetry-card">
+                    <div class="hud-card-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <div class="monitor-display">
+                        <div class="monitor-row">
+                            <span class="m-label">TEMPERATURA SCL</span>
+                            <span class="m-value" id="weather-temp">--°C</span>
+                        </div>
+                        <div class="monitor-row">
+                            <span class="m-label">VISIBILIDAD</span>
+                            <span class="m-value" id="weather-visibility">--%</span>
+                        </div>
+                        <div class="monitor-row">
+                            <span class="m-label">CONDICIÓN</span>
+                            <span class="m-value status-fluid" id="weather-desc">DESPEJADO</span>
+                        </div>
+                    </div>
+                    <div class="hud-card-label">Telemetría Atmosférica</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= MANIFIESTO 2026 — EXCELENCIA PARA TODOS ======= -->
+    <section class="manifesto-zenith" id="manifiesto">
+        <div class="container">
+            <div class="zenith-monolith-panel reveal">
+                <div class="monolith-header">
+                    <span class="monolith-label">Ecosistema AURA</span>
+                    <h2 class="monolith-title">Excelencia <br>para <span class="aura-liquid-chrome">Todos.</span></h2>
+                    <div class="monolith-divider"></div>
+                </div>
+                
+                <div class="manifesto-grid">
+                    <div class="manifesto-pillar">
+                        <div class="pillar-icon"><i class="fas fa-clock"></i></div>
+                        <div class="pillar-content">
+                            <h3>Precisión Obsesiva</h3>
+                            <p>El tiempo es sagrado. Si prometemos 10 minutos, son 10 minutos. Nuestra logística se rige por rigor técnico e institucional.</p>
+                        </div>
+                    </div>
+                    <div class="manifesto-pillar">
+                        <div class="pillar-icon"><i class="fas fa-search-dollar"></i></div>
+                        <div class="pillar-content">
+                            <h3>Transparencia Radical</h3>
+                            <p>Sin letras chicas. Explicamos el porqué de cada tarifa y ruta con la honestidad de un vecino experto y la seriedad de una institución.</p>
+                        </div>
+                    </div>
+                    <div class="manifesto-pillar">
+                        <div class="pillar-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="pillar-content">
+                            <h3>Empatía Tecnológica</h3>
+                            <p>IA diseñada para simplificar, no para complicar. Tecnología invisible que anticipa sus necesidades y garantiza su seguridad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="monolith-footer">
+                    <span class="footer-note">AURA TRAVEL — SANTIAGO, CHILE 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= SERVICIOS BENTO — THE DIVISION ECOSYSTEM ======= -->
+    <section class="ecosystem-section" id="centro-operaciones">
         <div class="tactical-grid-overlay"></div>
         <div class="radar-sweep"></div>
         
-        <span class="hud-coordinate hud-tl">lat: -33.4489 // lng: -70.6693</span>
-        <span class="hud-coordinate hud-tr">status: operational</span>
-        <span class="hud-coordinate hud-bl">network: scl-hub</span>
-        <span class="hud-coordinate hud-br">uptime: 99.97%</span>
+        <span class="hud-coordinate hud-tl">SECTOR: CONO SUR // SCL</span>
+        <span class="hud-coordinate hud-tr">ESTADO: OPERATIVO</span>
+        <span class="hud-coordinate hud-bl">RED: SCL-HUB-ALPHA</span>
+        <span class="hud-coordinate hud-br">PROTOCOLO: ZENITH 2026</span>
 
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Centro de Operaciones</span>
-                <h2 class="section-title">Divisiones <br>de <span style="color: var(--aura-champagne);">Excelencia.</span></h2>
+                <h2 class="section-title">Nuestras Divisiones <br>de <span style="color: var(--aura-gold);">Excelencia.</span></h2>
+                <p style="color: var(--text-silver); margin-top: 1.5rem; max-width: 600px;">Sistemas de movilidad especializados con estándar institucional, trazabilidad total y precisión operativa.</p>
             </div>
 
-            <div class="services-bento-2 reveal">
-                <!-- Columna Izquierda -->
-                <div class="bento-column">
-                    <!-- Card Grande: Corporativo -->
-                    <a href="/pages/corporativo.html" class="bento-2-card tall magnetic reveal-up">
-                        <div class="bento-2-bg">
-                            <img src="./img/home/aura_fleet_night_8k_1778058439627.webp" alt="AURA Corporativo Flota" loading="lazy">
+            <div class="bento-zenith-grid">
+                <!-- Corporativo: Blue -->
+                <div class="zenith-card card-corp reveal">
+                    <div class="zenith-card-header">
+                        <span class="mission-tag">SCL // CORP-01</span>
+                        <div class="zenith-icon"><i class="fas fa-building"></i></div>
+                    </div>
+                    <div class="zenith-card-bg">
+                        <img src="img/corporativo/hero.png" alt="AURA Corporativo" loading="lazy">
+                    </div>
+                    <div class="zenith-card-content">
+                        <h3 class="zenith-card-title">Corporativo</h3>
+                        <p class="zenith-card-p">Logística institucional para empresas de alto estándar. Puntualidad absoluta y reporte ejecutivo.</p>
+                        <div class="zenith-card-actions">
+                            <a href="./pages/corporativo.html" class="zenith-card-action">VER DETALLES <i class="fas fa-arrow-right"></i></a>
+                            <button class="btn-quick-reserve" data-aura-action="prefill" data-aura-service="corporativo" data-aura-destination="Centro de Negocios SCL">RESERVAR AHORA</button>
                         </div>
-                        <div class="bento-2-content">
-                            <span class="bento-2-tag" style="color: var(--aura-corporate);">DIVISIÓN CORPORATIVA</span>
-                            <h3 style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-top: 0.5rem;">Transporte<br>Ejecutivo</h3>
-                        </div>
-                    </a>
-                    <!-- Row: Salud + Turismo -->
-                    <div class="bento-row-small">
-                        <a href="/pages/salud.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.1s;">
-                            <div class="bento-2-bg">
-                                <img src="./img/home/aura_van_salud_night_branded_8k_amber_gold_1777937962791.webp" alt="AURA Salud" loading="lazy">
-                            </div>
-                            <div class="bento-2-content">
-                                <span class="bento-2-tag" style="color: var(--aura-clinical);">SALUD</span>
-                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Logística<br>Clínica</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/turismo.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.2s;">
-                            <div class="bento-2-bg">
-                                <img src="./img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.webp" alt="AURA Turismo" loading="lazy">
-                            </div>
-                            <div class="bento-2-content">
-                                <span class="bento-2-tag" style="color: var(--aura-gold);">TURISMO</span>
-                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Experiencias<br>Premium</h3>
-                            </div>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Columna Derecha -->
-                <div class="bento-column">
-                    <!-- Row: Eventos + Delivery -->
-                    <div class="bento-row-small">
-                        <a href="/pages/eventos.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.1s;">
-                            <div class="bento-2-bg">
-                                <img src="./img/home/aura_van_eventos_night_branded_8k_gold_gala_1777937993359.webp" alt="AURA Eventos" loading="lazy">
-                            </div>
-                            <div class="bento-2-content">
-                                <span class="bento-2-tag" style="color: var(--aura-purple);">EVENTOS</span>
-                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Logística<br>de Gala</h3>
-                            </div>
-                        </a>
-                        <a href="/pages/delivery.html" class="bento-2-card magnetic reveal-up" style="transition-delay: 0.2s;">
-                            <div class="bento-2-bg">
-                                <img src="./img/home/aura_van_delivery_night_branded_8k_gold_courier_1777938005840.webp" alt="AURA Delivery" loading="lazy">
-                            </div>
-                            <div class="bento-2-content">
-                                <span class="bento-2-tag" style="color: var(--aura-ruby);">DELIVERY</span>
-                                <h3 style="font-size: 1.2rem; font-weight: 800; text-transform: uppercase;">Custodia<br>Crítica</h3>
-                            </div>
-                        </a>
+                <!-- Salud: Clinical Green -->
+                <div class="zenith-card card-salud reveal">
+                    <div class="zenith-card-header">
+                        <span class="mission-tag">SCL // INTEL-02</span>
+                        <div class="zenith-icon"><i class="fas fa-microscope"></i></div>
                     </div>
-                    <!-- Card Grande: Aeropuerto -->
-                    <a href="/pages/aeropuerto.html" class="bento-2-card tall magnetic reveal-up" style="transition-delay: 0.3s;">
-                        <div class="bento-2-bg">
-                            <img src="./img/home/aura_aeropuerto_hero_8k_1778059260900.webp" alt="AURA Aeropuerto VIP">
+                    <div class="zenith-card-bg">
+                        <img src="img/salud/clinical_intelligence.png" alt="AURA Clinical Intelligence" loading="lazy">
+                    </div>
+                    <div class="zenith-card-content">
+                        <h3 class="zenith-card-title">Clinical Intelligence</h3>
+                        <p class="zenith-card-p">Logística médica con reportabilidad preventiva diaria para la continuidad operacional de clínicas.</p>
+                        <div class="zenith-card-actions">
+                            <a href="./pages/salud.html" class="zenith-card-action">VER DETALLES <i class="fas fa-arrow-right"></i></a>
+                            <button class="btn-quick-reserve" data-aura-action="prefill" data-aura-service="salud" data-aura-destination="Centro de Diálisis / Clínica">RESERVAR AHORA</button>
                         </div>
-                        <div class="bento-2-content">
-                            <span class="bento-2-tag" style="color: var(--aura-sky);">DIVISIÓN AEROPUERTO</span>
-                            <h3 style="font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-top: 0.5rem;">Traslados<br>Aeropuerto</h3>
-                        </div>
-                    </a>
+                    </div>
                 </div>
+
+                <!-- Turismo: Gold -->
+                <div class="zenith-card card-turismo reveal">
+                    <div class="zenith-card-header">
+                        <span class="mission-tag">SCL // EXP-03</span>
+                        <div class="zenith-icon"><i class="fas fa-mountain"></i></div>
+                    </div>
+                    <div class="zenith-card-bg">
+                        <img src="./img/home/aura_van_turismo_night_branded_8k_gold_andes_1777937976484.webp" alt="AURA Turismo" loading="lazy">
+                    </div>
+                    <div class="zenith-card-content">
+                        <h3 class="zenith-card-title">Turismo Institucional</h3>
+                        <p class="zenith-card-p">Expediciones de nieve y rutas exclusivas. Temporada 2026 activa con estándar de montaña.</p>
+                        <div class="zenith-card-actions">
+                            <a href="./pages/turismo.html" class="zenith-card-action">VER DETALLES <i class="fas fa-arrow-right"></i></a>
+                            <button class="btn-quick-reserve" data-aura-action="prefill" data-aura-service="turismo" data-aura-destination="Valle Nevado">RESERVAR AHORA</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eventos: Purple -->
+                <div class="zenith-card card-eventos reveal">
+                    <div class="zenith-card-header">
+                        <span class="mission-tag">SCL // GALA-04</span>
+                        <div class="zenith-icon"><i class="fas fa-star"></i></div>
+                    </div>
+                    <div class="zenith-card-bg">
+                        <img src="img/eventos/hero.png" alt="AURA Eventos" loading="lazy">
+                    </div>
+                    <div class="zenith-card-content">
+                        <h3 class="zenith-card-title">Eventos</h3>
+                        <p class="zenith-card-p">Logística masiva para galas y producciones de alto impacto.</p>
+                        <div class="zenith-card-actions">
+                            <a href="./pages/eventos.html" class="zenith-card-action">VER DETALLES <i class="fas fa-arrow-right"></i></a>
+                            <button class="btn-quick-reserve" data-aura-action="prefill" data-aura-service="eventos" data-aura-destination="Centro de Eventos / Hotel">RESERVAR AHORA</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aeropuerto: Sky -->
+                <div class="zenith-card card-aeropuerto reveal">
+                    <div class="zenith-card-header">
+                        <span class="mission-tag">SCL // AIR-05</span>
+                        <div class="zenith-icon"><i class="fas fa-plane"></i></div>
+                    </div>
+                    <div class="zenith-card-bg">
+                        <img src="img/aeropuerto/hero.png" alt="AURA Aeropuerto" loading="lazy">
+                    </div>
+                    <div class="zenith-card-content">
+                        <h3 class="zenith-card-title">Aeropuerto</h3>
+                        <p class="zenith-card-p">Protocolo SCL: Recepción Institucional y monitorización de vuelos real-time.</p>
+                        <div class="zenith-card-actions">
+                            <a href="./pages/aeropuerto.html" class="zenith-card-action">VER DETALLES <i class="fas fa-arrow-right"></i></a>
+                            <button class="btn-quick-reserve" data-aura-action="prefill" data-aura-service="aeropuerto" data-aura-destination="Aeropuerto SCL">RESERVAR AHORA</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -383,11 +486,11 @@
                 </div>
                 <div class="fleet-card">
                     <div class="fleet-card-bg">
-                        <img loading="lazy" decoding="async" src="./img/home/aura_concierge_detail_8k_1778058457742.webp" alt="Concierge AURA">
+                        <img loading="lazy" decoding="async" src="./img/corporativo/hero_corporativo_2.png" alt="AURA — Protocolo Institucional">
                     </div>
                     <div class="fleet-card-overlay"></div>
                     <div class="fleet-card-content">
-                        <span class="fleet-card-tag">CONCIERGE</span>
+                        <span class="fleet-card-tag">ATENCIÓN</span>
                         <h3>Atención Personalizada</h3>
                         <p class="fleet-desc">Conductor certificado, bilingüe y con verificación de antecedentes exhaustiva.</p>
                     </div>
@@ -529,9 +632,9 @@
             <div class="mid-cta-card">
                 <div class="mid-cta-content">
                     <h3>¿Necesita un servicio con estándar diplomático?</h3>
-                    <p>Cotización personalizada en menos de 30 minutos. Sin compromiso, sin intermediarios. Directamente con nuestro equipo de concierge.</p>
+                    <p>Cotización personalizada en menos de 30 minutos. Sin compromiso, sin intermediarios. Directamente con nuestro equipo de atención.</p>
                 </div>
-                <a href="#contacto" class="btn-luxury-mission magnetic">
+                <a href="#contacto" class="btn-aura-mission magnetic">
                     <span>SOLICITAR COTIZACIÓN</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
@@ -562,7 +665,11 @@
                     <div class="terminal-main">
                         <div class="terminal-brand-header">
                             <span class="terminal-brand-aura">AURA</span>
-                            <span class="terminal-brand-travel">TRAVEL</span>
+                            <span class="terminal-brand-travel">INTELLIGENT HUB</span>
+                        </div>
+                        <div class="smart-intent-bar" style="margin-bottom: 2rem; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(201, 169, 110, 0.1);">
+                            <p style="font-size: 0.8rem; color: var(--aura-gold); letter-spacing: 2px; margin-bottom: 0.5rem;">ORQUESTADOR PREDICTIVO: ACTIVADO</p>
+                            <p style="font-size: 1.1rem; color: #fff; font-weight: 300;">"He detectado tráfico denso en Costanera Norte. Sugiero adelantar su recogida 15 minutos."</p>
                         </div>
                         <form class="terminal-form" id="contact-form">
                             <div class="form-group">
@@ -576,7 +683,6 @@
                                     <option value="salud">SALUD / DIÁLISIS</option>
                                     <option value="turismo">TURISMO PREMIUM</option>
                                     <option value="eventos">EVENTOS / GALA</option>
-                                    <option value="delivery">LOGÍSTICA / DELIVERY</option>
                                     <option value="aeropuerto">AEROPUERTO</option>
                                 </select>
                                 <label>TIPO DE SERVICIO</label>
@@ -592,6 +698,12 @@
                             <div class="form-group">
                                 <input type="text" id="direccion-destino" name="destino" placeholder=" " required>
                                 <label>PUNTO DE DESTINO</label>
+                                <div id="frequent-destinations" class="frequent-dest-list">
+                                    <span class="f-dest-tag">Aeropuerto SCL</span>
+                                    <span class="f-dest-tag">Valle Nevado</span>
+                                    <span class="f-dest-tag">W Santiago</span>
+                                    <span class="f-dest-tag">Clínica Las Condes</span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input type="email" name="email" placeholder=" " required>
@@ -607,6 +719,41 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= SECCIÓN MANIFIESTO: TRANSPARENCIA RADICAL ======= -->
+    <section class="section reveal" style="padding: 6rem 0; background: linear-gradient(to bottom, transparent, rgba(201, 169, 110, 0.03));">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center; margin-bottom: 4rem;">
+                <span class="section-label">Manifiesto AURA 2026</span>
+                <h2 class="section-title">Nuestra Promesa de <br><span style="color: var(--aura-gold);">Transparencia Radical.</span></h2>
+            </div>
+            
+            <div class="transparency-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Pilar 1 -->
+                <div class="vs-good" style="background: rgba(10, 10, 15, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 3rem; border-radius: 20px;">
+                    <div style="font-size: 2.5rem; color: var(--aura-gold); margin-bottom: 1.5rem;"><i class="fas fa-bullseye"></i></div>
+                    <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.5rem;">Precisión Obsesiva</h3>
+                    <p style="color: var(--text-silver); line-height: 1.6;">El tiempo del usuario es sagrado. Si prometemos 10 minutos, son 10 minutos. Nuestra IA optimiza rutas no para ahorrar combustible, sino para regalarle tiempo.</p>
+                </div>
+                <!-- Pilar 2 -->
+                <div class="vs-good" style="background: rgba(10, 10, 15, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 3rem; border-radius: 20px;">
+                    <div style="font-size: 2.5rem; color: var(--aura-gold); margin-bottom: 1.5rem;"><i class="fas fa-handshake"></i></div>
+                    <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.5rem;">Honestidad Institucional</h3>
+                    <p style="color: var(--text-silver); line-height: 1.6;">Explicamos el "por qué" de cada tarifa. Sin cargos ocultos, sin "tarifas dinámicas" arbitrarias. Usted paga por la excelencia técnica, no por la escasez del mercado.</p>
+                </div>
+                <!-- Pilar 3 -->
+                <div class="vs-good" style="background: rgba(10, 10, 15, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 3rem; border-radius: 20px;">
+                    <div style="font-size: 2.5rem; color: var(--aura-gold); margin-bottom: 1.5rem;"><i class="fas fa-brain"></i></div>
+                    <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.5rem;">Empatía Tecnológica</h3>
+                    <p style="color: var(--text-silver); line-height: 1.6;">Usamos la IA para simplificar, no para complicar. Nuestra interfaz es el puente entre una necesidad crítica y una solución inmediata. Hablamos claro, como un vecino experto.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <p style="color: var(--text-titanium); font-style: italic; opacity: 0.6; font-size: 0.9rem;">"No somos un lujo para pocos, somos la excelencia necesaria para todos."</p>
             </div>
         </div>
     </section>
@@ -631,7 +778,6 @@
                         <li><a href="/turismo">Turismo</a></li>
                         <li><a href="/eventos">Eventos</a></li>
                         <li><a href="/aeropuerto">Aeropuerto</a></li>
-                        <li><a href="/delivery">Delivery</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -663,11 +809,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="./js/analytics.js"></script>
+    <script src="./js/aura-agents-2026.js"></script>
     <script src="./js/form-handler.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwA6ivQGe80VUgHFnbCiACDEwyQF1eaNI&libraries=places&callback=initAutocomplete" async defer></script>
-    <script src="./js/aura-core.js"></script>
+    <script src="./js/aura-core.js?v=2026.zenith"></script>
+    <script src="js/aura-agents-logic.js"></script>
 </body>
-</html>
 
 
 
