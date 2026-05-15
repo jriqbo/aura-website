@@ -88,10 +88,16 @@
         
         <!-- HUD AIRPROTOCOL // TRANSPARENCIA -->
         <div class="hero-hud-minimal">
-            <span class="hud-label">Puntualidad Hoy</span>
-            <span class="hud-value glow-text">100% ON-TIME</span>
-            <span class="hud-label" style="margin-top: 1rem;">Protocolo Activo</span>
-            <span class="hud-value">SCL // OPERATIVO</span>
+            <div class="hud-grid">
+                <div class="hud-card">
+                    <span class="hud-label">LOGÍSTICA SCL</span>
+                    <span class="hud-value glow-text" style="animation: pulse-cyan 2s infinite;">OPERATIVO</span>
+                </div>
+                <div class="hud-card" id="weather-telemetry-card">
+                    <span class="hud-label">SCL // AMBIENTE</span>
+                    <span class="hud-value" id="hud-temp">--°C</span>
+                </div>
+            </div>
         </div>
 
         <div class="container">
@@ -396,6 +402,12 @@
                             <div class="form-group">
                                 <input type="text" id="direccion-destino" name="destino" placeholder=" ">
                                 <label>DESTINO / DIRECCIÓN</label>
+                                <div class="frequent-dest-list">
+                                    <span class="f-dest-tag" data-dest="SCL Terminal 2">T2 INTERNACIONAL</span>
+                                    <span class="f-dest-tag" data-dest="SCL Terminal 1">T1 NACIONAL</span>
+                                    <span class="f-dest-tag" data-dest="Hotel W Santiago">HOTEL W</span>
+                                    <span class="f-dest-tag" data-dest="Mandarin Oriental">MANDARIN</span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input type="email" name="email" placeholder=" " required>
@@ -469,7 +481,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../js/analytics.js"></script>
-    <script src="../js/aura-agents-2026.js"></script>
+    <script src="../js/aura-agents-logic.js"></script>
     <script src="../js/form-handler.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwA6ivQGe80VUgHFnbCiACDEwyQF1eaNI&libraries=places&callback=initAutocomplete" async defer></script>
     <script src="../js/aura-core.js"></script>

@@ -100,10 +100,16 @@
         
         <!-- HUD GLOBAL MINIMALISTA -->
         <div class="hero-hud-minimal">
-            <span class="hud-label">Protocolo de Gala</span>
-            <span class="hud-value glow-text">SCL // COORDINA_OK</span>
-            <span class="hud-label" style="margin-top: 1rem;">Estándar AURA</span>
-            <span class="hud-value">PARA TODOS</span>
+            <div class="hud-grid">
+                <div class="hud-card">
+                    <span class="hud-label">ESTADO LOGÍSTICO</span>
+                    <span class="hud-value glow-text" style="animation: pulse-purple 2s infinite;">EVENTOS READY</span>
+                </div>
+                <div class="hud-card" id="weather-telemetry-card">
+                    <span class="hud-label">SCL // AMBIENTE</span>
+                    <span class="hud-value" id="hud-temp">--°C</span>
+                </div>
+            </div>
         </div>
 
         <div class="container">
@@ -325,7 +331,7 @@
                     <div>
                         <span class="card-hud-label">Escala // Masiva</span>
                         <h3 class="card-title">Flota <br>Completa</h3>
-                        <p class="card-body">Operativos de gran escala: festivales, visitas de Estado, producciones cinematográficas. Toda la flota AURA a su disposición.</p>
+                        <p class="card-body">Operativos de gran escala: festivales, visitas de Estado, producciones cinematográficas. Toda the flota AURA a su disposición.</p>
                     </div>
                     <i class="fas fa-th" style="font-size: 2rem; color: var(--aura-purple); opacity: 0.5;"></i>
                 </div>
@@ -441,8 +447,14 @@
                                 <label>PUNTO DE ENCUENTRO / ORIGEN</label>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="direccion-destino" name="destino" placeholder=" " required>
-                                <label>VENUE / LUGAR DEL EVENTO</label>
+                                <input type="text" id="direccion-destino" name="destino" placeholder=" ">
+                                <label>DESTINO / CENTRO DE EVENTOS</label>
+                                <div class="frequent-dest-list">
+                                    <span class="f-dest-tag" data-dest="Espacio Riesco">ESPACIO RIESCO</span>
+                                    <span class="f-dest-tag" data-dest="Casa Piedra">AV. VITACURA 9500</span>
+                                    <span class="f-dest-tag" data-dest="Metropolitan Santiago">METROPOLITAN</span>
+                                    <span class="f-dest-tag" data-dest="Centro Parque">CENTRO PARQUE</span>
+                                </div>
                             </div>
                             <div class="form-group" style="grid-column: span 2;">
                                 <textarea name="detalle" placeholder=" "></textarea>
@@ -569,7 +581,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="../js/analytics.js"></script>
-    <script src="../js/aura-agents-2026.js"></script>
+    <script src="../js/aura-agents-logic.js"></script>
     <script src="../js/form-handler.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwA6ivQGe80VUgHFnbCiACDEwyQF1eaNI&libraries=places&callback=initAutocomplete" async defer></script>
     <script src="../js/aura-core.js"></script>
